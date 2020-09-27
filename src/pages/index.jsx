@@ -12,7 +12,7 @@ const Mobile = loadable(() => import('../components/views/home/mobile'));
 const Home = ({deviceType}) => (
     <div>
         <Helmet>
-            <title>{process.env.REACT_APP_NAME + ' | صفحه اصلی'}</title>
+            <title>{process.env.REACT_APP_NAME + ' | صفحه ی اصلی'}</title>
         </Helmet>
         {
             deviceType == DeviceTypes.MOBILE
