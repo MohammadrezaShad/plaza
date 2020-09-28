@@ -1,15 +1,22 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Footer from './footer';
+import Header from './header';
 import { 
-    Wrapper
+    Wrapper,
+    Container
 } from './main-layout.styled';
 
 const MainLayout = ({children}) => {
     const { t } = useTranslation();
     return (
         <Wrapper>
-            <h1>desktop {t('title')}</h1>
-            {children}
+            <Header />
+            <Container>
+                {children}
+                {t('title')}
+            </Container>
+            <Footer />
         </Wrapper>
     )
 }
