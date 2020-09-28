@@ -1,7 +1,10 @@
 const initialState = { 
     token: null,
+    isSignedIn:false,
     user: {
-        name: 'siyamak'
+        displayName:"",
+        level: "",
+        point: ""
     }
 }
 
