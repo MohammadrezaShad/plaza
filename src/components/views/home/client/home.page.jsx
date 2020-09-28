@@ -7,7 +7,10 @@ import {
 
 const HomePage = () => {
     return (
-        <Title>home client</Title>
+        <div>
+            <Title>home client</Title>
+            <div style={{height:'1000px'}}></div>
+        </div>
     )
 }
 
