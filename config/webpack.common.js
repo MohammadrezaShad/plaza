@@ -89,10 +89,6 @@ module.exports = (env) => {
             }
           }
         ]
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
       }
       ]
     },
