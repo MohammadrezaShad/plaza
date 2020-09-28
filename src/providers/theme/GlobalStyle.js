@@ -36,7 +36,7 @@ export default createGlobalStyle`
    body{
       height: 100%;
       font-family: 'Yekan';
-      background-color: ${({theme}) => theme.palette.bg};
+      background-color: ${({theme}) => theme.palette.back};
       &::-webkit-scrollbar{width:10px;height:10px}
       &::-webkit-scrollbar-thumb{background-color:#666}
       &::-webkit-scrollbar-track{background-color:#e0e0e0}
