@@ -4968,6 +4968,11 @@ react-i18next@^11.7.3:
     "@babel/runtime" "^7.3.1"
     html-parse-stringify2 "2.0.1"
 
+react-icomoon@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/react-icomoon/-/react-icomoon-2.1.5.tgz#18724ad9514d38faf29cf4cef3165fffef4be448"
+  integrity sha512-d9XrpFSLnj1LTE89Ve6KGhJGqQZwSYF5LqKnLvv1NGK3SUMVt/KTaSjtIms7SU+cQ+XBTcRqZuguJPJgojHXSw==
+
 react-icons@^3.10.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.11.0.tgz#2ca2903dfab8268ca18ebd8cc2e879921ec3b254"
