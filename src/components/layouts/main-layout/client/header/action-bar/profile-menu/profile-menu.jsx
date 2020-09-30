@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import HeaderMenu from '../header-menu'
 import Paths from '../../../../../../../utils/paths'
+import ProfileContextMenu from './profile-context-menu'
 
 
-const ProfileMenu = ({ isSignedIn, userLevel, userDisplayName, point }) => {
+const ProfileMenu = ({ isSignedIn, level, displayName, point }) => {
+
+    isSignedIn = true;
+
     let config = {};
     if (!isSignedIn) {
         config = {
@@ -15,16 +19,18 @@ const ProfileMenu = ({ isSignedIn, userLevel, userDisplayName, point }) => {
     } else {
         config = {
             icon: 'user',
-            fillColor:userLevel
+            fillColor:level || 1
         }
     }
+
+    
     
     return (
-        <HeaderMenu {...config}>
+        <HeaderMenu {...config} hasHeader={true}>
             {
                 isSignedIn
                 ?
-                <div>submenu</div>
+                <ProfileContextMenu level={level}></ProfileContextMenu>
                 :
                 null
             }
@@ -33,10 +39,10 @@ const ProfileMenu = ({ isSignedIn, userLevel, userDisplayName, point }) => {
 }
 
 ProfileMenu.propTypes = {
-    isSignedIn: PropTypes.bool.isRequired,
+    isSignedIn: PropTypes.bool,
     userLevel: PropTypes.number,
     userDisplayName: PropTypes.string,
-    point: PropTypes.point
+    point: PropTypes.number
 }
 
 export default ProfileMenu
