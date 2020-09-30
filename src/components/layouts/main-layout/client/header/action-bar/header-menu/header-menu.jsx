@@ -1,27 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 import {
     Wrapper,
     Button,
     ButtonIcon,
-    ButtonText
+    ButtonText,
+    ButtonCount,
+    ContextMenu,
+    ContextMenuArrow
 } from './header-menu.styled'
 import { Link } from 'react-router-dom'
-import IconProvider from '../../../../../../../providers/icon/icon-provider'
 
-const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning }) => {
+const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning, hasHeader }) => {
     const [menuIsShow, setMenuIsShow] = useState(false)
-
     const buttonIcon = icon ? <ButtonIcon icon={icon} size="20px" /> : null;
     const buttonText = text ? <ButtonText>{text}</ButtonText> : null;
+    const buttonCount = count ? <ButtonCount>{count}</ButtonCount> : null;
+
+    
+
+    const documentClickHandler = () => {
+        setMenuIsShow(false);
+        document.removeEventListener('click', documentClickHandler)
+    }
+
+    const buttonClickHandler = () => {
+        if (!menuIsShow) {
+            document.addEventListener('click', documentClickHandler)
+        } else {
+            document.removeEventListener('click', documentClickHandler)
+        }
+
+        setMenuIsShow(!menuIsShow)
+    }
 
     return (
         <Wrapper>
             {
                 href
                 ?
-                <Button as={Link} to={href}>
+                <Button as={Link} to={href} warning={showWarning}>
                     {
                         buttonIcon
                     }
@@ -30,7 +49,10 @@ const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning 
                     }
                 </Button>
                 :
-                <Button onClick={() => {setMenuIsShow(!menuIsShow)}} fillColor={fillColor}>
+                <Button onClick={buttonClickHandler} fillColor={fillColor} warning={showWarning}>
+                    {
+                        buttonCount
+                    }
                     {
                         buttonIcon
                     }
@@ -39,15 +61,17 @@ const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning 
                     }
                 </Button>
             }
-            <div>
+            <ContextMenuArrow show={menuIsShow} hasheader={hasHeader}/>
+            <ContextMenu show={menuIsShow}>
                 {children}
-            </div>
+            </ContextMenu>
         </Wrapper>
     )
 }
 
 HeaderMenu.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    showWarning: PropTypes.bool
 }
 
 export default HeaderMenu
