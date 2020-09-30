@@ -11,6 +11,7 @@ import {
     LogoLink,
     TopSection
 } from './header.styled'
+import SearchBox from './search-box'
 
 
 const Header = () => {
@@ -19,7 +20,9 @@ const Header = () => {
             <Layout>
                 <TopSection>
                     <LogoLink to="/"><Logo /></LogoLink>
-                    <Container></Container>
+                    <Container>
+                        <SearchBox />
+                    </Container>
                     <ActionBar/>
                 </TopSection>
             </Layout>
