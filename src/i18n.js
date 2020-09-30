@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import common from './assets/locales/fa/common.js';
+import common from './assets/locales/fa/common.json';
 
 
 i18n
