@@ -3,12 +3,16 @@ import React from 'react'
 import {
     Wrapper
 } from './action-bar.styled'
+import CartMenu from './cart-menu'
 import ProfileMenu from './profile-menu'
+import WholesalingMenu from './wholesaling-menu'
 
 const ActionBar = () => {
     return (
         <Wrapper>
-            <ProfileMenu isSignedIn={true} userLevel="green"/>
+            <WholesalingMenu />
+            <CartMenu/>
+            <ProfileMenu/>
         </Wrapper>
     )
 }
