@@ -16,6 +16,7 @@ const palette = {
     stroke: '#D8D8D8',
     subtitle: '#757280',
     strokeVariant: '#F3F3F3',
+    overlay: 'rgba(0,0,0,.5)',
 
     greenUser: '#42D9BB',
     silverUser: '#BBBAC0',
