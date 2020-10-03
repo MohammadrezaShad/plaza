@@ -12,7 +12,7 @@ const StyledWrapper = styled.div`
 `
 
 const StyledOverlay = styled.span`
-    position:fixed;
+    position:absolute;
     top:0;
     right:0;
     left:0;
