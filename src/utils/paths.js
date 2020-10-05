@@ -27,7 +27,12 @@ class Paths {
     static home = new Uri('/')
     
     static signin = new Uri('/login')
-    
+
+    static plazaPlus = new Uri('/plus')
+
+    static plazaMag = new Uri('/mag')
+
+    static faq = new Uri('/faq')
 
     static club = class {
         static base = "/club"
@@ -50,6 +55,10 @@ class Paths {
         static search () {
             return new Uri('/search');
         }
+    }
+
+    static brand = class {
+        static home = new Uri('/brands')
     }
 }
 
