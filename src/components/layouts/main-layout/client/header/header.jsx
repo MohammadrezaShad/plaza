@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import {ReactComponent as Logo} from '../../../../../assets/images/logo.svg'
@@ -12,11 +12,14 @@ import {
     TopSection
 } from './header.styled'
 import SearchBox from './search-box'
+import NavBar from './nav-bar'
 
 
 const Header = () => {
+    const [navIsShow, setNavIsShow] = useState(true);
+
     return (
-        <Wrapper>
+        <Wrapper showNav={navIsShow}>
             <Layout>
                 <TopSection>
                     <LogoLink to="/"><Logo /></LogoLink>
@@ -26,7 +29,7 @@ const Header = () => {
                     <ActionBar/>
                 </TopSection>
             </Layout>
-
+            <NavBar onNavShow={setNavIsShow} />
         </Wrapper>
     )
 }
