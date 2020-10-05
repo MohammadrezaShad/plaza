@@ -3,12 +3,15 @@ import styled from 'styled-components'
 
 
 const Wrapper = styled.header`
-    padding:0 ${({theme}) => theme.defaults.screenSideDim};
+    padding:${({theme}) => theme.dim[1]} ${({theme}) => theme.defaults.screenSideDim};
     position:sticky;
     top:0;
     right:0;
     left:0;
     background-color:${({theme}) => theme.palette.back};
+    border-bottom:1px solid ${({theme}) => theme.palette.stroke};
+    margin-bottom:${({theme, showNav}) => showNav ? 0 : theme.defaults.navHeight};
+    transition:.3s margin-bottom;
 `
 
 const Layout = styled.section`
@@ -18,10 +21,13 @@ const Layout = styled.section`
 `
 
 const TopSection = styled.section`
+    position:relative;
     display:flex;
     align-items:center;
     min-width:0;
-    padding:${({theme}) => theme.dim[2]} 0;
+    padding:${({theme}) => theme.dim[1]} 0;
+    background-color:${({theme}) => theme.palette.back};
+    z-index:10;
 `
 
 const Container = styled.section`
