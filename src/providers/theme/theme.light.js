@@ -81,6 +81,7 @@ const typography = {
 const defaults = {
     screenWideSize: '1600px',
     screenSideDim: dim[2],
+    navHeight:'37px',
     borderRadius: '4px',
     direction: 'rtl',
     boxShadow:'0 6px 12px rgba(0,0,0,.05)',
