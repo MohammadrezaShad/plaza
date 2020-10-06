@@ -60,6 +60,11 @@ class Paths {
     static brand = class {
         static home = new Uri('/brands')
     }
+
+    static about = new Uri('/about')
+
+    static contact = new Uri('/contact')
+
 }
 
 
