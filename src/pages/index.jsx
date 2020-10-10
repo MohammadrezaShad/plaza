@@ -21,7 +21,6 @@ const Home = ({deviceType}) => (
             :
             <Client />
         }
-        <div>test</div>
     </div>
 )
 
