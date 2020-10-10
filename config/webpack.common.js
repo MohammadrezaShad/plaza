@@ -4,10 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 const LoadablePlugin = require('@loadable/webpack-plugin');
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
+
 
 const distDir = path.resolve(__dirname, '../build');
 const srcDir = path.resolve(__dirname, '../src');
 const publicDir = path.resolve(__dirname, '../public');
+const styledComponentsTransformer = createStyledComponentsTransformer();
 
 module.exports = (env) => {
   
@@ -44,7 +47,16 @@ module.exports = (env) => {
       // publicPath: '/app/'
     },
     module: {
-      rules: [{
+      rules: [
+        { 
+          test: /\.tsx?$/,
+          loader: 'ts-loader',
+          exclude: /node_modules/,
+          options: {
+              getCustomTransformers: () => ({ before: [styledComponentsTransformer] })
+          }
+        },
+        {
         // for any file with a suffix of js or jsx
         test: /\.jsx?$/,
         // ignore transpiling JavaScript from node_modules as it should be that state
@@ -93,7 +105,7 @@ module.exports = (env) => {
       ]
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.tsx', '.ts','.js', '.jsx']
     },
     // add a custom index.html as the template
     plugins: [
