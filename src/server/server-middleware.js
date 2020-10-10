@@ -16,6 +16,7 @@ import i18n from '../i18n';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from '../redux/reducers';
+import { getPreloadedState } from './helper';
 
 
 const ServerMiddleware = (req, res) => {
@@ -41,7 +42,9 @@ const ServerMiddleware = (req, res) => {
         req,
         res
       },
-      preloadedState = {};
+      preloadedState = getPreloadedState(req, res) || {};
+
+    
 
     const sheet = new ServerStyleSheet();
     const store = createStore(reducers, preloadedState);
