@@ -7,8 +7,5 @@ export const logout = () => {
 }
 
 
-export const setToken = (token) => {
-    return { type: userTypes.LOGIN_SET_TOKEN, token:token };
-}
 
 
