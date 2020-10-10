@@ -38,6 +38,8 @@ const StyledButton = styled.a`
 `
 
 const StyledButtonIcon = styled.span`
+    transition:.3s transform;
+    transition-delay:.3s;
     margin-right:${({theme}) => theme.dim[1]};
 `
 
@@ -65,6 +67,11 @@ const StyledWrapper = styled.li`
             &:after{
                 visibility:visible;
             }
+        }
+
+        ${StyledButtonIcon}{
+            transform:rotate(180deg);
+            transition-delay:0;
         }
     }
 `
