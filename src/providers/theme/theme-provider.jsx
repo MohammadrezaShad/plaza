@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ThemeProvider as StyleComponentThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import { theme as darkTheme } from './theme.dark.js';
-import { theme as lightTheme } from './theme.light.js';
+import { theme as lightTheme } from './theme.light.ts';
 import ThemeContext from '../../context/theme-context';
 import { useCookies } from 'react-cookie';
 

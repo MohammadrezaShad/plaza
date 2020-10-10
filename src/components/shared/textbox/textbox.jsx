@@ -8,7 +8,7 @@ import {
 } from './textbox.styled'
 import IconProvider from '../../../providers/icon/icon-provider';
 
-const Textbox = ({placeholder, icon , showIcon, buttonCallback,...props}) => {
+const Textbox = ({placeholder, icon , showIcon, buttonCallback,changeHandler,inputValue,reference,...props}) => {
     const [iconIsShow, setIconIsShow] = useState(showIcon || !!icon);
 
     return (
@@ -16,7 +16,7 @@ const Textbox = ({placeholder, icon , showIcon, buttonCallback,...props}) => {
             {
                 iconIsShow ? <Icon as={buttonCallback ? 'button' : 'span'} onClick={buttonCallback}><IconProvider icon={icon} size="16px" /></Icon> : null
             }
-            <Input {...props} placeholder={placeholder} hasIcon={iconIsShow} />
+            <Input {...props} placeholder={placeholder} hasIcon={iconIsShow} onChange={changeHandler} value={inputValue} ref={reference}/>
         </Wrapper>
     )
 }

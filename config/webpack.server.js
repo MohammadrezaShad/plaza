@@ -3,10 +3,12 @@ const fs = require('fs'); // to check if the file exists
 const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
 
 
 const srcDir = path.resolve(__dirname, '../src');
 const distDir = path.resolve(__dirname, '../build');
+const styledComponentsTransformer = createStyledComponentsTransformer();
 
 module.exports = (env) => {
 
@@ -47,6 +49,14 @@ module.exports = (env) => {
         externals: [nodeExternals()],
         module: {
         rules: [
+            { 
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+                options: {
+                    getCustomTransformers: () => ({ before: [styledComponentsTransformer] })
+                }
+              },
                 {
                     // for any file with a suffix of js or jsx
                     test: /\.jsx?$/,
@@ -96,7 +106,7 @@ module.exports = (env) => {
             ]
         },
         resolve: {
-            extensions: ['.js', '.jsx']
+            extensions: ['.tsx', '.ts','.js', '.jsx']
         },
         plugins: [
             new webpack.DefinePlugin({

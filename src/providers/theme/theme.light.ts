@@ -1,3 +1,6 @@
+/// <reference path="./themeModules.d.ts" />
+import {DefaultTheme} from "styled-components";
+
 const palette = {
     back: '#FFFFFF',
     onBack: '#2B273C',
@@ -24,7 +27,7 @@ const palette = {
     diamondUser: '#896FFA'
 };
 
-const getUserLevelColor = (level) => {
+const getUserLevelColor = (level:number) => {
     switch (level){
         case 1:
             return palette.greenUser;
@@ -94,7 +97,7 @@ const defaults = {
     shortBoxShadow:'0 3px 6px rgba(0,0,0,.05)'
 }
 
-const theme = {
+const theme:DefaultTheme = {
     palette,
     dim,
     typography,
