@@ -7,7 +7,7 @@ import CartMenu from './cart-menu'
 import ProfileMenu from './profile-menu/profile-menu-container'
 import WholesalingMenu from './wholesaling-menu'
 
-const ActionBar = React.c(() => {
+const ActionBar = React.memo(() => {
     return (
         <Wrapper>
             <WholesalingMenu />
