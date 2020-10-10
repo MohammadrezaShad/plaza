@@ -8,20 +8,209 @@ import {
     StyledButton,
     StyledContent
 } from './nav-submenu.styled'
+import NavSubmenuItem from './nav-submenu-item/nav-submenu-item'
 
 const NavSubmenu = ({list}) => {
     list = [
         {
             selected:true,
-            title:"کالای دیجیتال"
+            title:"کالای دیجیتال",
+            items: [
+                {
+                    items:[
+                        {
+                            title:'لوازم جانبی موبایل و تبلت',
+                            url:'/search/category-accessories',
+                            items:[
+                                {
+                                    title:'پاور بانک',
+                                    url:'/search/category-power-bank'
+                                },
+                                {
+                                    title:'کیف و کاور',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'کابل و مبدل',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'شارژر',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'محافظ صفحه نمایش',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'نگهدارنده موبایل',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'باتری',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'هندزفری',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'قاب و شاسی موبایل',
+                                    url:'/search/category-cover'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    items:[
+                        {
+                            title:'لوازم جانبی کامپیوتر و لپ تاپ',
+                            items:[
+                                {
+                                    title:'کیبورد',
+                                    url:'/'
+                                },
+                                {
+                                    title:'موس',
+                                    url:'کابل و مبدل کامپیوتر'
+                                },
+                                {
+                                    title:'کابل و مبدل کامپیوتر',
+                                    url:'/'
+                                },
+                                {
+                                    title:'هاب USB',
+                                    url:'/'
+                                },
+                                {
+                                    title:'اسپیکر رومیزی',
+                                    url:'/'
+                                },
+                                {
+                                    title:'ماوس پد',
+                                    url:'/'
+                                },
+                                {
+                                    title:'پایه خنک کننده لپ تاپ',
+                                    url:'/'
+                                }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    items:[
+                        {
+                            title:'صوتی و تصویری و لوازم جانبی',
+                            url:'/'
+                        }
+                    ]
+                },
+                {
+                    items:[
+                        {
+                            title:'ذخیره سازی اطلاعات',
+                            url:'/search/category-accessories',
+                            items:[
+                                {
+                                    title:'فلش مموری',
+                                    url:'/search/category-power-bank'
+                                },
+                                {
+                                    title:'کیف و کاورهارد دیسک اکسترنال',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'کارت حافظه',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'کارت خوان',
+                                    url:'/search/category-cover'
+                                }
+                            ]
+                        },
+                        {
+                            title:'بازی و سرگرمی و لوازم جانبی',
+                            url:'/search/category-accessories',
+                            items:[
+                                {
+                                    title:'دسته بازی',
+                                    url:'/search/category-power-bank'
+                                },
+                                {
+                                    title:'ماوس گیمینگ',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'کنسول بازی',
+                                    url:'/search/category-cover'
+                                },
+                                {
+                                    title:'هدست گیمینگ',
+                                    url:'/search/category-cover'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    items:[
+                        {
+                            title:'گجت دیجیتال'
+                        }
+                    ]
+                }
+            ]
         },
         {
-            title:"لوازم و تجهیزات"
+            title:"لوازم و تجهیزات",
+            items:[
+                {
+                    items:[
+                        {
+                            title:'لوازم جانبی کامپیوتر و لپ تاپ',
+                            items:[
+                                {
+                                    title:'کیبورد',
+                                    url:'/'
+                                },
+                                {
+                                    title:'موس',
+                                    url:'کابل و مبدل کامپیوتر'
+                                },
+                                {
+                                    title:'کابل و مبدل کامپیوتر',
+                                    url:'/'
+                                },
+                                {
+                                    title:'هاب USB',
+                                    url:'/'
+                                },
+                                {
+                                    title:'اسپیکر رومیزی',
+                                    url:'/'
+                                },
+                                {
+                                    title:'ماوس پد',
+                                    url:'/'
+                                },
+                                {
+                                    title:'پایه خنک کننده لپ تاپ',
+                                    url:'/'
+                                }
+                            ]
+                        },
+                    ]
+                }
+            ]
         },
         {
             title: "هنر، فیلم و موسیقی"
         }
     ]
+
     const [finalList, setFinalList] = useState(list)
     
 
@@ -50,7 +239,7 @@ const NavSubmenu = ({list}) => {
             {
                 finalList.map((data,index) => (
                 <StyledContent key={index} selected={!!data.selected}>
-                    
+                    <NavSubmenuItem list={data.items || []} />
                 </StyledContent>
                 ))
             }

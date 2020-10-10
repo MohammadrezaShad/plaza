@@ -17,17 +17,14 @@ import { Link } from 'react-router-dom'
 import Paths from '../../../../../../../../utils/paths'
 import { useTranslation } from 'react-i18next'
 
-const ProfileContextMenu = ({level}) => {
+const ProfileContextMenu = ({userLevel, logoutHandler}) => {
     const {t} = useTranslation();
 
-    const signoutHandler = () => {
-        alert("signout");
-    }
 
     return (
         <Wrapper>
             <Header>
-                <Avatar level={level}>
+                <Avatar level={userLevel}>
                     <IconProvider icon="user" size="32px" />
                 </Avatar>
                 <HeaderContent>
@@ -48,7 +45,7 @@ const ProfileContextMenu = ({level}) => {
                     <ButtonIcon as={IconProvider} icon="shopping-cart" size="20px" />
                     {t('myOrders')}
                 </Button>
-                <Button onClick={signoutHandler}>
+                <Button onClick={logoutHandler}>
                     <ButtonIcon as={IconProvider} icon="logout" size="20px" />
                     {t('signout')}
                 </Button>
@@ -59,7 +56,8 @@ const ProfileContextMenu = ({level}) => {
 }
 
 ProfileContextMenu.propTypes = {
-
+    userLevel:PropTypes.string,
+    logoutHandler: PropTypes.func
 }
 
 export default ProfileContextMenu

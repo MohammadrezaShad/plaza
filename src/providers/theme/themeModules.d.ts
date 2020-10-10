@@ -36,6 +36,9 @@ declare module "styled-components" {
         6: string;
         7: string;
     },
+    zIndex: {
+      header:number
+    },
     typography: {
         headline1: string;
         headline2: string;

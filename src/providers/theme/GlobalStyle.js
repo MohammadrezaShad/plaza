@@ -1,9 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import BYekanWoff from '../../assets/fonts/Yekan/BYekan.woff';
-import BYekanTtf from '../../assets/fonts/Yekan/BYekan.ttf';
-import BYekanEot from '../../assets/fonts/Yekan/BYekan.eot';
-
 import ShabnamEot from '../../assets/fonts/shabnam/Shabnam.eot';
 import ShabnamWoff2 from '../../assets/fonts/shabnam/Shabnam.woff2';
 import ShabnamWoff from '../../assets/fonts/shabnam/Shabnam.woff';

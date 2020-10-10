@@ -2,14 +2,14 @@ import React from 'react';
 
 import {
     Title
-} from './home.styled';
+} from './home-view.styled';
 
 
-const HomePage = () => {
+const HomeView = () => {
     return (
         <Title>mobile title</Title>
     )
 }
 
 
-export default HomePage;
+export default HomeView;

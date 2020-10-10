@@ -5,14 +5,11 @@ import Paths from '../../../../../../../utils/paths'
 import ProfileContextMenu from './profile-context-menu'
 
 
-const ProfileMenu = ({ isSignedIn, level, displayName, point }) => {
-
-    isSignedIn = true;
-
+const ProfileMenu = ({ loggedIn, level, displayName, point , logoutHandler}) => {
     let config = {};
-    if (!isSignedIn) {
+    if (!loggedIn) {
         config = {
-            href: Paths.signin(),
+            href: Paths.signin.getPathAndQuery(),
             text: "وارد شوید",
             icon: 'user'
         }
@@ -28,9 +25,9 @@ const ProfileMenu = ({ isSignedIn, level, displayName, point }) => {
     return (
         <HeaderMenu {...config} hasHeader={true}>
             {
-                isSignedIn
+                loggedIn
                 ?
-                <ProfileContextMenu level={level}></ProfileContextMenu>
+                <ProfileContextMenu level={level} logoutHandler={logoutHandler}></ProfileContextMenu>
                 :
                 null
             }
@@ -42,7 +39,8 @@ ProfileMenu.propTypes = {
     isSignedIn: PropTypes.bool,
     userLevel: PropTypes.number,
     userDisplayName: PropTypes.string,
-    point: PropTypes.number
+    point: PropTypes.number,
+    logoutHandler: PropTypes.func
 }
 
 export default ProfileMenu

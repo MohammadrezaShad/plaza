@@ -4,12 +4,12 @@ import Dialog from '../../../shared/dialog';
 
 import {
     Title
-} from './home.styled';
+} from './home-view.styled';
 
 
 
 
-const HomePage = () => {
+const HomeView = () => {
     const [modalIsShow, setModalIsShow] = useState(false);
 
     const modalCloseHandler = () => {
@@ -79,4 +79,4 @@ const HomePage = () => {
 }
 
 
-export default HomePage;
+export default HomeView;

@@ -1,13 +1,28 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
+import loadable from '@loadable/component';
+import EmptyLayout from '../components/layouts/empty-layout';
 
-const Signin = () => (
-    <div>
+
+import withDeviceDetection from '../hoc/withDeviceDetection';
+import { DeviceTypes } from '../utils/device-detection';
+
+const Client = loadable(() => import('../components/views/signin/client'));
+const Mobile = loadable(() => import('../components/views/signin/mobile'));
+
+const Signin = ({deviceType}) => (
+    <EmptyLayout>
         <Helmet>
-            <title>{process.env.REACT_APP_NAME + ' | ورو;د'}</title>
+            <title>{process.env.REACT_APP_NAME + ' | ورود'}</title>
         </Helmet>
-        <h1>ورود</h1>
-    </div>
+        {
+            deviceType == DeviceTypes.MOBILE
+            ?
+            <Mobile />
+            :
+            <Client />
+        }
+    </EmptyLayout>
 )
 
-export default Signin;
+export default withDeviceDetection(Signin);

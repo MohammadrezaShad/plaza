@@ -12,6 +12,7 @@ const Wrapper = styled.header`
     border-bottom:1px solid ${({theme}) => theme.palette.stroke};
     margin-bottom:${({theme, showNav}) => showNav ? 0 : theme.defaults.navHeight};
     transition:.3s margin-bottom;
+    z-index:${({theme}) => theme.zIndex.header};
 `
 
 const Layout = styled.section`

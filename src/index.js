@@ -11,34 +11,34 @@ import App from './components/app';
 import store from './redux/store';
 
 
-// loadableReady(() => {
-//   const root = document.getElementById('root');
-//   ReactDOM.hydrate(
-//     <I18nextProvider i18n={i18n}>
-//       <CookiesProvider>
-//           <Provider store={store}>
-//             <Router>
-//               <App />
-//             </Router>
-//           </Provider>
-//       </CookiesProvider>
-//     </I18nextProvider>
-//     ,
-//     root
-//   );
-// });
+loadableReady(() => {
+  const root = document.getElementById('root');
+  ReactDOM.hydrate(
+    <I18nextProvider i18n={i18n}>
+      <CookiesProvider>
+          <Provider store={store}>
+            <Router>
+              <App />
+            </Router>
+          </Provider>
+      </CookiesProvider>
+    </I18nextProvider>
+    ,
+    root
+  );
+});
 
 
-ReactDOM.hydrate(
-  <I18nextProvider i18n={i18n}>
-    <CookiesProvider>
-        <Provider store={store}>
-          <Router>
-            <App />
-          </Router>
-        </Provider>
-    </CookiesProvider>
-  </I18nextProvider>
-  , 
-  document.getElementById('root')
-);
+// ReactDOM.hydrate(
+//   <I18nextProvider i18n={i18n}>
+//     <CookiesProvider>
+//         <Provider store={store}>
+//           <Router>
+//             <App />
+//           </Router>
+//         </Provider>
+//     </CookiesProvider>
+//   </I18nextProvider>
+//   , 
+//   document.getElementById('root')
+// );
