@@ -11,7 +11,7 @@ const SearchBox = () => {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const node = useRef();
 
   const { t } = useTranslation();
@@ -59,7 +59,7 @@ const SearchBox = () => {
 
   return (
     <Wrapper onSubmit={buttonHandler}>
-      <Textbox placeholder={t("searchboxPlaceholder")} icon="search" buttonCallback={buttonHandler} changeHandler={changeHandler} inputValue={term} reference={node} />
+      <Textbox placeholder={t("searchboxPlaceholder")} icon="search" buttonCallback={buttonHandler} onChange={changeHandler} inputValue={term} reference={node} />
       {visible ? <SearchResults term={term} results={results} />:null}
     </Wrapper>
   );
