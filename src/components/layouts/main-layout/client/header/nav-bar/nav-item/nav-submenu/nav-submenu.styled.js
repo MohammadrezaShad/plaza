@@ -50,10 +50,10 @@ const StyledItem = styled.li`
 `
 
 const StyledContent = styled.ul`
-    height:10px;
     opacity:${({selected}) => selected ? '1' : '0'};
-    display:${({selected}) => selected ? 'block' : 'none'};;
+    display:${({selected}) => selected ? 'block' : 'none'};
     transition:.3s all;
+    transition-delay:${({selected}) => selected ? '0' : '.3s display'};
 `
 
 
