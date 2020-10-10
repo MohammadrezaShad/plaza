@@ -49,6 +49,10 @@ const dim = {
     7: "56px",
 }
 
+const zIndex = {
+    header: 100
+}
+
 const typography = {
 
     headline1:`font-size: 24px;
@@ -95,6 +99,7 @@ const theme = {
     dim,
     typography,
     defaults,
+    zIndex,
     getUserLevelColor
 };
 
