@@ -21,6 +21,7 @@ declare module "styled-components" {
         subtitle: string,
         strokeVariant: string,
         overlay: string,
+        lightGrey:string,
         greenUser: string,
         silverUser: string,
         goldenUser: string,
@@ -39,6 +40,7 @@ declare module "styled-components" {
         headline1: string;
         headline2: string;
         headline3: string;
+        bodyMdBold: string;
         bodyMdNormal: string;
         bodySmBold: string;
         bodySmNormal: string;
