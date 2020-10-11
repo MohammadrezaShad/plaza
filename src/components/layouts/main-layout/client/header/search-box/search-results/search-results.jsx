@@ -13,7 +13,9 @@ import MostSearchedTerms from "./most-searched-terms";
 
 const SearchResults = ({ results, term, loading }) => {
   const renderSwitchCase = () => {
-    if (results.length && term.length >= 2) {
+    if(loading){
+      return <div>Loading...</div>
+    }else if (results.length && term.length >= 2) {
       return (
         <Fragment>
           <ResultsList />
@@ -46,7 +48,7 @@ SearchResults.propTypes = {
 };
 
 const areEqual=()=>{
-    
+
 } 
 
 export default React.memo(SearchResults,areEqual);
