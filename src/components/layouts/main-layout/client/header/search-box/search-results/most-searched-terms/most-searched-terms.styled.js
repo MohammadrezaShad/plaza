@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   border-radius: ${({ theme }) => theme.defaults.borderRadius};
   background-color: ${({ theme }) => theme.palette.surface};
   padding: ${({ theme }) => theme.dim[2]};
+  margin-top:${({theme})=>theme.dim[3]};
 `;
 
 export const Head = styled.span`
