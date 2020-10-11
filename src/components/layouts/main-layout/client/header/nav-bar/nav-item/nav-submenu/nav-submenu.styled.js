@@ -13,6 +13,7 @@ const StyledNav = styled.ul`
     border-radius:${({theme}) => theme.defaults.borderRadius};
     display:flex;
     align-items:center;
+    flex-wrap:wrap;
 `
 
 

@@ -38,18 +38,23 @@ const StyledLinkWrap = styled.div`
     
 `
 
-const StyledLink = styled.a`
-    display:inline-flex;
-    align-items:center;
-    ${({theme}) => theme.typography.bodySmNormal};
-    color:${({theme}) => theme.palette.subtitle};
-    text-decoration:none;
+const StyledLinkText = styled.span`
+    display:block;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
     transition:.3s all;
-    max-width:100%;
     line-height:2;
+`
+
+const StyledLink = styled.a`
+    display:inline-flex;
+    align-items:center;
+    
+    text-decoration:none;
+    max-width:100%;
+    ${({theme}) => theme.typography.bodySmNormal};
+    color:${({theme}) => theme.palette.subtitle};
 
     ${StyledIcon}{
         margin-left:${({theme}) => theme.dim[1]};
@@ -64,10 +69,13 @@ const StyledLink = styled.a`
 `
 
 
+
+
 export {
     StyledWrapper,
     StyledTitle,
     StyledIcon,
     StyledLinkWrap,
-    StyledLink
+    StyledLink,
+    StyledLinkText
 }
