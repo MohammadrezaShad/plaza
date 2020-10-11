@@ -40,5 +40,7 @@
     "bazarAlt":"مارکت اندرویدی بازار",
     "appleAlt":"مارکت اپ اپل",
     "lastSearches":"آخرین جستجو های شما",
-    "mostSearches":"بیشترین جستجو های سایت"
+    "mostSearches":"بیشترین جستجو های سایت",
+    "mostSearchedTerms":"بیشترین جستجو های عبارت"
+
 }
