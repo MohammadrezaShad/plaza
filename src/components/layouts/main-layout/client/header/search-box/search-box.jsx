@@ -11,7 +11,7 @@ const SearchBox = () => {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const node = useRef();
 
   const { t } = useTranslation();
@@ -23,8 +23,14 @@ const SearchBox = () => {
 
   const changeHandler = (e) => {
     setTerm(e.target.value);
-    if (e.target.value.length >= 2) {
+    if(e.target.value.length==1){
+     setVisible(false)
+    }else if (e.target.value.length >= 2) {
       searchHandler(e.target.value);
+      setVisible(true)
+
+    }else {
+      setVisible(true)
     }
   };
 
@@ -43,24 +49,24 @@ const SearchBox = () => {
   const handleClick = (e) => {
     if (node.current.contains(e.target)) {
       setVisible(true);
-      console.log('insideClick')
       return;
     }
     setVisible(false);
-    console.log('outClick')
   };
-
+  
   useEffect(() => {
-    document.addEventListener("mousedown", handleClick);
+      if(term.length!==1){
+        document.addEventListener("mousedown", handleClick);
+      }    
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, []);
+  }, [term]);
 
   return (
     <Wrapper onSubmit={buttonHandler}>
       <Textbox placeholder={t("searchboxPlaceholder")} icon="search" buttonCallback={buttonHandler} onChange={changeHandler} inputValue={term} reference={node} />
-      {visible ? <SearchResults term={term} results={results} />:null}
+      {visible ? <SearchResults term={term} results={results} loading={loading} />:null}
     </Wrapper>
   );
 };
