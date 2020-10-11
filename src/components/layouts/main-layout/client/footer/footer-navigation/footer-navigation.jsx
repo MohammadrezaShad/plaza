@@ -8,7 +8,8 @@ import {
     Item,
     Text,
     Icon,
-    IconRight
+    IconRight,
+    ItemWrap
 } from './footer-navigation.styled'
 import IconProvider from "../../../../../../providers/icon/icon-provider";
 
@@ -22,9 +23,11 @@ const FooterNavigation = ({title,items,arrow,dir}) => {
         {items.map((item,index)=>{
           return (
             <Item key={index} $dir={dir}  $arrow={arrow}>
+              <ItemWrap $arrow={arrow}>
             <IconRight as={IconProvider} icon="chevron-left" size="6px" $arrow={arrow}/>
             <Text>{item}</Text>
             <Icon as={IconProvider} icon="chevron-left" size="6px" $arrow={arrow}/>
+             </ItemWrap>
             </Item>
           )
         })}
