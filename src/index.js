@@ -8,8 +8,12 @@ import { loadableReady } from '@loadable/component'
 
 import i18n from './i18n';
 import App from './components/app';
-import store from './redux/store';
+import initStore from './redux/store';
 
+const preloadedState = window.__PRELOADED_STATE__;
+delete window.__PRELOADED_STATE__;
+
+const store = initStore(preloadedState);
 
 loadableReady(() => {
   const root = document.getElementById('root');
