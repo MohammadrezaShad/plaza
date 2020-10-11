@@ -32,18 +32,25 @@ const Icon = styled.button`
   display: ${({ $arrow }) => ($arrow ? "inline-flex" : "none !important")};
   margin-right: ${({ theme }) => theme.dim[1]};
   color: ${({ theme }) => theme.palette.disabled};
-  transition:transform .2s ,.2s opacity,.2s visibility .2s;
+  opacity:1;
+  visibility:visible;
+  transition:all .3s;
+
 `;
 
 const IconRight=styled.button`
   display: ${({ $arrow }) => ($arrow ? "inline-flex" : "none !important")};
   color: ${({ theme }) => theme.palette.primary};
   position:absolute;
-  transition:right .3s ,.2s opacity,.2s visibility .2s;
+  transition:all .4s;
   transform:translateY(-50%);
   right:-25px;
   top:50%;
   opacity:0;
+  visibility:hidden;
+  width:0 !important;
+  height:0 !important;
+
 `
 
 const Text = styled.span`
@@ -52,34 +59,49 @@ const Text = styled.span`
   color: ${({ theme }) => theme.palette.onSurface};
 `;
 
-const Item = styled.li`
-  position:relative;
-  cursor:pointer;
-  display: flex;
-  align-items: center;
-  transition:all .3s;
-  ${Text}{
-    white-space:${({$arrow})=>$arrow ? 'nowrap':'pre-wrap'};
-  }
-  &:hover{
-    padding-right:${({theme,$arrow})=>!$arrow ? 0:theme.dim[1]};
+const ItemWrap=styled.div`
+transition:all .3s;
+cursor:pointer;
+
+ &:hover{
+    padding-right:${({theme,$arrow})=>!$arrow ? 0:'14px'};
     ${Icon}{
       transform:translateX(-8px);
       opacity:0;
+      visibility:hidden;
+      transition:transform .2s ,.2s opacity,.2s visibility .2s;
+
     }
     ${IconRight}{
-      right:-8px;
+      right:0;
       opacity:1;
+      visibility:visible;
+      width:6px !important;
+      height:6px !important;
+      transition:right .3s ,.2s opacity,.4s visibility .1s;
+
     }
   }
-  &:not(:last-child) {
-    margin-bottom: ${({theme})=>theme.dim[1]};
-  }
+
   &:first-child {
     ${Text} {
       direction: ${({ $dir }) => ($dir ? "ltr" : "rtl")};
     }
   }
+`
+
+const Item = styled.li`
+  position:relative;
+  display: flex;
+  align-items: center;
+  transition:all .3s;
+  &:not(:last-child) {
+    margin-bottom: ${({theme})=>theme.dim[1]};
+  }
+  ${Text}{
+    white-space:${({$arrow})=>$arrow ? 'nowrap':'pre-wrap'};
+  }
+ 
 `;
 
 
@@ -90,5 +112,6 @@ export {
     Item,
     Text,
     Icon,
-    IconRight
+    IconRight,
+    ItemWrap
 }
