@@ -38,7 +38,7 @@ export const Text = styled.span`
 export const Icon = styled.span`
    display:inline-flex;
    ${({theme})=>theme.typography.bodyMdNormal}
-   color:${({theme})=>theme.palette.onSurface};
+   color:${({theme})=>theme.palette.lightGrey};
    transition:color .3s;
    margin-left:${({theme})=>theme.dim[1]};
 `;
