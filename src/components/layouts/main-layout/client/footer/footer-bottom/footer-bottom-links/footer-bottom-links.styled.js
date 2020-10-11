@@ -34,10 +34,15 @@ const SocialMediaLink = styled.a`
   }
 `;
 
+const Icon=styled.span`
+display:inline-flex;
+color:${({theme})=>theme.palette.onSurface};
+`
 export {
     Store,
     StoreLink,
     StoreImage,
     SocialMedia,
-    SocialMediaLink
+    SocialMediaLink,
+    Icon
 }
