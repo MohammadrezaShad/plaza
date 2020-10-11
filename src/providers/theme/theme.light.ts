@@ -99,6 +99,20 @@ const defaults = {
     boxShadow:'0 6px 12px rgba(0,0,0,.05)',
     shortBoxShadow:'0 3px 6px rgba(0,0,0,.05)'
 }
+ const mediaQueries = (breakPoint:string):string => {
+    return `@media only screen and (max-width: ${breakPoint})`;
+  };
+
+const breakPoints={
+    tablet:  mediaQueries('768px'),
+    laptop:  mediaQueries('1024px'),
+    laptopL:  mediaQueries('1440px'),
+    desktop: mediaQueries('2560px')
+}
+// xs: 480,
+// sm: 768,
+// md: 992,
+// lg: 1200
 
 const theme:DefaultTheme = {
     palette,
@@ -106,9 +120,9 @@ const theme:DefaultTheme = {
     typography,
     defaults,
     zIndex,
-    getUserLevelColor
+    getUserLevelColor,
+    breakPoints
 };
-
 
 
 
