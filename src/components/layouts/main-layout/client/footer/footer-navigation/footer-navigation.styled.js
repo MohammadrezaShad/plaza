@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+flex:0;
+flex-basis: 24.8%;
+max-width:24.8%;
+`;
 
 const Title = styled.span`
   display: inline-flex;
@@ -28,41 +32,55 @@ const Icon = styled.button`
   display: ${({ $arrow }) => ($arrow ? "inline-flex" : "none !important")};
   margin-right: ${({ theme }) => theme.dim[1]};
   color: ${({ theme }) => theme.palette.disabled};
+  transition:transform .2s ,.2s opacity,.2s visibility .2s;
 `;
+
+const IconRight=styled.button`
+  display: ${({ $arrow }) => ($arrow ? "inline-flex" : "none !important")};
+  color: ${({ theme }) => theme.palette.primary};
+  position:absolute;
+  transition:right .3s ,.2s opacity,.2s visibility .2s;
+  transform:translateY(-50%);
+  right:-25px;
+  top:50%;
+  opacity:0;
+`
 
 const Text = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme }) => theme.palette.onSurface};
-  white-space: nowrap;
 `;
 
 const Item = styled.li`
+  position:relative;
+  cursor:pointer;
   display: flex;
   align-items: center;
+  transition:all .3s;
+  ${Text}{
+    white-space:${({$arrow})=>$arrow ? 'nowrap':'pre-wrap'};
+  }
+  &:hover{
+    padding-right:${({theme,$arrow})=>!$arrow ? 0:theme.dim[1]};
+    ${Icon}{
+      transform:translateX(-8px);
+      opacity:0;
+    }
+    ${IconRight}{
+      right:-8px;
+      opacity:1;
+    }
+  }
   &:not(:last-child) {
-    margin-bottom: 4px;
+    margin-bottom: ${({theme})=>theme.dim[1]};
   }
   &:first-child {
     ${Text} {
       direction: ${({ $dir }) => ($dir ? "ltr" : "rtl")};
     }
   }
-  &:last-child {
-    flex-flow: ${({ $exception }) => ($exception ? "row-reverse" : "row")};
-    justify-content: ${({ $exception }) =>
-      $exception ? "flex-end" : "flex-start"};
-    ${Icon} {
-      color: ${({ theme, $exception }) =>
-        $exception ? theme.palette.primary : theme.palette.disabled};
-      margin-right: ${({ theme, $exception }) =>
-        $exception ? 0 : theme.dim[1]};
-      margin-left: ${({ theme, $exception }) =>
-        $exception ? theme.dim[1] : 0};
-    }
-  }
 `;
-
 
 
 export {
@@ -71,5 +89,6 @@ export {
     List,
     Item,
     Text,
-    Icon
+    Icon,
+    IconRight
 }
