@@ -42,7 +42,7 @@ const IconRight=styled.button`
   display: ${({ $arrow }) => ($arrow ? "inline-flex" : "none !important")};
   color: ${({ theme }) => theme.palette.primary};
   position:absolute;
-  transition:all .4s;
+  transition:all .2s;
   transform:translateY(-50%);
   right:-25px;
   top:50%;
@@ -62,7 +62,7 @@ const Text = styled.span`
 const ItemWrap=styled.div`
 transition:all .3s;
 cursor:pointer;
-
+position:relative;
  &:hover{
     padding-right:${({theme,$arrow})=>!$arrow ? 0:'14px'};
     ${Icon}{
