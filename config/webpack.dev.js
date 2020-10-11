@@ -7,6 +7,7 @@ module.exports = (env) => {
         mode: 'development',
         devtool: 'inline-source-map',
         devServer: {
+            historyApiFallback: true,
             port: 3000,
             contentBase: path.join(__dirname, '../src/assets')
         },
