@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-display:${({$searchItems})=>$searchItems ? 'block':'none'};
+/* display:${({$searchItems})=>$searchItems ? 'block':'none'}; */
 `;
 
 const Message = styled.div`
