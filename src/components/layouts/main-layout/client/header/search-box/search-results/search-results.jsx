@@ -45,6 +45,8 @@ SearchResults.propTypes = {
   loading: PropTypes.bool,
 };
 
- 
+const areEqual=()=>{
+    
+} 
 
 export default React.memo(SearchResults,areEqual);
