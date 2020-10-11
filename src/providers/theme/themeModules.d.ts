@@ -58,6 +58,12 @@ declare module "styled-components" {
         boxShadow: string;
         shortBoxShadow: string;
     },
-    getUserLevelColor: (level: number) => string
+    getUserLevelColor: (level: number) => string,
+    breakPoints: {
+      tablet: string;
+      laptop: string;
+      laptopL: string;
+      desktop: string;
+  }
   }
 }

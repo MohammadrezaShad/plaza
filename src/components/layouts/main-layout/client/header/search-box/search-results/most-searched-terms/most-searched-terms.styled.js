@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   border-radius: ${({ theme }) => theme.defaults.borderRadius};
   background-color: ${({ theme }) => theme.palette.surface};
   padding: ${({ theme }) => theme.dim[2]};
+  margin-top:${({theme})=>theme.dim[3]};
 `;
 
 export const Head = styled.span`
@@ -37,7 +38,7 @@ export const Text = styled.span`
 export const Icon = styled.span`
    display:inline-flex;
    ${({theme})=>theme.typography.bodyMdNormal}
-   color:${({theme})=>theme.palette.onSurface};
+   color:${({theme})=>theme.palette.lightGrey};
    transition:color .3s;
    margin-left:${({theme})=>theme.dim[1]};
 `;

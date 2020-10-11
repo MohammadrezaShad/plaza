@@ -7,12 +7,14 @@ import {
     List,
     Item,
     Text,
-    Icon
+    Icon,
+    IconRight,
+    ItemWrap
 } from './footer-navigation.styled'
 import IconProvider from "../../../../../../providers/icon/icon-provider";
 
 
-const FooterNavigation = ({title,items,arrow,exception,dir}) => {
+const FooterNavigation = ({title,items,arrow,dir}) => {
 
   return (
     <Wrapper>
@@ -20,9 +22,12 @@ const FooterNavigation = ({title,items,arrow,exception,dir}) => {
       <List>
         {items.map((item,index)=>{
           return (
-            <Item key={index} $exception={exception} $dir={dir}>
+            <Item key={index} $dir={dir}  $arrow={arrow}>
+              <ItemWrap $arrow={arrow}>
+            <IconRight as={IconProvider} icon="chevron-left" size="6px" $arrow={arrow}/>
             <Text>{item}</Text>
             <Icon as={IconProvider} icon="chevron-left" size="6px" $arrow={arrow}/>
+             </ItemWrap>
             </Item>
           )
         })}

@@ -28,7 +28,7 @@ const Footer = () => {
                 <NavigationContent>
                     <FooterNavigation title={t('purchaseGuide')} items={[t('frequentlyAskedQuestions'), t('buyMethodAndOrder'), t('paymentMethods'), t('termsOfUsePlazaCoupon'), t('privacy')]} arrow={true} />
                     <FooterNavigation title={t('cooperation')} items={[t('plazaClub'), t('termsOfDelivery'), t('guarantee'), t('trackOrders')]} arrow={true} />
-                    <FooterNavigation title={t('customer')} items={[t('plazaSellersPanel'), t('cooperationWithOrganizations'), t('jobOpportunities')]} arrow={true} exception />
+                    <FooterNavigation title={t('customer')} items={[t('plazaSellersPanel'), t('cooperationWithOrganizations'), t('jobOpportunities')]} arrow={true} />
                     <FooterNavigation title={t('support')} items={[t('phoneNumber'), t('email'), t('address')]} arrow={false} dir='ltr' />
                 </NavigationContent>
                 <Content>

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+flex:0;
+flex-basis: 24.8%;
+max-width:24.8%;
+`;
 
 const Title = styled.span`
   display: inline-flex;
@@ -28,41 +32,77 @@ const Icon = styled.button`
   display: ${({ $arrow }) => ($arrow ? "inline-flex" : "none !important")};
   margin-right: ${({ theme }) => theme.dim[1]};
   color: ${({ theme }) => theme.palette.disabled};
+  opacity:1;
+  visibility:visible;
+  transition:all .3s;
+
 `;
+
+const IconRight=styled.button`
+  display: ${({ $arrow }) => ($arrow ? "inline-flex" : "none !important")};
+  color: ${({ theme }) => theme.palette.primary};
+  position:absolute;
+  transition:all .2s;
+  transform:translateY(-50%);
+  right:-25px;
+  top:50%;
+  opacity:0;
+  visibility:hidden;
+  width:0 !important;
+  height:0 !important;
+
+`
 
 const Text = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme }) => theme.palette.onSurface};
-  white-space: nowrap;
 `;
 
-const Item = styled.li`
-  display: flex;
-  align-items: center;
-  &:not(:last-child) {
-    margin-bottom: 4px;
+const ItemWrap=styled.div`
+transition:all .3s;
+cursor:pointer;
+position:relative;
+ &:hover{
+    padding-right:${({theme,$arrow})=>!$arrow ? 0:'14px'};
+    ${Icon}{
+      transform:translateX(-8px);
+      opacity:0;
+      visibility:hidden;
+      transition:transform .2s ,.2s opacity,.2s visibility .2s;
+
+    }
+    ${IconRight}{
+      right:0;
+      opacity:1;
+      visibility:visible;
+      width:6px !important;
+      height:6px !important;
+      transition:right .3s ,.2s opacity,.4s visibility .1s;
+
+    }
   }
+
   &:first-child {
     ${Text} {
       direction: ${({ $dir }) => ($dir ? "ltr" : "rtl")};
     }
   }
-  &:last-child {
-    flex-flow: ${({ $exception }) => ($exception ? "row-reverse" : "row")};
-    justify-content: ${({ $exception }) =>
-      $exception ? "flex-end" : "flex-start"};
-    ${Icon} {
-      color: ${({ theme, $exception }) =>
-        $exception ? theme.palette.primary : theme.palette.disabled};
-      margin-right: ${({ theme, $exception }) =>
-        $exception ? 0 : theme.dim[1]};
-      margin-left: ${({ theme, $exception }) =>
-        $exception ? theme.dim[1] : 0};
-    }
-  }
-`;
+`
 
+const Item = styled.li`
+  position:relative;
+  display: flex;
+  align-items: center;
+  transition:all .3s;
+  &:not(:last-child) {
+    margin-bottom: ${({theme})=>theme.dim[1]};
+  }
+  ${Text}{
+    white-space:${({$arrow})=>$arrow ? 'nowrap':'pre-wrap'};
+  }
+ 
+`;
 
 
 export {
@@ -71,5 +111,7 @@ export {
     List,
     Item,
     Text,
-    Icon
+    Icon,
+    IconRight,
+    ItemWrap
 }
