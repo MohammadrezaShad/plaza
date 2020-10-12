@@ -97,6 +97,7 @@ const defaults = {
     borderRadius: '4px',
     direction: 'rtl',
     boxShadow:'0 6px 12px rgba(0,0,0,.05)',
+    boxShadowInset:'inset 0px 6px 12px 0px rgba(0, 0, 0, 0.08)',
     shortBoxShadow:'0 3px 6px rgba(0,0,0,.05)'
 }
  const mediaQueries = (breakPoint:string):string => {
