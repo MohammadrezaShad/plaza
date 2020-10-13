@@ -21,7 +21,7 @@ const palette = {
     strokeVariant: '#F3F3F3',
     overlay: 'rgba(0,0,0,.5)',
     lightGrey:'#908D99',
-
+    nightRider:'#333333',
     greenUser: '#42D9BB',
     silverUser: '#BBBAC0',
     goldenUser: '#FBC635',
@@ -70,9 +70,13 @@ const typography = {
     headline3:`font-size: 16px;
                 font-weight: bold;
                 line-height: 1.5;`,
+     bodyLgBold:`font-size: 18px;
+                font-weight: bold;
+                line-height: 1.5;`,            
     bodyMdBold:`font-size: 16px;
                 font-weight: bold;
                 line-height: 1.5;`,
+
     bodyMdNormal:`font-size: 16px;
                 font-weight: normal;
                 line-height: 1.5;`,
