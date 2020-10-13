@@ -3,7 +3,7 @@ import { renderRoutes } from 'react-router-config';
 import loadable from '@loadable/component';
 
 import { DeviceTypes } from '../../../utils/device-detection';
-import withDeviceDetection from '../../../hoc/withDeviceDetection';
+import withDeviceDetection from '../../../hoc/with-device-detection';
 
 const DesktopMainLayout = loadable(() => import('./client'));
 const MobileMainLayout = loadable(() => import('./mobile'));

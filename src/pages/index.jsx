@@ -2,7 +2,8 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import loadable from '@loadable/component';
 
-import withDeviceDetection from '../hoc/withDeviceDetection';
+
+import withDeviceDetection from '../hoc/with-device-detection';
 import { DeviceTypes } from '../utils/device-detection';
 
 const Client = loadable(() => import('../components/views/home/client'));
