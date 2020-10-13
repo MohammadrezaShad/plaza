@@ -1,8 +1,7 @@
 import userTypes from '../types/user-types'
-import {
-  Cookies
-} from 'react-cookie';
-import cookiesName from '../../constants/cookiesName';
+import { Cookies } from 'react-cookie';
+import cookiesName from '../../constants/cookies-name';
+import decodeUserToken from '../../helpers/decode-user-token';
 
 const userCookie = new Cookies().get(cookiesName.USER);
 
@@ -16,6 +15,7 @@ export const parseUserReducerInitialData = (value) => {
   if (value) {
     output.loggedIn = true;
     output.token = value;
+    output.user = decodeUserToken(value);
   }
 
   return output;
@@ -48,9 +48,7 @@ const userReducer = (state = parseUserReducerInitialData(userCookie), action) =>
 
     default:
       return state;
-
   }
 }
-
 
 export default userReducer;
