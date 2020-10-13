@@ -60,6 +60,7 @@ const Text = styled.span`
 `;
 
 const ItemWrap=styled.div`
+white-space:nowrap;
 transition:all .3s;
 cursor:pointer;
 position:relative;

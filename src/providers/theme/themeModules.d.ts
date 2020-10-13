@@ -56,6 +56,7 @@ declare module "styled-components" {
         borderRadius: string;
         direction: string;
         boxShadow: string;
+        boxShadowInset:string;
         shortBoxShadow: string;
     },
     getUserLevelColor: (level: number) => string,
