@@ -2,7 +2,7 @@ import React from 'react';
 import loadable from '@loadable/component';
 
 import { DeviceTypes } from '../../../utils/device-detection';
-import withDeviceDetection from '../../../hoc/withDeviceDetection';
+import withDeviceDetection from '../../../hoc/with-device-detection';
 
 const DesktopEmptyLayout = loadable(() => import('./client'));
 const MobileEmptyLayout = loadable(() => import('./mobile'));
