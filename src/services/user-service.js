@@ -1,15 +1,15 @@
-import { Cookies } from 'react-cookie';
+import httpClient from '../utils/http-client';
 
 
-const logout = () => {
-    // TODO : remove cookie
-}
 
-const login = (username, password) => {
-    
+const login = (username, password, isPersistent) => {
+    return httpClient.post(`${process.env.API_URL}/auth/login`,{
+        username,
+        password,
+        isPersistent
+    });
 }
 
 export default {
-    logout,
     login
 }

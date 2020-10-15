@@ -1,4 +1,4 @@
-import cookiesName from '../constants/cookiesName';
+import cookiesName from '../constants/cookies-name';
 import {
     parseUserReducerInitialData
 } from '../redux/reducers/user-reducer';
