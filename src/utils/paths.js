@@ -26,7 +26,9 @@ class Paths {
 
     static home = new Uri('/')
     
-    static signin = new Uri('/login')
+    static signin = new Uri('/signin')
+
+    static signup = new Uri('/signup')
 
     static plazaPlus = new Uri('/plus')
 
