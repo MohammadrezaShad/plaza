@@ -22,6 +22,7 @@ const palette = {
     overlay: 'rgba(0,0,0,.5)',
     lightGrey:'#908D99',
     nightRider:'#333333',
+    whisper:'#eeeeee',
     greenUser: '#42D9BB',
     silverUser: '#BBBAC0',
     goldenUser: '#FBC635',
