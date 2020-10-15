@@ -1,5 +1,7 @@
 /// <reference path="./themeModules.d.ts" />
 import {DefaultTheme} from "styled-components";
+import userLevel from "../../constants/user-levels";
+
 
 const palette = {
     back: '#FFFFFF',
@@ -30,13 +32,13 @@ const palette = {
 
 const getUserLevelColor = (level:number) => {
     switch (level){
-        case 1:
+        case userLevel.GREEN:
             return palette.greenUser;
-        case 2:
+        case userLevel.SILVER:
             return palette.silverUser;
-        case 3:
+        case userLevel.GOLDEN:
             return palette.goldenUser;
-        case 4:
+        case userLevel.DIAMOND:
             return palette.diamondUser;
         default:
             return palette.greenUser;
