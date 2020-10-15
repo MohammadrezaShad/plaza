@@ -5,7 +5,7 @@ import ServerMiddleware from './server-middleware';
 import SecureStaticMiddleware from './static-middlerware';
 
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 const server = express();
 const router = express.Router();
 const httpServer = http.createServer(server);

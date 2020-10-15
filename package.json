@@ -9,6 +9,7 @@
     "build": "webpack --env.ENVIRONMENT=prod --config config/webpack.prod.js",
     "build:ssr": "webpack --env.ENVIRONMENT=prod --config config/webpack.server.js",
     "ssr": "npm run build:ssr && node build/server.js",
+    "all:dev": "npm run build:dev && npm run build:ssr && node build/server.js",
     "all": "npm run build && npm run build:ssr && node build/server.js"
   },
   "author": "plaza team",

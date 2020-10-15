@@ -72,27 +72,32 @@ const ServerMiddleware = (req, res) => {
       sheet.seal();
     }
 
-    fs.readFile(path.resolve('./build/index.html'), 'utf8', (err, content) => {
-      if (err) {
-        return res.status(500).send('Oops, better luck next time!' + err);
-      }
+    if (context.url) {
+      // Somewhere a `<Redirect>` was rendered
+      res.redirect(context.url);
+    } else {
+      // we're good, send the response
+      fs.readFile(path.resolve('./build/index.html'), 'utf8', (err, content) => {
+        if (err) {
+          return res.status(500).send('Oops, better luck next time!' + err);
+        }
 
 
-      let htmlResponse = content.replace('<div id="root"></div>', `<div id="root">${markup}</div>`)
-        .replace('<style id="styled-component-ssr-placeholder"></style>', styleTags)
-        .replace('<script defer="defer" src="/bundle.js"></script>','')
-        .replace(
-          '<script id="dataScript"></script>',
-          `<script>window.__ROUTE_DATA__ = ${JSON.stringify(data)};window.__PRELOADED_STATE__ = ${JSON.stringify(store.getState())};</script>${scriptTagsEx}`
-        );
-        
-      if (helmet) {
-        htmlResponse = htmlResponse.replace(`<title>${process.env.REACT_APP_NAME}</title>`, `${helmet.title}`);
-      }
+        let htmlResponse = content.replace('<div id="root"></div>', `<div id="root">${markup}</div>`)
+          .replace('<style id="styled-component-ssr-placeholder"></style>', styleTags)
+          .replace('<script defer="defer" src="/bundle.js"></script>','')
+          .replace(
+            '<script id="dataScript"></script>',
+            `<script>window.__ROUTE_DATA__ = ${JSON.stringify(data)};window.__PRELOADED_STATE__ = ${JSON.stringify(store.getState())};</script>${scriptTagsEx}`
+          );
+          
+        if (helmet) {
+          htmlResponse = htmlResponse.replace(`<title>${process.env.REACT_APP_NAME}</title>`, `${helmet.title}`);
+        }
 
-      return res.send(htmlResponse);
-    });
-
+        return res.send(htmlResponse);
+      });
+    }
   });
 }
 

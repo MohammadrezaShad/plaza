@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import loadable from '@loadable/component';
 
 import { DeviceTypes } from '../../../utils/device-detection';
-import withDeviceDetection from '../../../hoc/with-device-detection';
 
 const DesktopEmptyLayout = loadable(() => import('./client'));
 const MobileEmptyLayout = loadable(() => import('./mobile'));
@@ -21,4 +21,8 @@ const EmptyLayout = ({ deviceType, children }) => {
     )
 }
 
-export default withDeviceDetection(EmptyLayout);
+EmptyLayout.propTypes = {
+    deviceType: PropTypes.number.isRequired
+}
+
+export default EmptyLayout;
