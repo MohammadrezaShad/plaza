@@ -11,8 +11,8 @@ import {
     LogoLink,
     TopSection
 } from './header.styled'
-import SearchBox from './search-box'
 import NavBar from './nav-bar'
+import SearchBox from '../../../../shared/search-box'
 
 
 const Header = () => {
