@@ -1,28 +1,33 @@
 import React from "react";
-import IconProvider from "../../../../../../providers/icon/icon-provider";
+import PropTypes from "prop-types";
 
 import { 
-  StyledWrapper,
-  StyledContent,
-  StyledAlertIcon,
-  StyledBoldText,
-  StyledArrowIcon,
-  StyledText
+  StyledWrapper, 
+  StyledContent, 
+  StyledAlertIcon, 
+  StyledBoldText, 
+  StyledArrowIcon, 
+  StyledText 
 } from "./wholesaling.styled";
+import IconProvider from "../../../../../../providers/icon/icon-provider";
+import { useTranslation } from "react-i18next";
 
-const Wholesaling = () => {
+const Wholesaling = ({ error }) => {
+  const { t } = useTranslation();
   return (
     <StyledWrapper>
       <StyledContent>
-        <StyledAlertIcon as={IconProvider} icon="alert-o" size="24px" />
+        <StyledAlertIcon error={error} as={IconProvider} icon={error ? "alert" : "true"} size="24px" />
         <StyledBoldText>تکنوگیل شمال</StyledBoldText>
-        <StyledArrowIcon as={IconProvider} icon="chevron-left" size="6px"/>
+        <StyledArrowIcon as={IconProvider} icon="chevron-left" size="6px" />
       </StyledContent>
       <StyledContent>
-        <StyledText>وضعیت درخواست</StyledText>
+        <StyledText error={error}>{t('requestStatus')}</StyledText>
       </StyledContent>
     </StyledWrapper>
   );
 };
+
+Wholesaling.prototype = {};
 
 export default Wholesaling;
