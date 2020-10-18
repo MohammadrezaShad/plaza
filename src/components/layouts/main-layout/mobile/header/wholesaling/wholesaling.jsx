@@ -18,7 +18,7 @@ const Wholesaling = ({ error }) => {
     <StyledWrapper>
       <StyledContent>
         <StyledAlertIcon error={error} as={IconProvider} icon={error ? "alert" : "true"} size="24px" />
-        <StyledBoldText>تکنوگیل شمال</StyledBoldText>
+        <StyledBoldText>تکنوگیل</StyledBoldText>
         <StyledArrowIcon as={IconProvider} icon="chevron-left" size="6px" />
       </StyledContent>
       <StyledContent>
