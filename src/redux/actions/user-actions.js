@@ -1,5 +1,4 @@
 import { Cookies } from 'react-cookie';
-import jwtDecode from 'jwt-decode';
 
 import cookiesName from '../../constants/cookies-name';
 import userService from '../../services/user-service'
@@ -10,9 +9,10 @@ const cookies = new Cookies();
 
 export const logout = () => {
     cookies.remove(cookiesName.USER);
+    
     return {
         type: userTypes.LOGOUT
-    };
+    }
 }
 
 export const login = (username, password, rememberMe) => {
