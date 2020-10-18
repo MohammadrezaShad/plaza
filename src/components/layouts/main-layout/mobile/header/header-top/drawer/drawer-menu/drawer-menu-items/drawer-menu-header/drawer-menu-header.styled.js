@@ -11,7 +11,6 @@ export const StyledProfile = styled.div`
   display: inline-flex;
   align-items: center;
   border: 1px solid ${({ theme, $loggedIn }) => ($loggedIn ? "transparent" : theme.palette.stroke)};
-  padding: ${({ theme }) => theme.dim[1]};
   text-decoration: none;
 `;
 
