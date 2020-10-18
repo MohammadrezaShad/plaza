@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 import { 
     StyledText, 
@@ -8,13 +9,15 @@ import {
 } from "./profile-details.styled";
 import ProfileAvatar from "./profile-avatar";
 
-const ProfileDetails = ({loggedIn,logoutHandler,text,icon,fillColor,score}) => {
+const ProfileDetails = ({loggedIn,firstName,lastName,userLevel,userPoint}) => {
+  const {t}=useTranslation()
+
   return (
     <Fragment>
-      <ProfileAvatar fillColor={fillColor} icon={icon}/>
+      <ProfileAvatar level={userLevel} />
       <StyledText>
-        <StyledUserName>{text}</StyledUserName>
-        <StyledScore loggedIn={loggedIn}>امتیاز : {score}</StyledScore>
+        <StyledUserName>{firstName} {lastName}</StyledUserName>
+        <StyledScore loggedIn={loggedIn}>{t('score')} : {userPoint}</StyledScore>
       </StyledText>
     </Fragment>
   );
@@ -23,9 +26,9 @@ const ProfileDetails = ({loggedIn,logoutHandler,text,icon,fillColor,score}) => {
 ProfileDetails.propTypes = {
     loggedIn:PropTypes.bool,
     logoutHandler:PropTypes.func,
-    text:PropTypes.string,
-    icon:PropTypes.string,
-    fillColor:PropTypes.number,
+    firstName:PropTypes.string,
+    lastName:PropTypes.string,
+    userLevel:PropTypes.number,
     score:PropTypes.number
   };
 
