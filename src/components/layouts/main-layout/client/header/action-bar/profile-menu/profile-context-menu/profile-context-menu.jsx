@@ -17,19 +17,19 @@ import { Link } from 'react-router-dom'
 import Paths from '../../../../../../../../utils/paths'
 import { useTranslation } from 'react-i18next'
 
-const ProfileContextMenu = ({userLevel, logoutHandler}) => {
+const ProfileContextMenu = ({level, logoutHandler, displayName, point}) => {
     const {t} = useTranslation();
 
 
     return (
         <Wrapper>
             <Header>
-                <Avatar level={userLevel}>
+                <Avatar level={level}>
                     <IconProvider icon="user" size="32px" />
                 </Avatar>
                 <HeaderContent>
-                    <HeaderTitle>محمد زاهدی شاقاجی</HeaderTitle>
-                    <HeaderText>{t('score')} : 1,200</HeaderText>
+                    <HeaderTitle>{displayName}</HeaderTitle>
+                    <HeaderText>{t('score')} : {point.toLocaleString()}</HeaderText>
                 </HeaderContent>
             </Header>
             <Content>
@@ -56,8 +56,10 @@ const ProfileContextMenu = ({userLevel, logoutHandler}) => {
 }
 
 ProfileContextMenu.propTypes = {
-    userLevel:PropTypes.string,
-    logoutHandler: PropTypes.func
+    displayName:PropTypes.string,
+    level:PropTypes.number,
+    logoutHandler: PropTypes.func,
+    point: PropTypes.number
 }
 
 export default ProfileContextMenu
