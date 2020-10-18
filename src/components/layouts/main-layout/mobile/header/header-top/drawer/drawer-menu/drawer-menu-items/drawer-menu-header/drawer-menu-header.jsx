@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { 
   StyledWrapper, 
@@ -11,39 +12,40 @@ import {
   StyledNavigation
 } from "./drawer-menu-header.styled";
 import IconProvider from "../../../../../../../../../../providers/icon/icon-provider";
-import WithLoginRedux from "../../../../../../../../../../hoc/with-login-redux";
+import WithUserState from "../../../../../../../../../../hoc/with-user-state";
 import ProfileDetails from "../../../../../../../../../shared/profile-details";
 import DrawerMenuNavigation from "./drawer-menu-navigation";
 import Paths from "../../../../../../../../../../utils/paths";
 
-const DrawerMenuHeader = ({ loggedIn, logoutHandler, href, text, icon, fillColor, score }) => {
+const DrawerMenuHeader = ({ loggedIn,firstName,lastName,userLevel,userPoint,logoutHandler  }) => {
+  const {t}=useTranslation()
   const loggedOut = () => (
     <Fragment>
       <StyledIcon as={IconProvider} icon="user" size="32px" />
-      <StyledText>وارد شوید</StyledText>
+      <StyledText>{t('signIn')}</StyledText>
     </Fragment>
   );
 
   return (
     <StyledWrapper>
-      <StyledProfile as={loggedIn ? "div" : Link} to={href} $loggedIn={loggedIn}>
+      <StyledProfile as={loggedIn ? "div" : Link} to={Paths.home.getPath()} $loggedIn={loggedIn}>
         {loggedIn ? 
         <ProfileDetails 
         loggedIn={loggedIn} 
         logoutHandler={logoutHandler} 
-        text={text} 
-        icon={icon} 
-        fillColor={fillColor} 
-        score={score} /> : loggedOut()}
+        firstName={firstName} 
+        lastName={lastName}
+        userLevel={userLevel} 
+        userPoint={userPoint} /> : loggedOut()}
       </StyledProfile>
       <StyledNavigation>
         <StyledContent>
-          <DrawerMenuNavigation text="پروفایل"  icon="user" />
-          <DrawerMenuNavigation text="سفارش من"  icon="shopping-cart" href={Paths.home.getPath()}/>
+          <DrawerMenuNavigation text={t('profile')}  icon="user" />
+          <DrawerMenuNavigation text={t('myOrders')} icon="shopping-cart" href={Paths.home.getPath()}/>
         </StyledContent>
         <StyledContent>
-          <DrawerMenuNavigation text="باشگاه مشتریان"  icon="club" href={Paths.home.getPath()}/>
-          <DrawerMenuNavigation text="خروج از حساب"  icon="logout" href={Paths.home.getPath()}/>
+          <DrawerMenuNavigation text={t('club')}   icon="club" href={Paths.home.getPath()}/>
+          <DrawerMenuNavigation text={t('signout')}  icon="logout" href={Paths.home.getPath()}/>
         </StyledContent>
       </StyledNavigation>
     </StyledWrapper>
@@ -53,11 +55,10 @@ const DrawerMenuHeader = ({ loggedIn, logoutHandler, href, text, icon, fillColor
 DrawerMenuHeader.propTypes = {
   loggedIn: PropTypes.bool,
   logoutHandler: PropTypes.func,
-  href: PropTypes.string,
-  text: PropTypes.string,
-  icon: PropTypes.string,
-  fillColor: PropTypes.number,
-  score: PropTypes.number,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  userLevel: PropTypes.number,
+  userPoint: PropTypes.number,
 };
 
-export default WithLoginRedux(DrawerMenuHeader);
+export default WithUserState(DrawerMenuHeader);
