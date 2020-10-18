@@ -14,7 +14,6 @@ const MainLayout = ({children}) => {
             <Header />
             <Container>
                 {children}
-                {t('title')}
             </Container>
             <Footer />
         </Wrapper>
