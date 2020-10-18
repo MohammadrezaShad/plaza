@@ -5,22 +5,21 @@ import { StyledAvatar, StyledIcon } from "./profile-avatar.styled";
 import IconProvider from "../../../../providers/icon/icon-provider";
 import userLevel from "../../../../constants/user-levels";
 
-const ProfileAvatar = ({level}) => {
-
-  const AvatarSwitch=(level)=>{
+const ProfileAvatar = ({ level }) => {
+  const AvatarSwitch = (level) => {
     switch (level) {
       case userLevel.GREEN:
-        return 'user'
+        return "user";
       case userLevel.SILVER:
-        return 'silver'
+        return "silver";
       case userLevel.GOLDEN:
-        return 'golden'
+        return "golden";
       case userLevel.DIAMOND:
-        return 'diamond'
+        return "diamond";
       default:
-        return ''
+        return "";
     }
-  }
+  };
 
   return (
     <StyledAvatar level={level}>
@@ -30,7 +29,7 @@ const ProfileAvatar = ({level}) => {
 };
 
 ProfileAvatar.propTypes = {
-  level:PropTypes.number,
+  level: PropTypes.number,
 };
 
 export default ProfileAvatar;
