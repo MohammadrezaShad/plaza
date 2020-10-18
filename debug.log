@@ -1,0 +1,15 @@
+[1013/140105.130:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
+[1013/162841.729:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1013/162841.731:ERROR:exception_snapshot_win.cc(99)] thread ID 11236 not found in process
+[1013/162841.731:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1013/162841.731:ERROR:exception_snapshot_win.cc(99)] thread ID 14884 not found in process
+[1013/162841.731:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1013/162841.705:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1013/162841.731:ERROR:exception_snapshot_win.cc(99)] thread ID 8712 not found in process
+[1013/162841.731:ERROR:exception_snapshot_win.cc(99)] thread ID 11836 not found in process
+[1013/162841.731:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1013/162841.731:ERROR:exception_snapshot_win.cc(99)] thread ID 13180 not found in process
+[1013/162841.741:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1013/162841.741:ERROR:exception_snapshot_win.cc(99)] thread ID 13380 not found in process
+[1013/162841.769:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1013/162841.772:ERROR:exception_snapshot_win.cc(99)] thread ID 3816 not found in process
