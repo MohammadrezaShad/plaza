@@ -45,11 +45,10 @@ const ProfileMenu = ({
 ProfileMenu.propTypes = {
   loggedIn: PropTypes.bool,
   logoutHandler: PropTypes.func,
-  href: PropTypes.string,
-  text: PropTypes.string,
-  icon: PropTypes.string,
-  fillColor: PropTypes.number,
-  score: PropTypes.number,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  userLevel: PropTypes.number,
+  userPoint: PropTypes.number,
   showProfile: PropTypes.bool,
   toggleProfile: PropTypes.func,
 };
