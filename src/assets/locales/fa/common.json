@@ -41,6 +41,8 @@
     "appleAlt":"مارکت اپ اپل",
     "lastSearches":"آخرین جستجو های شما",
     "mostSearches":"بیشترین جستجو های سایت",
-    "mostSearchedTerms":"بیشترین جستجو های عبارت"
-
+    "mostSearchedTerms":"بیشترین جستجو های عبارت",
+    "signIn":"وارد شوید",
+    "search":"جستجو",
+    "requestStatus":"وضعیت درخواست"
 }
