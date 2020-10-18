@@ -4,17 +4,17 @@ import {
     Wrapper
 } from './action-bar.styled'
 import CartMenu from './cart-menu'
-import ProfileMenu from './profile-menu/profile-menu-container'
+import ProfileMenu from './profile-menu'
 import WholesalingMenu from './wholesaling-menu'
 
-const ActionBar = React.memo(() => {
+const ActionBar = () => {
     return (
         <Wrapper>
             <WholesalingMenu />
             <CartMenu/>
-            <ProfileMenu isSignedIn={true}/>
+            <ProfileMenu/>
         </Wrapper>
     )
-})
+}
 
 export default ActionBar
