@@ -8,9 +8,9 @@ export const StyledAvatar = styled.div`
   padding: ${({ theme }) => theme.dim[2]};
   margin-left: ${({ theme }) => theme.dim[2]};
   flex-shrink: 0;
-  background-color: ${({ theme, fillColor }) => (fillColor ? theme.getUserLevelColor(fillColor) : theme.palette.back)};
+  background-color: ${({ theme, level }) => (level ? theme.getUserLevelColor(level) : theme.palette.back)};
   PATH {
-    fill: ${({ theme, fillColor }) => (fillColor ? theme.palette.back : theme.palette.onSurface)};
+    fill: ${({ theme, level }) => (level ? theme.palette.back : theme.palette.onSurface)};
   }
 `;
 
