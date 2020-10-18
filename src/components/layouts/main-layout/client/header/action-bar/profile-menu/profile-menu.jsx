@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import HeaderMenu from '../header-menu'
 import Paths from '../../../../../../../utils/paths'
 import ProfileContextMenu from './profile-context-menu'
+import WithUserState from '../../../../../../../hoc/with-user-state'
 
 
-const ProfileMenu = ({ loggedIn, level, displayName, point , logoutHandler}) => {
+const ProfileMenu = ({ loggedIn, firstName, lastName, userLevel, userPoint , logoutHandler }) => {
     let config = {};
     if (!loggedIn) {
         config = {
@@ -16,18 +17,16 @@ const ProfileMenu = ({ loggedIn, level, displayName, point , logoutHandler}) => 
     } else {
         config = {
             icon: 'user',
-            fillColor:level || 1
+            fillColor: userLevel
         }
     }
-
-    
     
     return (
         <HeaderMenu {...config} hasHeader={true}>
             {
                 loggedIn
                 ?
-                <ProfileContextMenu level={level} logoutHandler={logoutHandler}></ProfileContextMenu>
+                <ProfileContextMenu logoutHandler={logoutHandler} displayName={`${firstName} ${lastName}`} level={userLevel} point={userPoint}></ProfileContextMenu>
                 :
                 null
             }
@@ -36,11 +35,12 @@ const ProfileMenu = ({ loggedIn, level, displayName, point , logoutHandler}) => 
 }
 
 ProfileMenu.propTypes = {
-    isSignedIn: PropTypes.bool,
+    loggedIn: PropTypes.bool,
+    firstName: PropTypes.string,
+    LastName: PropTypes.string,
     userLevel: PropTypes.number,
-    userDisplayName: PropTypes.string,
-    point: PropTypes.number,
+    userPoint: PropTypes.number,
     logoutHandler: PropTypes.func
 }
 
-export default ProfileMenu
+export default WithUserState(ProfileMenu)

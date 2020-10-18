@@ -9,13 +9,13 @@ export const parseUserReducerInitialData = (value) => {
   let output = {
     loggedIn: false,
     token: null,
-    user: null
+    detail: null
   }
 
   if (value) {
     output.loggedIn = true;
     output.token = value;
-    output.user = decodeUserToken(value);
+    output.detail = decodeUserToken(value);
   }
 
   return output;
@@ -29,7 +29,7 @@ const userReducer = (state = parseUserReducerInitialData(userCookie), action) =>
           ...state,
           loggedIn: true,
           token: action.token,
-          user: action.user
+          detail: action.user
       };
 
     case userTypes.LOGIN_SUCCESS:
@@ -37,7 +37,7 @@ const userReducer = (state = parseUserReducerInitialData(userCookie), action) =>
           ...state,
           loggedIn: true,
           token: action.token,
-          user: action.user
+          detail: action.user
       };
 
     case userTypes.LOGIN_FAILURE:
