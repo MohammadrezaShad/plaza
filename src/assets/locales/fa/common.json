@@ -44,5 +44,7 @@
     "mostSearchedTerms":"بیشترین جستجو های عبارت",
     "signIn":"وارد شوید",
     "search":"جستجو",
-    "requestStatus":"وضعیت درخواست"
+    "requestStatus":"وضعیت درخواست",
+    "iosApp":"نرم افزار آی.او.اس",
+    "androidApp":"نرم افزار اندروید"
 }
