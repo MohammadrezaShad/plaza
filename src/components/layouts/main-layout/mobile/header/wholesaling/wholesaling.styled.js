@@ -8,6 +8,7 @@ export const StyledWrapper = styled.div`
   height: 48px;
   box-shadow: ${({ theme }) => theme.defaults.boxShadowInset};
   padding: ${({ theme }) => theme.dim[2]};
+  margin: 0 -${({ theme }) => theme.dim[2]};
 `;
 
 export const StyledContent = styled.div`
