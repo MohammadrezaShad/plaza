@@ -80,7 +80,7 @@ const ContextMenu = styled.div`
     position:absolute;
     margin-top:${({theme}) => theme.dim[2]};
     top:100%;
-    width:300px;
+    min-width:300px;
     left:-${({theme}) => theme.dim[1]};
     opacity:${({show}) => show ? 1 : 0};
     visibility:${({show}) => show ? 'visible' : 'hidden'};
