@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledWrapper = styled.div`
    display: flex;
     flex-flow: column;
-    max-width: 30rem;
     margin-bottom: ${({theme})=>theme.dim[4]};
 `;
 
@@ -38,5 +37,8 @@ export const StyledContent = styled.div`
   justify-content: space-between;
   &:not(:last-child){
     margin-bottom: ${({ theme }) => theme.dim[2]};
+  }
+  ${({theme})=>theme.breakPoints.mobile}{
+    flex-wrap:wrap;
   }
 `;

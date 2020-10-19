@@ -11,7 +11,7 @@ export const StyledLayout=styled.div`
     overflow: auto;
     box-shadow: -25px 0px 28px -6px rgba(0, 0, 0, 0.05);
     transform:${({showDrawer})=>showDrawer ? 'translate(0, 0)':'translate(100%, 0)'} ;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: transform 0.3s linear;
 `
 
 export const StyledWrapper = styled.div`

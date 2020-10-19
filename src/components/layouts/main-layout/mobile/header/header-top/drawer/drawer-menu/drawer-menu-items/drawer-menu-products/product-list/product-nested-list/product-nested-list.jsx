@@ -37,4 +37,4 @@ ProductNestedList.propTypes = {
     depth:PropTypes.number
 };
 
-export default ProductNestedList;
+export default React.memo(ProductNestedList);

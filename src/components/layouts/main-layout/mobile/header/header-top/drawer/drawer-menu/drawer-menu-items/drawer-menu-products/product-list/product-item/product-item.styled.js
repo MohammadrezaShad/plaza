@@ -9,6 +9,8 @@ export const StyledText = styled.span`
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme, $show }) => ($show ? theme.palette.primary : theme.palette.onSurface)};
   white-space: nowrap;
+  transition:color .3s;
+
 `;
 
 export const StyledIcon = styled.div`
@@ -16,4 +18,5 @@ export const StyledIcon = styled.div`
   margin-left: ${({ theme }) => theme.dim[1]};
   transform: ${({ $show }) => ($show ? "rotate(90deg)" : "rotate(0)")};
   color: ${({ theme, $show }) => ($show ? theme.palette.primary : theme.palette.onSurface)};
+  transition:color .3s;
 `;
