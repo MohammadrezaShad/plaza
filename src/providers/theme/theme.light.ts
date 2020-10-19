@@ -112,6 +112,7 @@ const defaults = {
   };
 
 const breakPoints={
+    mobile: mediaQueries('480px'),
     tablet:  mediaQueries('768px'),
     laptop:  mediaQueries('1024px'),
     laptopL:  mediaQueries('1440px'),
