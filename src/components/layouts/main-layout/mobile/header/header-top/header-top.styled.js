@@ -5,7 +5,7 @@ export const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.dim[2]};
+  padding: ${({ theme }) => theme.dim[2]} 0;
   background-color: ${({ theme }) => theme.palette.back};
   height: 48px;
 `;
