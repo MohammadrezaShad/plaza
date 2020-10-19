@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   border-left: 1px solid ${({ theme,mobile }) => mobile ? 'transparent':theme.palette.stroke};
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  top:${({mobile})=>mobile ? '99%':'95%'};
+  top:${({mobile})=>mobile ? '99%':'92%'};
 `;
 
 const Container = styled.div`
