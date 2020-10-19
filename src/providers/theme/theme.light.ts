@@ -25,6 +25,7 @@ const palette = {
     lightGrey:'#908D99',
     nightRider:'#333333',
     whisper:'#eeeeee',
+    atlantis:'#A5C63C',
     greenUser: '#42D9BB',
     silverUser: '#BBBAC0',
     goldenUser: '#FBC635',
