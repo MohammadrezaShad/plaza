@@ -17,7 +17,7 @@ const ProfileDetails = ({loggedIn,firstName,lastName,userLevel,userPoint}) => {
       <ProfileAvatar level={userLevel} />
       <StyledText>
         <StyledUserName>{firstName} {lastName}</StyledUserName>
-        <StyledScore loggedIn={loggedIn}>{t('score')} : {userPoint}</StyledScore>
+        <StyledScore loggedIn={loggedIn}>{t('score')} : {userPoint ? userPoint.toLocaleString():userPoint}</StyledScore>
       </StyledText>
     </Fragment>
   );
