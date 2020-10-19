@@ -72,4 +72,4 @@ const DrawerMenuProducts = () => {
 
 DrawerMenuProducts.propTypes = {};
 
-export default DrawerMenuProducts;
+export default React.memo(DrawerMenuProducts);
