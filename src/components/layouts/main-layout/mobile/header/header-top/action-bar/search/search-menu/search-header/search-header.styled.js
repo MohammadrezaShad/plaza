@@ -5,7 +5,7 @@ export const StyledWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: ${({ theme }) => theme.dim[2]};
-  border: 1px solid ${({ theme }) => theme.palette.stroke};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.stroke};
 `;
 
 export const StyledText = styled.span`
