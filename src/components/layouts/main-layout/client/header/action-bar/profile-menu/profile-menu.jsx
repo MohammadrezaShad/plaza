@@ -4,6 +4,7 @@ import HeaderMenu from '../header-menu'
 import Paths from '../../../../../../../utils/paths'
 import ProfileContextMenu from './profile-context-menu'
 import WithUserState from '../../../../../../../hoc/with-user-state'
+import getUserLevelIconName from '../../../../../../../helpers/get-user-level-icon-name'
 
 
 const ProfileMenu = ({ loggedIn, firstName, lastName, userLevel, userPoint , logoutHandler }) => {
@@ -16,7 +17,7 @@ const ProfileMenu = ({ loggedIn, firstName, lastName, userLevel, userPoint , log
         }
     } else {
         config = {
-            icon: 'user',
+            icon: getUserLevelIconName(userLevel),
             fillColor: userLevel
         }
     }
