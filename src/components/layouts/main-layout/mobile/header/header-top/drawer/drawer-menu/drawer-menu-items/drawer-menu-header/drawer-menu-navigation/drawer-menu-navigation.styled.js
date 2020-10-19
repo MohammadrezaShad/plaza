@@ -7,11 +7,22 @@ export const StyledLink = styled(Link)`
   justify-content: right;
   padding: ${({ theme }) => theme.dim[2]} ${({ theme }) => theme.dim[1]};
   border: 1px solid ${({ theme }) => theme.palette.strokeVariant};
-  flex: 1;
+  flex-grow:1;
+  flex-shrink:0;
   flex-basis: 50%;
+  min-width:50%;
   text-decoration:none;
   &:first-child {
     margin-left: ${({ theme }) => theme.dim[2]};
+  }
+  ${({theme})=>theme.breakPoints.mobile}{
+    flex-basis: 100%;
+    min-width:100%;
+    &:first-child {
+    margin-left: 0;
+    margin-bottom: ${({ theme }) => theme.dim[2]};
+
+  }
   }
 `;
 
