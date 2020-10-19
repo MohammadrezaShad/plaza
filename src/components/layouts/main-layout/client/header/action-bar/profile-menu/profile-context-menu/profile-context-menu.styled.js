@@ -12,23 +12,8 @@ const Header = styled.header`
 
 `
 
-const Avatar = styled.span`
-    display:flex;
-    align-items:center;
-    width:64px;
-    height:64px;
-    border-radius:50%;
-    background-color:${({theme, level}) => theme.getUserLevelColor(level)};
-    justify-content:center;
-    PATH {
-        fill: ${({theme}) => theme.palette.back}
-    }
-
-`
-
 const HeaderContent = styled.div`
     flex:1;
-    margin-right:${({theme}) => theme.dim[2]};
 `
 
 const HeaderTitle = styled.strong`
@@ -72,7 +57,6 @@ const ButtonIcon = styled.span`
 export {
     Wrapper,
     Header,
-    Avatar,
     HeaderContent,
     HeaderTitle,
     HeaderText,

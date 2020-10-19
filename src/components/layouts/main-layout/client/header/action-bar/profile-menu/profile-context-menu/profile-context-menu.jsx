@@ -16,6 +16,7 @@ import IconProvider from '../../../../../../../../providers/icon/icon-provider'
 import { Link } from 'react-router-dom'
 import Paths from '../../../../../../../../utils/paths'
 import { useTranslation } from 'react-i18next'
+import ProfileAvatar from '../../../../../../../shared/profile-details/profile-avatar'
 
 const ProfileContextMenu = ({level, logoutHandler, displayName, point}) => {
     const {t} = useTranslation();
@@ -24,9 +25,7 @@ const ProfileContextMenu = ({level, logoutHandler, displayName, point}) => {
     return (
         <Wrapper>
             <Header>
-                <Avatar level={level}>
-                    <IconProvider icon="user" size="32px" />
-                </Avatar>
+                <ProfileAvatar level={level}/>
                 <HeaderContent>
                     <HeaderTitle>{displayName}</HeaderTitle>
                     <HeaderText>{t('score')} : {point.toLocaleString()}</HeaderText>

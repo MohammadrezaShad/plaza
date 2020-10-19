@@ -92,7 +92,9 @@ const ServerMiddleware = (req, res) => {
           );
           
         if (helmet) {
-          htmlResponse = htmlResponse.replace(`<title>${process.env.REACT_APP_NAME}</title>`, `${helmet.title}`);
+          let head = `${helmet.title}${helmet.link}`.replace(/\s*data-react-helmet="true"/g,'');
+          
+          htmlResponse = htmlResponse.replace(`<title>${process.env.REACT_APP_NAME}</title>`, head);
         }
 
         return res.send(htmlResponse);
