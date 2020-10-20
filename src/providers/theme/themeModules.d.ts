@@ -65,6 +65,7 @@ declare module "styled-components" {
     },
     getUserLevelColor: (level: number) => string,
     breakPoints: {
+      mobileSm:string,
       mobile: string;
       tablet: string;
       laptop: string;
