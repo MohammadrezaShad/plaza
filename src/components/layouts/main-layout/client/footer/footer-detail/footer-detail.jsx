@@ -22,13 +22,13 @@ const FooterDetail = props => {
         <Fragment>
             <Enamad>
                 <EnamadLink >
-                    <EnamadLogo src={CommercialBusiness} />
+                    <EnamadLogo src={CommercialBusiness} alt={t('nationalAssociationOfVirtualBusinesses')}/>
                 </EnamadLink>
                 <EnamadLink >
-                    <EnamadLogo src={OnlineBusiness} />
+                    <EnamadLogo src={OnlineBusiness} alt={t('eCommerceDevelopmentCenter')}/>
                 </EnamadLink>
                 <EnamadLink  >
-                    <EnamadLogo src={Organizing} />
+                    <EnamadLogo src={Organizing} alt={t('nationalRegistrationMark')}/>
                 </EnamadLink >
             </Enamad>
             <Description>
