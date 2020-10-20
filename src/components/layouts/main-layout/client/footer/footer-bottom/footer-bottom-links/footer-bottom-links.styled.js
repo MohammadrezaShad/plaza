@@ -27,22 +27,9 @@ const SocialMedia = styled.div`
   margin-bottom: ${({ theme }) => theme.dim[3]};
 `;
 
-const SocialMediaLink = styled.a`
-  display: inline-flex;
-  &:not(:last-child) {
-    margin-left: ${({ theme }) => theme.dim[4]};
-  }
-`;
-
-const Icon=styled.span`
-display:inline-flex;
-color:${({theme})=>theme.palette.onSurface};
-`
 export {
     Store,
     StoreLink,
     StoreImage,
     SocialMedia,
-    SocialMediaLink,
-    Icon
 }
