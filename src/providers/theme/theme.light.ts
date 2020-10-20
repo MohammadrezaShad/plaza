@@ -103,7 +103,8 @@ const typography = {
     buttonXsNormal:`
                 font-size: 10px;
                 font-weight: normal;
-                line-height: 1.5;`
+                line-height: 1.5;`,
+    type1:'test1'
 }
 
 const defaults = {

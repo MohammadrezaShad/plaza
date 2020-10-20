@@ -53,6 +53,7 @@ declare module "styled-components" {
         bodySmNormal: string;
         subtitleXsNormal: string;
         buttonXsNormal:string;
+        type1:string;
     },
     defaults: {
         screenWideSize: string;
