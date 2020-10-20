@@ -24,7 +24,9 @@ const ProfileMenu = ({
   showProfile, 
   toggleProfile }) => {
 
-    const {t}=useTranslation()
+  const {t}=useTranslation()
+
+  if(!loggedIn) return null
 
   return (
     <StyledWrapper showProfile={showProfile}>
