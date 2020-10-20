@@ -6,6 +6,7 @@ import {
     Container 
 } from "./main-layout.styled";
 import Header from "./header";
+import Footer from "./footer";
 
 const MainLayout = ({ children }) => {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ const MainLayout = ({ children }) => {
         <h1>mobile {t("title")}</h1>
         {children}
       </Container>
+      <Footer/>
     </Wrapper>
   );
 };
