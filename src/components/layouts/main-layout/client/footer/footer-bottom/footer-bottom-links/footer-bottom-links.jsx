@@ -1,18 +1,16 @@
 import React, { Fragment } from "react";
 import { useTranslation } from "react-i18next";
 
-import {
-    Store,
-    StoreLink,
-    StoreImage, 
-    SocialMedia, 
-    SocialMediaLink,
-    Icon
- } from "./footer-bottom-links.styled";
+import { 
+  Store, 
+  StoreLink, 
+  StoreImage, 
+  SocialMedia, 
+} from "./footer-bottom-links.styled";
 import GoogleImg from "../../../../../../../assets/images/google.png";
 import BazarImg from "../../../../../../../assets/images/bazar.png";
 import AppleImg from "../../../../../../../assets/images/apple.png";
-import IconProvider from "../../../../../../../providers/icon/icon-provider";
+import SocialMediaItem from "../../../../../../shared/socialmedia-item";
 
 const FooterBottomLinks = () => {
   const { t } = useTranslation();
@@ -31,21 +29,11 @@ const FooterBottomLinks = () => {
         </StoreLink>
       </Store>
       <SocialMedia>
-        <SocialMediaLink>
-          <Icon as={IconProvider} icon="instagram" size="24px" />
-        </SocialMediaLink>
-        <SocialMediaLink>
-          <Icon as={IconProvider} icon="twitter" size="24px" />
-        </SocialMediaLink>
-        <SocialMediaLink>
-          <Icon as={IconProvider} icon="facebook" size="24px" />
-        </SocialMediaLink>
-        <SocialMediaLink>
-          <Icon as={IconProvider} icon="telegram" size="24px" />
-        </SocialMediaLink>
-        <SocialMediaLink>
-          <Icon as={IconProvider} icon="aparat" size="24px" />
-        </SocialMediaLink>
+        <SocialMediaItem icon="instagram" />
+        <SocialMediaItem icon="facebook" />
+        <SocialMediaItem icon="twitter" />
+        <SocialMediaItem icon="telegram" />
+        <SocialMediaItem icon="aparat" />
       </SocialMedia>
     </Fragment>
   );
