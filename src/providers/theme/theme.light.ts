@@ -74,9 +74,11 @@ const typography = {
     headline3:`font-size: 16px;
                 font-weight: bold;
                 line-height: 1.5;`,
-     bodyLgBold:`font-size: 18px;
+
+    bodyLgBold:`font-size: 18px;
                 font-weight: bold;
-                line-height: 1.5;`,            
+                line-height: 1.5;`, 
+
     bodyMdBold:`font-size: 16px;
                 font-weight: bold;
                 line-height: 1.5;`,
@@ -93,7 +95,13 @@ const typography = {
                 font-weight: normal;
                 line-height: 1.5;`,
 
-    subtitleXsNormal:`font-size: 12px;
+    subtitleXsNormal:`
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 1.5;`,
+
+    buttonXsNormal:`
+                font-size: 10px;
                 font-weight: normal;
                 line-height: 1.5;`
 }
