@@ -12,7 +12,7 @@ import {
 } from './header-menu.styled'
 import { Link } from 'react-router-dom'
 
-const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning, hasHeader }) => {
+const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning, hasHeader, onOpen, onClose }) => {
     const [menuIsShow, setMenuIsShow] = useState(false)
     const buttonIcon = icon ? <ButtonIcon icon={icon} size="20px" /> : null;
     const buttonText = text ? <ButtonText>{text}</ButtonText> : null;
@@ -23,6 +23,7 @@ const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning,
     const documentClickHandler = () => {
         setMenuIsShow(false);
         document.removeEventListener('click', documentClickHandler)
+        onClose && onClose();
     }
 
     const buttonClickHandler = () => {
@@ -33,6 +34,11 @@ const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning,
         }
 
         setMenuIsShow(!menuIsShow)
+        if (menuIsShow) {
+            onClose && onClose();
+        } else {
+            onOpen && onOpen();
+        }
     }
 
     return (
@@ -74,4 +80,4 @@ HeaderMenu.propTypes = {
     showWarning: PropTypes.bool
 }
 
-export default HeaderMenu
+export default React.memo(HeaderMenu)
