@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const StyledWrapper = styled.ul`
   flex-shrink: 0;
+  flex-grow:1;
   flex-basis: 47.7%;
    ${({theme})=>theme.breakPoints.mobileSm}{
     &:first-child{

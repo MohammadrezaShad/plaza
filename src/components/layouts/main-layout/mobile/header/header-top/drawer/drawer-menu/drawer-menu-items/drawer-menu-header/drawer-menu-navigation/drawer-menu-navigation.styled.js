@@ -29,7 +29,7 @@ export const StyledLink = styled(Link)`
 export const StyledIcon = styled.span`
   display: inline-flex;
   margin-left: ${({ theme }) => theme.dim[1]};
-  color:${({theme})=>theme.palette.primary};
+  color:${({theme,icon})=>icon==='logout' ? theme.palette.error:theme.palette.primary};
 `;
 
 export const StyledText = styled.span`

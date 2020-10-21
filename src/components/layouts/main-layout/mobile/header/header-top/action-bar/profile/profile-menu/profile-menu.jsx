@@ -9,7 +9,6 @@ import {
   StyledIcon 
 } from "./profile-menu.styled";
 import IconProvider from "../../../../../../../../../providers/icon/icon-provider";
-import WithUserState from "../../../../../../../../../hoc/with-user-state";
 import ProfileDetails from "../../../../../../../../shared/profile-details";
 import ProfileMenuItem from "./profile-menu-item";
 import Paths from "../../../../../../../../../utils/paths";
@@ -24,19 +23,26 @@ const ProfileMenu = ({
   showProfile, 
   toggleProfile }) => {
 
-    const {t}=useTranslation()
+  const {t}=useTranslation()
+
 
   return (
     <StyledWrapper showProfile={showProfile}>
       <StyledHeader>
-        <ProfileDetails loggedIn={loggedIn} logoutHandler={logoutHandler} firstName={firstName} lastName={lastName} userLevel={userLevel} userPoint={userPoint} />
+        <ProfileDetails 
+        loggedIn={loggedIn} 
+        logoutHandler={logoutHandler} 
+        firstName={firstName} 
+        lastName={lastName} 
+        userLevel={userLevel} 
+        userPoint={userPoint} />
         <StyledIcon as={IconProvider} icon="close" size="12px" onClick={toggleProfile} />
       </StyledHeader>
       <StyledContent>
         <ProfileMenuItem text={t('profile')} icon="user" href={Paths.home.getPath()} />
         <ProfileMenuItem text={t('club')} icon="club" href={Paths.home.getPath()} />
         <ProfileMenuItem text={t('myOrders')} icon="shopping-cart" href={Paths.home.getPath()} />
-        <ProfileMenuItem text={t('signout')} icon="logout" href={Paths.home.getPath()} />
+        <ProfileMenuItem text={t('signout')} icon="logout" logoutHandler={logoutHandler} />
       </StyledContent>
     </StyledWrapper>
   );
@@ -53,4 +59,4 @@ ProfileMenu.propTypes = {
   toggleProfile: PropTypes.func,
 };
 
-export default WithUserState(ProfileMenu);
+export default ProfileMenu;

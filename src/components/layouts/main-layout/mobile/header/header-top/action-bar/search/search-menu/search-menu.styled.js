@@ -7,7 +7,7 @@ export const StyledWrapper = styled.div`
   bottom: 0;
   width: 100%;
   opacity: ${({ showSearch }) => (showSearch ? 1 : 0)};
-  visibility: ${({ showSearch }) => (showSearch ? "visibale" : "hidden")};
+  visibility: ${({ showSearch }) => (showSearch ? "visible" : "hidden")};
   transition: ${({ showSearch }) => (showSearch ? "visibility 0s,opacity .3s" : "0s visibility .3s,opacity .3s")};
 `;
 

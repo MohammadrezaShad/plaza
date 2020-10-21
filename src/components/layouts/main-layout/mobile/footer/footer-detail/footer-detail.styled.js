@@ -33,6 +33,8 @@ export const StyledText = styled.p`
 `;
 
 export const StyledButton = styled.span`
+  display:inline-block;
+  margin-top:${({theme})=>theme.dim[1]};
   color: ${({ theme }) => theme.palette.secondary};
   ${({ theme }) => theme.typography.subtitleXsNormal};
   cursor:pointer;
