@@ -9,7 +9,7 @@ import {
 const Button = ({
     size = buttonSizes.MEDIUM, 
     variant = buttonVariants.FILL, 
-    color = buttonColors.PRIMARY,
+    color = variant == buttonVariants.FILL ? buttonColors.PRIMARY : null,
     matchParent,
     text,
     children

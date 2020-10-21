@@ -21,12 +21,12 @@ export const StyledWrapper = styled.button`
                 return theme.palette.primary
         }
     }};
-    border-color:${({color, theme, variant}) => {
+    border:${({color, theme, variant}) => {
         if (variant == buttonVariants.FILL || variant == buttonVariants.LINK){
             return null
         }
         switch (color) {
-            case buttonColors.primary:
+            case buttonColors.PRIMARY:
                 return `1px solid ` + theme.palette.primary
             case buttonColors.SECONDARY:
                 return `1px solid ` + theme.palette.secondary
