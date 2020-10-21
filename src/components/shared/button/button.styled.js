@@ -7,6 +7,7 @@ export const StyledWrapper = styled.button`
     justify-content:center;
     border-radius:${({theme}) => theme.defaults.borderRadius};
     text-decoration:none;
+    white-space:${({textWrap})=>textWrap ? 'normal':'nowrap'};
     cursor:pointer;
     width:${({matchParent}) => matchParent ? '100%' : null};
     background-color:${({color, theme, variant}) => {

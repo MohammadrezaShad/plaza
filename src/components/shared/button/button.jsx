@@ -12,6 +12,7 @@ const Button = ({
     color = variant == buttonVariants.FILL ? buttonColors.PRIMARY : null,
     matchParent,
     text,
+    textWrap=true,
     children
 }) => {
     return (
@@ -20,6 +21,7 @@ const Button = ({
             variant={variant}
             color={color}
             matchParent={matchParent}
+            textWrap={textWrap}
             >
             {text}
             {children}
@@ -34,7 +36,8 @@ Button.propTypes = {
     color: PropTypes.number,
     text: PropTypes.string,
     children: PropTypes.node,
-    matchParent: PropTypes.bool 
+    matchParent: PropTypes.bool,
+    textWrap:PropTypes.bool
 }
 
 export default Button
