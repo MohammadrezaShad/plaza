@@ -20,9 +20,9 @@ const WholesalingMenu = ({wholeSalingName, wholeSalingState}) => {
         <HeaderMenu icon="wholesaling" showWarning={wholeSalingState == 1} hasHeader={true}>
             <StyledHeader>{wholeSalingName}</StyledHeader>
             <StyledContent>
-                <ContextMenuItem text={t('yourRequestState')} iconName="alert-o">{wholeSalingState == 1 ? <StyledStateIcon as={IconProvider} icon="alert" size="24px" /> : <StyledStateIcon as={IconProvider} icon="true" size="24px" isSuccess={true} />}</ContextMenuItem>
-                <ContextMenuItem text={t('wholeSalingAbout')} iconName="alert-o" />
-                <ContextMenuItem text={t('plazaPlusAppDownload')} iconName="alert-o" />
+                <ContextMenuItem text={t('yourRequestState')} iconName="req-status">{wholeSalingState == 1 ? <StyledStateIcon as={IconProvider} icon="alert" size="24px" /> : <StyledStateIcon as={IconProvider} icon="true" size="24px" isSuccess={true} />}</ContextMenuItem>
+                <ContextMenuItem text={t('wholeSalingAbout')} iconName="about" />
+                <ContextMenuItem text={t('plazaPlusAppDownload')} iconName="download" />
             </StyledContent>
             
         </HeaderMenu>
