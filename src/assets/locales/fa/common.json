@@ -51,5 +51,8 @@
     "eCommerceDevelopmentCenter":"مرکز توسعه تجارت الکترونیکی",
     "nationalRegistrationMark":"نشان ملی ثبت",
     "close":"بستن",
-    "showMore":"نمایش بیشتر"
+    "showMore":"نمایش بیشتر",
+    "cartMenuTitle":"تعداد <!--count--> کالا در سبد خرید شما",
+    "currencyUnit": "تومان",
+    "payablePrice": "مبلغ قابل پرداخت"
 }
