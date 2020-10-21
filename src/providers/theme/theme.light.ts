@@ -100,8 +100,13 @@ const typography = {
                 font-weight: normal;
                 line-height: 1.5;`,
 
+    buttonMdNormal:`
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 1.5;`,
+
     buttonXsNormal:`
-                font-size: 10px;
+                font-size: 12px;
                 font-weight: normal;
                 line-height: 1.5;`
 }
