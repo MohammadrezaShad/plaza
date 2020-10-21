@@ -14,7 +14,6 @@ const MainLayout = ({ children }) => {
     <Wrapper>
       <Header />
       <Container>
-        <h1>mobile {t("title")}</h1>
         {children}
       </Container>
       <Footer/>
