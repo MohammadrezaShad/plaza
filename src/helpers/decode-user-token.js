@@ -6,7 +6,9 @@ const decodeUserToken = (token) => {
         firstName: data.given_name,
         lastName: data.family_name,
         level: data.level,
-        point: data.point
+        point: data.point,
+        wholeSalingName: data.wholeSalingName,
+        wholeSalingState: data.wholeSalingState
     };
 
     return user;
