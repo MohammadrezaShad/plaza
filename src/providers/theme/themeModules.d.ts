@@ -46,6 +46,7 @@ declare module "styled-components" {
         headline1: string;
         headline2: string;
         headline3: string;
+        bodyXLgBold:string;
         bodyLgBold: string;
         bodyMdBold: string;
         bodyMdNormal: string;
