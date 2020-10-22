@@ -73,6 +73,7 @@
         "historyOfPointGraph":"تاریخچه امتیازات",
         "buyTogether":"مشاهده هم خریدها",
         "minPoint":0,
-        "maxPoint":25000
+        "maxPoint":25000,
+        "yourScore":"امتیاز شما"
     }
 }
