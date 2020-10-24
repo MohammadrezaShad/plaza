@@ -1,4 +1,5 @@
 import cookiesName from '../constants/cookies-name';
+import { parseCartReducerInitialData } from '../redux/reducers/cart-reducer';
 import {
     parseUserReducerInitialData
 } from '../redux/reducers/user-reducer';
@@ -13,6 +14,9 @@ export const getPreloadedState = (req, res) => {
     output.user = parseUserReducerInitialData(userCookie);
 
     // cart
+    var cartCookie = cookies[cookiesName.CART];
+    output.cart = parseCartReducerInitialData(cartCookie);
+    
 
     return output;
 }
