@@ -27,10 +27,26 @@ export const StyledTitle = styled.h4`
     line-height:25px;
 `
 
-export const StyledContent = styled.div`
-    ${paddingStyle};
+export const StyledContent = styled.ul`
+    margin:${({theme}) => theme.dim[1]};
+    padding:${({theme}) => theme.dim[1]} ${({theme}) => theme.dim[2]};
     max-height:266px;
     overflow:auto;
+`
+
+export const StyledItem = styled.li`
+    padding-top:${({theme}) => theme.dim[2]};
+    padding-bottom:${({theme}) => theme.dim[2]};
+    display:flex;
+    align-items:center;
+    border-top:1px solid ${({theme}) => theme.palette.strokeVariant};
+    &:first-child {
+        border-top:none;
+        padding-top:0
+    }
+    &:last-child {
+        padding-bottom:0
+    }
 `
 
 export const StyledFooter = styled.footer`
@@ -43,6 +59,7 @@ export const StyledFooter = styled.footer`
 export const StyledFooterContent = styled.div`
     flex:1;
     min-width:0;
+    padding-left:${({theme}) => theme.dim[2]};
 `
 
 export const StyledFooterText = styled.span`
@@ -55,4 +72,8 @@ export const StyledFooterPrice = styled.strong`
     display:block;
     ${({theme}) => theme.typography.headline3};
     color:${({theme}) => theme.palette.onBack};
+`
+
+export const StyledFooterActions = styled.span`
+    flex-basis:51%;
 `

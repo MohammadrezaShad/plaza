@@ -31,10 +31,9 @@ export default createGlobalStyle`
       margin: 0;
       list-style-type:none;
       outline:none;
-      &::-webkit-scrollbar{width:8px;height:8px}
-      &::-webkit-scrollbar-thumb{background-color:#666}
-      &::-webkit-scrollbar-track{background-color:#e0e0e0}
-      &:hover::-webkit-scrollbar-thumb{background-color:#555}
+      &::-webkit-scrollbar{width:6px;height:6px}
+      &::-webkit-scrollbar-thumb{border-radius:${({theme}) => theme.defaults.borderRadius};background-color:${({theme}) => theme.palette.strokeVariant}}
+      &::-webkit-scrollbar-track{background-color:transparent}
       box-sizing:border-box;
    }
 
