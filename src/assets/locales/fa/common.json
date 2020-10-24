@@ -66,5 +66,15 @@
     "plazaPlusAppDownload":"دانلود اپلیکیشن پلازا پلاس",
     "count":"عدد",
     "createOrder":"ثبت سفارش",
-    "deleteAll":"حذف همه"
+    "deleteAll":"حذف همه",
+    "plazaClubArea":{
+        "dashboard":"داشبورد",
+        "pointGraph":"نمودار امتیازات",
+        "historyOfPointGraph":"تاریخچه امتیازات",
+        "buyTogether":"مشاهده هم خریدها",
+        "minPoint":0,
+        "maxPoint":25000,
+        "yourScore":"امتیاز شما",
+        "clubBannerAlt":"بنر باشگاه مشتریان"
+    }
 }

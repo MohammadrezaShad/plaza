@@ -65,7 +65,7 @@ transition:all .3s;
 cursor:pointer;
 position:relative;
  &:hover{
-    padding-right:${({theme,$arrow})=>!$arrow ? 0:'14px'};
+    padding-right:${({theme,$arrow})=>!$arrow ? 0:theme.dim[2]};
     ${Icon}{
       transform:translateX(-8px);
       opacity:0;
@@ -74,7 +74,7 @@ position:relative;
 
     }
     ${IconRight}{
-      right:0;
+      right:4px;
       opacity:1;
       visibility:visible;
       width:6px !important;

@@ -14,7 +14,7 @@ i18n
     },
     lng: "fa",
     fallbackLng: "fa",
-    keySeparator: false, // we do not use keys in form messages.welcome
+    keySeparator: '.', // we do not use keys in form messages.welcome
 
     interpolation: {
       escapeValue: false // react already safes from xss

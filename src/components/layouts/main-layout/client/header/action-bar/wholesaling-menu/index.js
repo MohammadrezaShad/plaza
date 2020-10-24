@@ -1,1 +1,1 @@
-export { default } from './wholesaling-menu'
+export { default } from './wholesaling-menu.jsx'
