@@ -8,4 +8,7 @@ export const StyledWrapper = styled.div`
 export const StyledContainer=styled.div`
   border: 1px solid ${({ theme }) => theme.palette.stroke};
   border-radius: ${({ theme }) => theme.defaults.borderRadius};
+  display:flex;
+  flex-direction:column;
+  height:100%;
 `
