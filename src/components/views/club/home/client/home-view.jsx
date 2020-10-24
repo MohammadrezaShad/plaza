@@ -1,12 +1,15 @@
 import React from "react";
 
-import { Title } from "./home-view.styled";
+import { StyledWrapper,StyledLayout } from "./home-view.styled";
+import HomeTop from "./home-top";
 
 const HomeView = () => {
   return (
-    <div>
-      <Title>home client</Title>
-    </div>
+    <StyledWrapper>
+      <StyledLayout>
+      <HomeTop/>
+      </StyledLayout>
+    </StyledWrapper>
   );
 };
 
