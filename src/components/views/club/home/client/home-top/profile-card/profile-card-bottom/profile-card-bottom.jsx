@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import { StyledWrapper } from "./profile-card-bottom.styled";
-import ProgressBar from "./progress-bar";
+import ProgressBar from "../../../../../../../shared/progress-bar";
 import { useTranslation } from "react-i18next";
 import ProfileCardPoint from "./profile-card-point";
 
