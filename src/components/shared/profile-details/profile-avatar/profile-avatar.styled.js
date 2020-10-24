@@ -5,7 +5,7 @@ export const StyledAvatar = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  padding: ${({ theme }) => theme.dim[2]};
+  padding: ${({ theme,iconSize }) =>iconSize=='32px' ? theme.dim[2]:'12px'};
   margin-left: ${({ theme }) => theme.dim[2]};
   flex-shrink: 0;
   background-color: ${({ theme, level }) => (level ? theme.getUserLevelColor(level) : theme.palette.back)};
