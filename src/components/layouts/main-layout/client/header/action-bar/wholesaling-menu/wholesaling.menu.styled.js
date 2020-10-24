@@ -25,6 +25,6 @@ export const StyledContent = styled.div`
 
 export const StyledStateIcon = styled.span`
     margin-right:auto;
-    color:${({theme, isSuccess}) => isSuccess ? theme.palette.success : theme.palette.error}
+    color:${({theme, $isSuccess}) => $isSuccess ? theme.palette.success : theme.palette.error}
 `
 
