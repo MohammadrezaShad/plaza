@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledWrapper = styled.div`
   flex:0 0 25.5%;
   padding-left:${({ theme }) => theme.dim[4]};
+  overflow:hidden;
 `;
 
 export const StyledContainer=styled.div`
