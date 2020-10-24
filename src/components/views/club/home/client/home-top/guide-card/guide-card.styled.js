@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledWrapper = styled.div`
   display: flex;
   flex-flow: column;
-  flex: 1 0 25.5%;
+  flex: 0 0 25.5%;
   padding-right:${({theme})=>theme.dim[4]};
   overflow:hidden;
 `;
