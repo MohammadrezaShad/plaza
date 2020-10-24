@@ -17,13 +17,15 @@ const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning,
     const buttonIcon = icon ? <ButtonIcon icon={icon} size="20px" /> : null;
     const buttonText = text ? <ButtonText>{text}</ButtonText> : null;
     const buttonCount = count ? <ButtonCount>{count}</ButtonCount> : null;
-
+    let isMounted = true;
     
 
     const documentClickHandler = () => {
-        setMenuIsShow(false);
-        document.removeEventListener('click', documentClickHandler)
-        onClose && onClose();
+        if (isMounted) {
+            setMenuIsShow(false);
+            document.removeEventListener('click', documentClickHandler)
+            onClose && onClose();
+        }
     }
 
     const buttonClickHandler = () => {
@@ -40,6 +42,13 @@ const HeaderMenu = ({ children, href, icon, text, fillColor, count, showWarning,
             onOpen && onOpen();
         }
     }
+
+    useEffect(() => {
+        isMounted = true
+        return () => { 
+            isMounted = false
+         };
+    }, []);
 
     return (
         <Wrapper>
