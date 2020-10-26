@@ -6,5 +6,5 @@ export const Wrapper = styled.div`
     direction:${({theme}) => theme.defaults.direction};
     align-items:center;
     justify-content:center;
-    padding:${({theme}) => theme.dim[2]};
+    padding:${({theme}) => theme.dim[3]};
 `
