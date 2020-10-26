@@ -25,6 +25,7 @@ const palette = {
     lightGrey: '#908D99',
     nightRider: '#333333',
     nero:'#222222',
+    hotPink:'#F574B5',
     whisper: '#eeeeee',
     atlantis: '#A5C63C',
     greenUser: '#42D9BB',

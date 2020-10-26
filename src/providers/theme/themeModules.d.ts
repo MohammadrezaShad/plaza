@@ -24,6 +24,7 @@ declare module "styled-components" {
         lightGrey:string,
         nightRider:string,
         nero:string,
+        hotPink:string,
         whisper:string,
         atlantis:string,
         greenUser: string,
