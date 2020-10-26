@@ -5,7 +5,7 @@ export const StyledWrapper = styled.div`
   flex-flow: column;
   justify-content: center;
   flex: 1;
-  padding:${({ theme }) => theme.dim[2]} ${({ theme }) => theme.dim[4]};
+  padding:${({ theme }) => theme.dim[4]};
   border: 1px solid ${({ theme }) => theme.palette.stroke};
   border-radius: ${({ theme }) => theme.defaults.borderRadius};
   &:not(:first-child) {
@@ -20,6 +20,7 @@ export const StyledTitle = styled.span`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  line-height:1.1;
 `;
 
 export const ButtonWrapper = styled.div`

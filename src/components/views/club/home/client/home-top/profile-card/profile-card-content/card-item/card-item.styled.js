@@ -12,6 +12,7 @@ export const StyledWrapper = styled.li`
 export const StyledText = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyMdNormal};
+  line-height:1.4;
   transition: all 0.3s;
 `;
 

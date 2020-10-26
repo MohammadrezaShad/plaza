@@ -68,6 +68,8 @@
     "createOrder":"ثبت سفارش",
     "deleteAll":"حذف همه",
     "details":"مشاهده جزئیات",
+    "currency":"تومان",
+    "topRatedProduct":"پر امتیاز ترین کالاهای مورد علاقه شما",
     "plazaClubArea":{
         "dashboard":"داشبورد",
         "pointGraph":"نمودار امتیازات",
@@ -76,6 +78,7 @@
         "minPoint":0,
         "maxPoint":25000,
         "yourScore":"امتیاز شما",
+        "buyScore":"امتیاز خرید",
         "addNewBuyTogether":"افزودن هم خرید جدید",
         "clubBannerAlt":"بنر باشگاه مشتریان",
         "guideTitleOne":"ارتقا به سطح نقره ای!",

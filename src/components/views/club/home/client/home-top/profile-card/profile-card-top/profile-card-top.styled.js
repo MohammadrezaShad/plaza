@@ -4,12 +4,18 @@ export const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: ${({ theme }) => theme.dim[3]};
-  background-color:${({theme})=>theme.palette.surface};
-  max-height:102px;
+  background-color: ${({ theme }) => theme.palette.surface};
+`;
+
+export const StyledContent = styled.div`
+  width: 48px;
+  margin-left: ${({ theme }) => theme.dim[2]};
 `;
 
 export const StlyedDetail = styled.div`
-width:70%;
+  width: 100%;
+  overflow: hidden;
+  margin: -3px 0;
 `;
 
 export const StyledTitle = styled.span`
@@ -25,13 +31,14 @@ export const StyledTitle = styled.span`
 export const StyledContainer = styled.div`
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
 `;
 
 export const StlyedLevel = styled.span`
   display: inline-flex;
   align-items: center;
-  margin-left: ${({ theme }) => theme.dim[1]};
+  margin-left: ${({ theme }) => theme.dim[2]};
 `;
 
 export const StyledLevelText = styled.span`
@@ -44,6 +51,7 @@ export const StyledLevelText = styled.span`
 
 export const StyledLevelValue = styled.span`
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-right: ${({ theme }) => theme.dim[1]};
   color: ${({ theme, userLevel }) => theme.getUserLevelColor(userLevel)};
