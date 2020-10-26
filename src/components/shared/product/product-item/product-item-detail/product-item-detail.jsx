@@ -42,7 +42,8 @@ ProductItemDetail.propTypes = {
     price: PropTypes.number,
     offPrice: PropTypes.number,
     href: PropTypes.string,
-    point: PropTypes.number
+    point: PropTypes.number,
+    specialOffer:PropTypes.bool
 }
 
 export default ProductItemDetail
