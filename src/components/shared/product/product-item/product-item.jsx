@@ -14,7 +14,7 @@ import {
 import ProductItemDetail from "./product-item-detail/product-item-detail";
 import ProductItemColor from "./product-item-color/product-item-color";
 
-const ProductItem = ({ title, href, imgSrc, point, offPrice, price, colors, specialOffer = true }) => {
+const ProductItem = ({ title, href, imgSrc, point, offPrice, price, colors, specialOffer = false }) => {
   return (
     <StyledWrapper>
       <StyledContainer specialOffer={specialOffer}>

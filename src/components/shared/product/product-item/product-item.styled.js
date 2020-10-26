@@ -12,14 +12,18 @@ export const StyledContainer = styled.div`
   flex-flow: column;
   justify-content: space-between;
   border: 1px solid ${({ theme }) => theme.palette.stroke};
-  padding: ${({ theme }) => theme.dim[4]};
+  padding: ${({ theme,specialOffer }) =>specialOffer ? theme.dim[4]:theme.dim[3]};
   height: 100%;
 `;
 
 export const StyledContent = styled.div``;
 
+export const StyledColors = styled.div`
+  margin-top: ${({ theme }) => theme.dim[2]};
+`;
+
 export const StyledImgWrapper = styled.div`
-  padding: 0 41px;
+  padding:${({ specialOffer }) =>specialOffer ? '0 41px':'0 69px'};
   margin-bottom: ${({ theme }) => theme.dim[3]};
 `;
 
