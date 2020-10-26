@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
-  width: 50%;
+  flex:0 0 49%;
 `;
 
 export const StyledContainer = styled.div`
