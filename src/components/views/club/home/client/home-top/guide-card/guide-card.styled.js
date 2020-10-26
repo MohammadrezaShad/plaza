@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const StyledWrapper = styled.div`
   display: flex;
   flex-flow: column;
-  flex: 0 0 25.5%;
-  padding-right:${({theme})=>theme.dim[4]};
+  flex: 0 0 25%;
+  padding:0 ${({theme})=>theme.dim[2]};
   overflow:hidden;
 `;
 
