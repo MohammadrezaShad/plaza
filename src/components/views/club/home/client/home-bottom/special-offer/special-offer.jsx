@@ -19,7 +19,9 @@ const SpecialOffer = (props) => {
       title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد" 
       price={3000000} 
       offPrice={2550000} 
-      point={102} />
+      point={102}
+      specialOffer = {true}
+      />
 
       <ProductItem 
       href={Paths.home.getPath()} 
@@ -27,7 +29,9 @@ const SpecialOffer = (props) => {
       title="دسته بازی پلی استیشن 4 قرمز رنگ" 
       price={3000000} 
       offPrice={2550000} 
-      point={102} />
+      point={102} 
+      specialOffer = {true}
+      />
 
       <ProductItem 
       href={Paths.home.getPath()} 
@@ -35,7 +39,9 @@ const SpecialOffer = (props) => {
       title="هدفون مشکی بی سیم به همراه کاپ های قرمز رنگ" 
       price={3000000} 
       offPrice={2550000} 
-      point={102} />
+      point={102}
+      specialOffer = {true}
+      />
 
       <ProductItem 
       href={Paths.home.getPath()} 
@@ -43,7 +49,9 @@ const SpecialOffer = (props) => {
       title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها" 
       price={3000000} 
       offPrice={2550000} 
-      point={102} />
+      point={102}
+      specialOffer = {true}
+      />
       
     </StyledWrapper>
   );
