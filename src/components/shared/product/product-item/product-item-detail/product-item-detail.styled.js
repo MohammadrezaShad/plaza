@@ -12,7 +12,6 @@ export const StyledContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-right: ${({ theme }) => theme.dim[2]};
   position: relative;
 `;
 
@@ -33,7 +32,8 @@ export const StyledPoint = styled.span`
 export const StyledPrice = styled.span`
   display: inline-flex;
   position: absolute;
-  right: 0;
+  right:${({specialOffer})=> specialOffer ? 0:'50%'};
+  transform:${({specialOffer})=> specialOffer ? 'translateX(0)':'translateX(50%)'};
   top: -14px;
   ${({ theme }) => theme.typography.subtitleXsNormal};
   color: ${({ theme }) => theme.palette.subtitle};
@@ -43,7 +43,7 @@ export const StyledPrice = styled.span`
 export const StyledOffPrice = styled.span`
   display: inline-flex;
   color: ${({ theme }) => theme.palette.primary};
-  ${({ theme }) => theme.typography.bodyLgBold};
+  ${({ theme }) => theme.typography.bodyXLgBold};
 `;
 
 export const StyledCurrency = styled.span`
@@ -56,5 +56,6 @@ export const StyledCurrency = styled.span`
 
 export const StyledDetail=styled.div`
   position: relative;
+  margin-left: ${({ theme }) => theme.dim[2]};
 
 `
