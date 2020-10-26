@@ -11,6 +11,8 @@ export const StyledText = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme }) => theme.palette.onSurface};
+  white-space: nowrap; 
+  margin-left:${({theme})=>theme.dim[2]};
 `;
 
 export const StyledPoint = styled.span`
@@ -21,7 +23,9 @@ export const StyledMaxPoint = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyMdNormal};
   color:${({theme})=>theme.palette.subtitle};
-  align-items: center;
+  align-self: center;
+  height:100%;
+  line-height:1;
 `;
 
 export const StyledCurrentPoint = styled.span`
@@ -29,6 +33,7 @@ export const StyledCurrentPoint = styled.span`
   align-items: center;
   color:${({theme})=>theme.palette.primary};
   ${({ theme }) => theme.typography.bodyXLgBold};
+  line-height:1;
   `;
 
 export const StyledSeperator = styled.span`
