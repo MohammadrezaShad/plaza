@@ -76,5 +76,13 @@
         "maxPoint":25000,
         "yourScore":"امتیاز شما",
         "clubBannerAlt":"بنر باشگاه مشتریان"
+    },
+    "signinView":{
+        "title":"لطفا وارد شوید",
+        "description":"کاربر پلازا نیستی؟! همین حالا <1>عضو شو</1>",
+        "usenameInputPlaceholder": "آدرس ایمیل یا شماره موبایل",
+        "passwordInputPlaceholder": "رمز عبور",
+        "rememberMe": "منو یادت باشه!",
+        "button":"ورود به سایت"
     }
 }
