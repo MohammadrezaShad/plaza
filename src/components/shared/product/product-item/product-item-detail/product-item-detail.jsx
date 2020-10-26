@@ -21,7 +21,7 @@ const ProductItemDetail = ({ price, offPrice, href, point }) => {
     return (
         <StyledWrapper>
             <StyledDetail>
-                <StyledPoint>{t('plazaClubArea.yourScore')}:{point}</StyledPoint>
+                <StyledPoint>{t('plazaClubArea.buyScore')}:{point}</StyledPoint>
                 <StyledLink to={href}>
                     <Button text={t('details')} size={buttonSizes.MEDIUM} textWrap={false} />
                 </StyledLink>
