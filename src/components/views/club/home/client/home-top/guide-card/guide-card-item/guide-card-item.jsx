@@ -24,6 +24,12 @@ const GuideCardItem = ({ title, text, buttonText, buttonColor, children }) => {
   );
 };
 
-GuideCardItem.propTypes = {};
+GuideCardItem.propTypes = {
+  title:PropTypes.string,
+  text:PropTypes.string,
+  buttonText:PropTypes.string,
+  buttonColor:PropTypes.bool,
+  children:PropTypes.node
+};
 
 export default GuideCardItem;
