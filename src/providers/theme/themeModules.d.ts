@@ -23,6 +23,7 @@ declare module "styled-components" {
         overlay: string,
         lightGrey:string,
         nightRider:string,
+        nero:string,
         whisper:string,
         atlantis:string,
         greenUser: string,
