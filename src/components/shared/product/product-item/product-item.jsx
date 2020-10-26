@@ -11,8 +11,8 @@ import {
   StyledImg,
   StyledColors
 } from "./product-item.styled";
-import ProductItemDetail from "./product-item-detail/product-item-detail";
-import ProductItemColor from "./product-item-color/product-item-color";
+import ProductItemDetail from "./product-item-detail";
+import ProductItemColor from "./product-item-color";
 
 const ProductItem = ({ title, href, imgSrc, point, offPrice, price, colors, specialOffer = false }) => {
   return (
@@ -26,7 +26,13 @@ const ProductItem = ({ title, href, imgSrc, point, offPrice, price, colors, spec
           </StyledImgWrapper>
           <StyledTitle to={href}>{title}</StyledTitle>
         </StyledContent>
-        <ProductItemDetail price={price} offPrice={offPrice} href={href} point={point} specialOffer={specialOffer} />
+        <ProductItemDetail 
+        price={price} 
+        offPrice={offPrice} 
+        href={href} 
+        point={point} 
+        specialOffer={specialOffer} 
+        />
         {
           colors ?
             <StyledColors>
@@ -45,7 +51,8 @@ ProductItem.propTypes = {
   price: PropTypes.number,
   offPrice: PropTypes.number,
   href: PropTypes.string,
-  point: PropTypes.number
+  point: PropTypes.number,
+  specialOffer:PropTypes.bool
 };
 
 export default ProductItem;
