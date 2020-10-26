@@ -7,6 +7,7 @@ import {
 } from './button.styled'
 
 const Button = ({
+    type,
     size = buttonSizes.MEDIUM, 
     variant = buttonVariants.FILL, 
     color = variant == buttonVariants.FILL ? buttonColors.PRIMARY : null,
@@ -18,6 +19,7 @@ const Button = ({
 }) => {
     return (
         <StyledWrapper
+            type={type}
             size={size}
             variant={variant}
             color={color}
@@ -33,6 +35,7 @@ const Button = ({
 
 
 Button.propTypes = {
+    type: PropTypes.string,
     size: PropTypes.number,
     variant: PropTypes.number,
     color: PropTypes.number,
