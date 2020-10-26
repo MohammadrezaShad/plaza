@@ -68,6 +68,7 @@
     "createOrder":"ثبت سفارش",
     "deleteAll":"حذف همه",
     "details":"مشاهده جزئیات",
+    "currency":"تومان",
     "plazaClubArea":{
         "dashboard":"داشبورد",
         "pointGraph":"نمودار امتیازات",
