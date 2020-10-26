@@ -11,7 +11,7 @@ const ProfileMenu = ({ loggedIn, firstName, lastName, userLevel, userPoint , log
     let config = {};
     if (!loggedIn) {
         config = {
-            href: Paths.signin.getPathAndQuery(),
+            href: Paths.signin.getPath(),
             text: "وارد شوید",
             icon: 'user'
         }

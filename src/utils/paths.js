@@ -8,10 +8,6 @@ class Uri {
         return this.route
     }
 
-    getPathAndQuery() {
-        return this.url
-    }
-
     getPath() {
         // TODO : remove querystring and return path
         return this.url

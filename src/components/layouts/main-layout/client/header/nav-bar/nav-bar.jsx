@@ -44,11 +44,11 @@ const NavBar = ({onNavShow}) => {
             <StyledLayout>
                 <NavItem title="محصولات" list={list} />
                 <StyledSeparator/>
-                <NavItem title="پلازا پلاس" to={Paths.plazaPlus.getPathAndQuery()} />
-                <NavItem title="باشگاه مشتریان" to={Paths.club.home.getPathAndQuery()} />
+                <NavItem title="پلازا پلاس" to={Paths.plazaPlus.getPath()} />
+                <NavItem title="باشگاه مشتریان" to={Paths.club.home.getPath()} />
                 <NavItem title="پلازا مگ" href={Paths.plazaMag.getAbsoulteUri()} />
-                <NavItem title="سوالات متداول" to={Paths.faq.getPathAndQuery()} />
-                <NavItem title="برندها" to={Paths.brand.home.getPathAndQuery()} />
+                <NavItem title="سوالات متداول" to={Paths.faq.getPath()} />
+                <NavItem title="برندها" to={Paths.brand.home.getPath()} />
             </StyledLayout>
         </StyledWrapper>
     )
