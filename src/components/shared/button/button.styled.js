@@ -79,10 +79,10 @@ export const StyledWrapper = styled.button`
         }
         switch (size) {
             case buttonSizes.MEDIUM:
-                return theme.dim[3]
+                return theme.dim[2]
 
             case buttonSizes.S_MEDIUM:
-                return theme.dim[2]
+                return theme.dim[1]
 
             case buttonSizes.SMALL:
                 return theme.dim[1]
@@ -97,10 +97,10 @@ export const StyledWrapper = styled.button`
         }
         switch (size) {
             case buttonSizes.MEDIUM:
-                return theme.dim[3]
+                return theme.dim[2]
 
             case buttonSizes.S_MEDIUM:
-                return theme.dim[2]
+                return theme.dim[1]
 
             case buttonSizes.SMALL:
                 return theme.dim[1]
