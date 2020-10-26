@@ -20,7 +20,7 @@ export const StyledTitle = styled.span`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  line-height:1;
+  line-height:1.1;
 `;
 
 export const ButtonWrapper = styled.div`
