@@ -2,7 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
-import { StyledWrapper, StlyedDetail, StyledTitle, StyledContainer, StlyedLevel, StyledLevelText, StyledLevelValue } from "./profile-card-top.styled";
+import { 
+  StyledWrapper, 
+  StlyedDetail, 
+  StyledTitle, 
+  StyledContainer, 
+  StlyedLevel, 
+  StyledLevelText, 
+  StyledLevelValue, 
+  StyledContent 
+} from "./profile-card-top.styled";
 import ProfileAvatar from "../../../../../../../shared/profile-details/profile-avatar";
 import WithUserState from "../../../../../../../../hoc/with-user-state";
 import Button from "../../../../../../../shared/button/button";
@@ -14,7 +23,9 @@ const ProfileCardTop = ({ userLevel, firstName, lastName }) => {
 
   return (
     <StyledWrapper>
-      <ProfileAvatar level={userLevel} iconSize='24px'/>
+      <StyledContent>
+        <ProfileAvatar level={userLevel} iconSize='24px' />
+      </StyledContent>
       <StlyedDetail>
         <StyledTitle>
           {firstName} {lastName}
@@ -24,7 +35,11 @@ const ProfileCardTop = ({ userLevel, firstName, lastName }) => {
             <StyledLevelText>{t("yourLevel")} :   </StyledLevelText>
             <StyledLevelValue userLevel={userLevel} > {getUserLevelName(userLevel)}</StyledLevelValue>
           </StlyedLevel>
-          <Button size={buttonSizes.SMALL} variant={buttonVariants.OUTLINE} text={t("increaseLevel")} textWrap={false}/>
+          <Button 
+          size={buttonSizes.SMALL} 
+          variant={buttonVariants.OUTLINE} 
+          text={t("increaseLevel")} 
+          textWrap={false} />
         </StyledContainer>
       </StlyedDetail>
     </StyledWrapper>
