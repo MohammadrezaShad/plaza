@@ -40,5 +40,6 @@ export const StyledSeperator = styled.span`
   display: inline-flex;
   color: ${({ theme }) => theme.palette.onSurface};
   padding: 0 ${({theme})=>theme.dim[1]};
+  ${({ theme }) => theme.typography.bodyMdNormal};
   align-items: center;
 `;
