@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Helmet } from "react-helmet";
 import loadable from '@loadable/component';
 
@@ -12,7 +12,7 @@ const Mobile = loadable(() => import('../components/views/home/mobile'));
 
 
 const Home = ({deviceType}) => (
-    <div>
+    <Fragment>
         <Helmet>
             <title>{process.env.REACT_APP_NAME + ' | صفحه ی اصلی'}</title>
             <link rel="canonical" href={Paths.home.getAbsoulteUri()} />
@@ -24,7 +24,7 @@ const Home = ({deviceType}) => (
             :
             <Client />
         }
-    </div>
+    </Fragment>
 )
 
 export default withDeviceDetection(Home);
