@@ -8,23 +8,40 @@ import {
   StyledImgWrapper,
   StyledTitle,
   StyledLink,
-  StyledImg
+  StyledImg,
+  StyledColors
 } from "./product-item.styled";
-import ProductItemDetail from "./product-item-detail/product-item-detail";
+import ProductItemDetail from "./product-item-detail";
+import ProductItemColor from "./product-item-color";
 
-const ProductItem = ({ title, href, imgSrc, point, offPrice, price }) => {
+const ProductItem = ({ title, href, imgSrc, point, offPrice, price, colors, specialOffer = false }) => {
   return (
     <StyledWrapper>
-      <StyledContainer>
+      <StyledContainer specialOffer={specialOffer}>
         <StyledContent>
-          <StyledImgWrapper>
+          <StyledImgWrapper specialOffer={specialOffer}>
             <StyledLink to={href}>
               <StyledImg src={imgSrc} />
             </StyledLink>
           </StyledImgWrapper>
           <StyledTitle to={href}>{title}</StyledTitle>
         </StyledContent>
-        <ProductItemDetail price={price} offPrice={offPrice} href={href} point={point} />
+        <ProductItemDetail 
+        price={price} 
+        offPrice={offPrice} 
+        href={href} 
+        point={point} 
+        specialOffer={specialOffer} 
+        />
+        {
+          colors ?
+            <StyledColors>
+              <ProductItemColor type={1} />
+              <ProductItemColor type={2} />
+              <ProductItemColor type={3} />
+              <ProductItemColor type={4} />
+            </StyledColors> : ''
+        }
       </StyledContainer>
     </StyledWrapper>
   );
@@ -34,7 +51,8 @@ ProductItem.propTypes = {
   price: PropTypes.number,
   offPrice: PropTypes.number,
   href: PropTypes.string,
-  point: PropTypes.number
+  point: PropTypes.number,
+  specialOffer:PropTypes.bool
 };
 
 export default ProductItem;

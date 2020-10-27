@@ -36,8 +36,10 @@ export const StyledWrapper = styled.button`
                 return `1px solid ` + theme.palette.stroke
         }
     }};
-    color:${({color, theme, variant}) => {
-        if (variant == buttonVariants.LINK || variant == buttonVariants.OUTLINE) {
+    color:${({color, theme, variant,$disabled}) => {
+        if ($disabled){
+            return theme.palette.subtitle
+        }else if(variant == buttonVariants.LINK || variant == buttonVariants.OUTLINE) {
             switch (color) {
                 case buttonColors.PRIMARY:
                     return theme.palette.primary
