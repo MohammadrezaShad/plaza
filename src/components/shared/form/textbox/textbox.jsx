@@ -6,7 +6,7 @@ import {
     Input,
     Icon
 } from './textbox.styled'
-import IconProvider from '../../../providers/icon/icon-provider';
+import IconProvider from '../../../../providers/icon/icon-provider';
 
 const Textbox = ({
     autocomplete,
