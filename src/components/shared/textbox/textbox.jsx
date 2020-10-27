@@ -26,7 +26,16 @@ const Textbox = ({
             {
                 iconIsShow ? <Icon as={buttonCallback ? 'button' : 'span'} onClick={buttonCallback}><IconProvider icon={icon} size="16px" /></Icon> : null
             }
-            <Input {...props} spellCheck={false} placeholder={placeholder} hasIcon={iconIsShow} onChange={onChange} value={inputValue} ref={reference} autoComplete={autocomplete}/>
+            <Input 
+                {...props} 
+                spellCheck={false} 
+                placeholder={placeholder} 
+                hasIcon={iconIsShow} 
+                onChange={onChange} 
+                value={inputValue} 
+                ref={reference} 
+                autoComplete={autocomplete}
+                />
         </Wrapper>
     )
 }
