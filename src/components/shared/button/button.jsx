@@ -15,7 +15,8 @@ const Button = ({
     text,
     textWrap = true,
     onClick,
-    children
+    children,
+    $disabled=false
 }) => {
     return (
         <StyledWrapper
@@ -26,6 +27,7 @@ const Button = ({
             matchParent={matchParent}
             textWrap={textWrap}
             onClick={onClick}
+            $disabled={$disabled}
             >
             {text}
             {children}
