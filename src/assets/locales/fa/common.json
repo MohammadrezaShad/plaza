@@ -93,8 +93,10 @@
     "signinView":{
         "title":"لطفا وارد شوید",
         "description":"کاربر پلازا نیستی؟! همین حالا <1>عضو شو</1>",
-        "usenameInputPlaceholder": "آدرس ایمیل یا شماره موبایل",
+        "usernameInputPlaceholder": "آدرس ایمیل یا شماره موبایل",
+        "usernameValidationText":"درج یک ایمیل یا شماره موبایل الزامی است.",
         "passwordInputPlaceholder": "رمز عبور",
+        "passwordValidationText":"درج رمز عبور الزامی است.",
         "rememberMe": "منو یادت باشه!",
         "button":"ورود به سایت"
     }
