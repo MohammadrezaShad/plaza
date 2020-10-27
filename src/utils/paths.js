@@ -36,6 +36,8 @@ class Paths {
         static base = "/club"
 
         static home = new Uri(this.base)
+        static history = new Uri(this.base + '/history')
+
     }
 
     static profile = class {
