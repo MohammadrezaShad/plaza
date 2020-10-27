@@ -29,7 +29,7 @@ const Pagination = ({ }) => {
     return (
         <Fragment>
             <Button onClick={pageDown} variant={buttonVariants.OUTLINE} $disabled={currentPage===1}>
-                <StyledIcon as={IconProvider} icon="chevron-down" size="16px" />
+                <StyledIcon as={IconProvider} icon="arrow-right" size="16px" />
                 <StyledText>قبلی</StyledText>
             </Button>
             {
@@ -39,7 +39,7 @@ const Pagination = ({ }) => {
             }
             <Button onClick={pageUp} variant={buttonVariants.OUTLINE} $disabled={currentPage===items.length}>
                 <StyledText>بعدی</StyledText>
-                <StyledIcon as={IconProvider} icon="chevron-down" size="16px" />
+                <StyledIcon as={IconProvider} icon="arrow-left" size="16px" />
             </Button>
         </Fragment>
     )
