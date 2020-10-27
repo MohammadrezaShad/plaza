@@ -31,6 +31,8 @@ const CartMenu = ({items, payablePrice}) => {
     const [isOpen, setIsOpen] = useState(false);
     const {t} = useTranslation();
     const dispatch = useDispatch()
+    const length = items instanceof Array ? items.length : 0
+    const count = length ? items.reduce((a, b) => ({count: a.count + b.count})).count : 0
 
     const removeAllHandler = () => {
         dispatch(removeAll())
@@ -40,32 +42,6 @@ const CartMenu = ({items, payablePrice}) => {
         dispatch(remove(id))
     }
 
-    // items = [
-    //     {
-    //         title:'دسته بازی گیمینگ مشکی بی سیم تسکو مدل TG 134W',
-    //         url:'/test',
-    //         price:1200,
-    //         count:1,
-    //         feature:'مشکی قرمز'
-    //     },
-    //     {
-    //         title:'دسته بازی گیمینگ مشکی بی سیم تسکو مدل TG 134W',
-    //         url:'/test1',
-    //         price:2200,
-    //         count:1,
-    //         feature:"آبی"
-    //     },
-    //     {
-    //         title:'دسته بازی گیمینگ مشکی بی سیم تسکو مدل TG 134W',
-    //         url:'/test1',
-    //         price:2200,
-    //         count:10,
-    //         feature:"سبز"
-    //     }
-    // ]
-
-    const length = items instanceof Array ? items.length : 0;
-
     const openHandler = () => {
         setIsOpen(true);
     }
@@ -74,7 +50,7 @@ const CartMenu = ({items, payablePrice}) => {
 
 
     return (
-        <HeaderMenu icon="cart-o" count={length} hasHeader={!!length} onOpen={openHandler}>
+        <HeaderMenu icon="cart-o" count={count} hasHeader={!!count} onOpen={openHandler}>
             {
                 !isOpen
                 ?
@@ -83,7 +59,7 @@ const CartMenu = ({items, payablePrice}) => {
                 ?
                 <StyledWrapper>
                     <StyledHeader>
-                        <StyledTitle>{t('cartMenuTitle').replace(/<!--count-->/g, length)}</StyledTitle>
+                        <StyledTitle>{t('cartMenuTitle').replace(/<!--count-->/g, count)}</StyledTitle>
                         <Button variant={buttonVariants.LINK} color={buttonColors.SECONDARY} size={buttonSizes.SMALL} text={t('deleteAll')} onClick={removeAllHandler}/>
                     </StyledHeader>
                     <StyledContent>
