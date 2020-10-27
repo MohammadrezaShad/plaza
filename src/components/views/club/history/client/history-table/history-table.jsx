@@ -25,10 +25,10 @@ const HistoryTable = props => {
                     detail={true}
                     href={Paths.home.getRoute()} />
                 <HistoryTableItem
-                    score={1000}
+                    score={-1000}
                     pointTitle="دعوت دوستان"
                     pointSubTitle="ahmad.n33@gmail.com"
-                    status={{ confirm: true, date: "‏1 فروردین 1399" }}
+                    status={{ confirm: false, date: "‏1 فروردین 1399" }}
                     persuasivePoint="ندارد"
                     detail={true}
                     href={Paths.home.getRoute()} />

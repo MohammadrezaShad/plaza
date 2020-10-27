@@ -10,8 +10,8 @@ export const StyledHead = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyLgBold};
   white-space: nowrap;
-  &:not(:first-child){
-      margin-right:${({theme})=>theme.dim[1]};
+  &:not(:first-child) {
+    margin-right: ${({ theme }) => theme.dim[1]};
   }
   &:nth-child(1) {
     flex: 0 0 9%;
@@ -26,7 +26,6 @@ export const StyledHead = styled.span`
     flex: 0 0 30.7%;
   }
   &:nth-child(5) {
-    flex: 0 0 9%;
+    margin-right: auto;
   }
-
 `;
