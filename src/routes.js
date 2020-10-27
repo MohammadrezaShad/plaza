@@ -6,8 +6,10 @@ import Paths from "./utils/paths";
 import Signup from "./pages/signup";
 import Profile from "./pages/profile";
 import ProfileOrders from "./pages/profile/orders";
+
 import ClubLayout from "./components/layouts/club-layout";
 import HomeClub from './pages/club'
+import HistoryClub from "./pages/club/history";
 
 const routes = [
   {
@@ -47,6 +49,11 @@ const routes = [
             path: Paths.club.home.getRoute(),
             exact: true,
             component: HomeClub,
+          },
+          {
+            path: Paths.club.history.getRoute(),
+            exact: true,
+            component: HistoryClub,
           }
         ],
       },
