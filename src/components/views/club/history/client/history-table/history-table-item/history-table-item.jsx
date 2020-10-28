@@ -15,6 +15,7 @@ import {
 import Button from '../../../../../../shared/button/button'
 import { buttonColors, buttonSizes, buttonVariants } from '../../../../../../../constants/button-configs'
 import BadgeButton from '../../../../../../shared/badge-button'
+import { badgeButtonVariants } from '../../../../../../../constants/badge-button-config'
 
 const HistoryTableItem = ({
     score,
@@ -42,8 +43,8 @@ const HistoryTableItem = ({
             <StyledContent>
                 <StyledStatus>
                     <StyledDate>{status.date}</StyledDate>
-                    <BadgeButton status={status.confirm ? 'success':'check'}>
-                        {status.confirm ? 'تایید امتیاز' : 'در حال بررسی'}
+                    <BadgeButton status={status.confirm ? badgeButtonVariants.SUCCESS:badgeButtonVariants.CHECK}>
+                        {status.confirm ? t('plazaClubArea.confirmPoints') : t('pending')}
                     </BadgeButton>
                 </StyledStatus>
             </StyledContent>
@@ -62,7 +63,13 @@ const HistoryTableItem = ({
 }
 
 HistoryTableItem.propTypes = {
-    score: PropTypes.number
+    score: PropTypes.number,
+    pointTitle:PropTypes.string,
+    pointSubTitle:PropTypes.string,
+    status:PropTypes.object,
+    persuasivePoint:PropTypes.string||PropTypes.number,
+    detail:PropTypes.bool,
+    href :PropTypes.string
 }
 
 export default HistoryTableItem
