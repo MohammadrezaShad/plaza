@@ -14,7 +14,7 @@ import {
 import ProductItemDetail from "./product-item-detail";
 import ProductItemColor from "./product-item-color";
 
-const ProductItem = ({ title, href, imgSrc, point, offPrice, price, colors, specialOffer = false }) => {
+const ProductItem = ({ title, href, imgSrc, point, offPrice, price, colors, specialOffer = false , children}) => {
   return (
     <StyledWrapper>
       <StyledContainer specialOffer={specialOffer}>
@@ -42,6 +42,7 @@ const ProductItem = ({ title, href, imgSrc, point, offPrice, price, colors, spec
               <ProductItemColor type={4} />
             </StyledColors> : ''
         }
+        {children}
       </StyledContainer>
     </StyledWrapper>
   );
@@ -52,7 +53,8 @@ ProductItem.propTypes = {
   offPrice: PropTypes.number,
   href: PropTypes.string,
   point: PropTypes.number,
-  specialOffer:PropTypes.bool
+  specialOffer:PropTypes.bool,
+  children: PropTypes.node
 };
 
 export default ProductItem;

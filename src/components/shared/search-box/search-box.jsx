@@ -4,7 +4,7 @@ import axios from "axios";
 import PropTypes from 'prop-types'
 
 import { Wrapper } from "./search-box.styled";
-import Textbox from "../textbox";
+import Textbox from "../form/textbox";
 import SearchResults from "./search-results";
 
 const SearchBox = ({mobile}) => {

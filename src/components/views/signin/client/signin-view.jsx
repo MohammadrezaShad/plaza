@@ -7,7 +7,7 @@ import { Trans } from 'react-i18next'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { login } from '../../../../redux/actions/user-actions'
-import Textbox from '../../../shared/textbox'
+import Textbox from '../../../shared/form/textbox'
 import { ReactComponent as Logo } from '../../../../assets/images/logo.svg'
 
 import {

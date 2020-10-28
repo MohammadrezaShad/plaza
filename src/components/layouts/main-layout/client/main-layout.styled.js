@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+export const StyledWrapper = styled.div`
     min-height:100%;
     display:flex;
     flex-direction:column;
@@ -8,11 +8,6 @@ const Wrapper = styled.div`
     
 `
 
-const Container = styled.main`
+export const StyledContainer = styled.main`
     flex:1;
 `
-
-export {
-    Wrapper,
-    Container
-}
