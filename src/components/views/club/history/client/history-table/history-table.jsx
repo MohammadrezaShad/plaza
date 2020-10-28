@@ -14,7 +14,14 @@ const HistoryTable = props => {
     const { t } = useTranslation()
     return (
         <StyledWrapper>
-            <HistoryTableHead items={[t('score'), t('pointTitle'), t('persuasivePoint'), t('status'), t('blank')]} />
+            <HistoryTableHead
+                items={
+                    [t('score'),
+                    t('pointTitle'),
+                    t('persuasivePoint'),
+                    t('status'),
+                    t('blank')]
+                } />
             <StyledContent>
                 <HistoryTableItem
                     score={1000}
