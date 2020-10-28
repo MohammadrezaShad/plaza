@@ -22,9 +22,12 @@ export const StyledWrapper = styled.button`
                 return theme.palette.primary
         }
     }};
-    border:${({color, theme, variant}) => {
+    border:${({color, theme, variant,$disabled}) => {
         if (variant == buttonVariants.FILL || variant == buttonVariants.LINK){
             return null
+        }
+        if ($disabled){
+            return `1px solid ` +theme.palette.strokeVariant
         }
         switch (color) {
             case buttonColors.PRIMARY:
