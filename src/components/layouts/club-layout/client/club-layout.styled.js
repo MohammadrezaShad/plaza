@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     
 `
 
-const Container = styled.main`
+const Container = styled.div`
     flex:1;
 `
 
