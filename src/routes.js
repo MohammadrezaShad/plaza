@@ -10,6 +10,7 @@ import ProfileOrders from "./pages/profile/orders";
 import ClubLayout from "./components/layouts/club-layout";
 import HomeClub from './pages/club'
 import HistoryClub from "./pages/club/history";
+import ScoreClub from "./pages/club/score";
 
 const routes = [
   {
@@ -54,11 +55,15 @@ const routes = [
             path: Paths.club.history.getRoute(),
             exact: true,
             component: HistoryClub,
+          },
+          {
+            path: Paths.club.score.getRoute(),
+            component: ScoreClub,
           }
-        ],
-      },
-    ],
-  },
+        ]
+      }
+    ]
+  }
 ];
 
 export default routes;
