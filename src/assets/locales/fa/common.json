@@ -52,6 +52,7 @@
     "nationalRegistrationMark":"نشان ملی ثبت",
     "close":"بستن",
     "showMore":"نمایش بیشتر",
+    "showAll":"نمایش همه",
     "cartMenuTitle":"تعداد <!--count--> کالا در سبد خرید شما",
     "currencyUnit": "تومان",
     "payablePrice": "مبلغ قابل پرداخت",
@@ -101,5 +102,11 @@
         "passwordValidationText":"درج رمز عبور الزامی است.",
         "rememberMe": "منو یادت باشه!",
         "button":"ورود به سایت"
+    },
+    "clubScoreView":{
+        "title":"نمودار امتیازات شما",
+        "monthlyScore":"امتیاز ماهانه",
+        "totalScore":"امتیاز کل",
+        "monthlyChart":"نمودار ماهانه"
     }
 }
