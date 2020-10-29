@@ -36,6 +36,7 @@ const StyledLayout = styled.div`
 const StyledContainer = styled.div`
     position:relative;
     z-index:5;
+    max-width:100%;
 `
 
 

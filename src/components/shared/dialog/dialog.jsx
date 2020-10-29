@@ -59,9 +59,7 @@ const Dialog = ({open, onClose, children}) => {
             <StyledLayout>
                 <StyledOverlay onClick={closeDialog} />
                 <StyledContainer>
-                    <div style={{height:'100px', backgroundColor:"white"}}>
-                        {children}
-                    </div>
+                    {children}
                 </StyledContainer>
             </StyledLayout>
         </StyledWrapper>
