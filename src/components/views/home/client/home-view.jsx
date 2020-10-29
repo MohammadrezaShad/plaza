@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {useDispatch} from 'react-redux'
 import QuickView from '../../../dialogs/product';
 import Button from '../../../shared/button/button';
-import Dialog from '../../../shared/dialog';
 import ProductItem from '../../../shared/product/product-item';
 import {add} from '../../../../redux/actions/cart-actions'
 
@@ -17,11 +16,11 @@ import {
 
 const HomeView = () => {
     const dispatch = useDispatch()
-    // const [modalIsShow, setModalIsShow] = useState(false);
+    const [modalIsShow, setModalIsShow] = useState(false);
 
-    // const modalCloseHandler = () => {
-    //     setModalIsShow(false);
-    // }
+    const modalCloseHandler = () => {
+        setModalIsShow(false);
+    }
 
     const addToBasketHandler = (id, title, photo, price, feature) => {
         dispatch(add(id, title, photo, price, feature))
@@ -47,6 +46,10 @@ const HomeView = () => {
                     </div>
                 </StyledSpecialItem>
             </StyledSpecial>
+            <button onClick={()=>{setModalIsShow(true)}}>show modal</button>
+            
+            <QuickView open={modalIsShow} onClose={modalCloseHandler}/>
+                
         </StyledWrapper>
     )
 }
