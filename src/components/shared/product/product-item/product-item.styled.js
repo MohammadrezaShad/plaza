@@ -23,8 +23,8 @@ export const StyledColors = styled.div`
 `;
 
 export const StyledImgWrapper = styled.div`
-  padding:${({ specialOffer }) =>specialOffer ? '0 41px':'0 69px'};
-  margin-bottom: ${({ theme }) => theme.dim[3]};
+  padding:0 44px;
+  margin-bottom: ${({ theme }) => theme.dim[4]};
 `;
 
 export const StyledTitle = styled(Link)`
@@ -32,7 +32,7 @@ export const StyledTitle = styled(Link)`
   text-decoration: none;
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme }) => theme.palette.onSurface};
-  margin-bottom: ${({ theme }) => theme.dim[3]};
+  margin-bottom: ${({ theme }) => theme.dim[4]};
 `;
 
 export const StyledLink = styled(Link)`

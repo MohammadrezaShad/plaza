@@ -1,15 +1,15 @@
 import React from "react";
 
 import { StyledWrapper, StyledLayout,StyledContainer } from "./history-view.styled";
-import ProfileCard from "../../../../shared/profile-card";
 import HistoryTable from "./history-table";
+import ProfileCard from "../../../../layouts/club-layout/client/profile-card";
 
 const HistoryView = () => {
     return (
         <StyledWrapper>
             <StyledLayout>
                 <StyledContainer>
-                <ProfileCard alignSelf='flex-start'/>
+                <ProfileCard />
                 <HistoryTable/>
                 </StyledContainer>
             </StyledLayout>

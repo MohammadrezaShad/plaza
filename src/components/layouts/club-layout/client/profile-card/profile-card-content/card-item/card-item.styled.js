@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 export const StyledWrapper = styled.li`
   display: flex;
@@ -22,11 +22,16 @@ export const StyledIcon = styled.span`
   transition: all 0.3s;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   color: ${({ theme }) => theme.palette.onSurface};
+  &.active{
+    ${StyledText},${StyledIcon} {
+      color: ${({ theme }) => theme.palette.primary};
+    }
+  }
   &:hover {
     ${StyledText},${StyledIcon} {
       color: ${({ theme }) => theme.palette.primary};

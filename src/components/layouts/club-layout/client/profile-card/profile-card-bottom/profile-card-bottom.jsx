@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { StyledWrapper } from "./profile-card-bottom.styled";
 import ProfileCardPoint from "./profile-card-point";
-import ProgressBar from "../../progress-bar";
+import ProgressBar from "../../../../../shared/progress-bar";
 
 const ProfileCardBottom = ({}) => {
   const [point, setPoint] = useState(10000);

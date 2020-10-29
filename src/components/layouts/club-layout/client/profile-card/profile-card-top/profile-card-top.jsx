@@ -12,11 +12,11 @@ import {
   StyledLevelValue, 
   StyledContent 
 } from "./profile-card-top.styled";
-import WithUserState from "../../../../hoc/with-user-state";
-import { getUserLevelName } from "../../../../helpers/get-user-level-icon-name";
-import { buttonSizes, buttonVariants } from "../../../../constants/button-configs";
-import Button from "../../button/button";
-import ProfileAvatar from "../../profile-details/profile-avatar";
+import ProfileAvatar from "../../../../../shared/profile-details/profile-avatar";
+import Button from "../../../../../shared/button";
+import { buttonSizes, buttonVariants } from "../../../../../../constants/button-configs";
+import WithUserState from "../../../../../../hoc/with-user-state";
+import { getUserLevelName } from "../../../../../../helpers/get-user-level-icon-name";
 
 const ProfileCardTop = ({ userLevel, firstName, lastName }) => {
   const { t } = useTranslation();
