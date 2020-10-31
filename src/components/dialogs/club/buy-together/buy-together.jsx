@@ -12,7 +12,7 @@ import Validation from '../../../shared/form/validation'
 import { buttonSizes, buttonVariants } from '../../../../constants/button-configs'
 import Button from '../../../shared/button'
 
-const BuyTogether = ({ onClose,...props }) => {
+const BuyTogether = ({ onClose, ...props }) => {
     const { t } = useTranslation()
     const formik = useFormik({
         initialValues: {
@@ -57,8 +57,8 @@ const BuyTogether = ({ onClose,...props }) => {
                     </FormGroup>
                     <FormGroup marginTopUnit={3}>
                         <StyledButtonsWrap>
-                            <Button type="reset" variant={buttonVariants.LINK} size={buttonSizes.MEDIUM}>انصراف</Button>
-                            <Button type="submit" variant={buttonVariants.OUTLINE} size={buttonSizes.MEDIUM}>افزودن</Button>
+                            <Button type="reset" variant={buttonVariants.LINK} size={buttonSizes.MEDIUM}>{t('cancel')}</Button>
+                            <Button type="submit" variant={buttonVariants.OUTLINE} size={buttonSizes.MEDIUM}>{t('add')}</Button>
                         </StyledButtonsWrap>
                     </FormGroup>
                 </StyledForm>
@@ -68,7 +68,7 @@ const BuyTogether = ({ onClose,...props }) => {
 }
 
 BuyTogether.propTypes = {
-
+    onClose: PropTypes.func
 }
 
 export default BuyTogether
