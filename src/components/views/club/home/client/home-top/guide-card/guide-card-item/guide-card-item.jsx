@@ -5,7 +5,7 @@ import { StyledWrapper, StyledTitle, ButtonWrapper, StyledText } from "./guide-c
 import Button from "../../../../../../../shared/button/button";
 import { buttonColors, buttonSizes } from "../../../../../../../../constants/button-configs";
 
-const GuideCardItem = ({ title, text, buttonText, buttonColor, children,btnClick }) => {
+const GuideCardItem = ({ title, text, buttonText, buttonColor, children,onOpen }) => {
   return (
     <StyledWrapper>
       <StyledTitle>{title}</StyledTitle>
@@ -19,7 +19,7 @@ const GuideCardItem = ({ title, text, buttonText, buttonColor, children,btnClick
         color={!buttonColor ? 
         buttonColors.PRIMARY : buttonColors.SECONDARY} 
         text={buttonText} 
-        onClick={btnClick}
+        onClick={onOpen}
         />
       </ButtonWrapper>
     </StyledWrapper>
@@ -29,6 +29,7 @@ const GuideCardItem = ({ title, text, buttonText, buttonColor, children,btnClick
 GuideCardItem.propTypes = {
   title:PropTypes.string,
   text:PropTypes.string,
+  onOpen:PropTypes.func,
   buttonText:PropTypes.string,
   buttonColor:PropTypes.bool,
   children:PropTypes.node
