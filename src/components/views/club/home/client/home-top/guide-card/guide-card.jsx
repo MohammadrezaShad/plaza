@@ -5,20 +5,42 @@ import { Trans, useTranslation } from "react-i18next";
 import { StyledWrapper, StyledNumber } from "./guide-card.styled";
 import GuideCardItem from "./guide-card-item";
 import BuyTogether from "../../../../../../dialogs/club/buy-together";
+import Confirm from "../../../../../../dialogs/club/confirm";
 
 const GuideCard = ({ point = 10000, nextLevelPoint = 15000 }) => {
   const { t } = useTranslation();
-  const [showModal, setshowModal] = useState(false)
-  const btnClick = () => {
-    setshowModal(!showModal)
+  const [showModal, setShowModal] = useState(false)
+  const [showConfirmModal, setShowConfirmModal] = useState(false)
+
+  const onClose = () => {
+    setShowModal(false)
   }
+  const onOpen = () => {
+    setShowModal(true)
+  }
+
+  const OnConfirmClose = () => {
+    setShowConfirmModal(false)
+
+  }
+  const onConfirmOpen = () => {
+    setShowConfirmModal(true)
+  }
+
+  const OnRemove = (id) => {
+    console.log(id)
+  }
+
   return (
     <StyledWrapper>
       <GuideCardItem
         title={t("plazaClubArea.guideTitleOne")}
         buttonText={t("increaseLevel")}
-        text={t("plazaClubArea.guideTextOne", { point: "2550" })} >
-        فقط <StyledNumber>{nextLevelPoint - point}</StyledNumber>
+        onOpen={onConfirmOpen}>
+        <Trans i18nKey="plazaClubArea.guideTextOne" 
+        values={{ pointToNext: nextLevelPoint - point }} 
+        components={[<StyledNumber></StyledNumber>]}> 
+        </Trans>
       </GuideCardItem>
 
       <GuideCardItem
@@ -26,9 +48,10 @@ const GuideCard = ({ point = 10000, nextLevelPoint = 15000 }) => {
         buttonText={t("plazaClubArea.addNewBuyTogether")}
         text={t("plazaClubArea.guideTextTwo")}
         buttonColor={true}
-        btnClick={btnClick}
+        onOpen={onOpen}
       />
-      <BuyTogether open={showModal||false} onClose={setshowModal} />
+      <BuyTogether open={showModal} onClose={onClose} />
+      <Confirm open={showConfirmModal} onClose={OnConfirmClose} OnRemove={() => OnRemove(1)} />
     </StyledWrapper>
   );
 };
