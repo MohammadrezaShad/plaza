@@ -31,7 +31,9 @@ const Confirm = ({ onClose, OnRemove, name = "احسان جلالی", ...props }
 }
 
 Confirm.propTypes = {
-
+    onClose:PropTypes.func,
+    OnRemove:PropTypes.func,
+    name:PropTypes.string
 }
 
 export default Confirm
