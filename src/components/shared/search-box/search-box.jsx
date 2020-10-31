@@ -65,7 +65,7 @@ const SearchBox = ({mobile}) => {
 
   return (
     <Wrapper onSubmit={buttonHandler} mobile={mobile} >
-      <Textbox placeholder={t("searchboxPlaceholder")} icon="search" buttonCallback={buttonHandler} onChange={changeHandler} inputValue={term} reference={node} />
+      <Textbox placeholder={t("searchboxPlaceholder")} icon="search" buttonCallback={buttonHandler} onChange={changeHandler} value={term} reference={node} />
       {visible ? <SearchResults mobile={mobile} term={term} results={results} loading={loading} />:null}
     </Wrapper>
   );
