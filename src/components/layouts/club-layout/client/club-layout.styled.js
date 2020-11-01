@@ -25,7 +25,8 @@ const CardWrapper = styled.div`
 `;
 
 const MainWrapper = styled.div`
-  overflow: hidden;
+ flex:1;
+ min-width:0;
 `;
 
 export { Wrapper, Container, CardWrapper, MainWrapper, Layout };
