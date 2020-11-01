@@ -5,6 +5,8 @@ export const StyledWrapper = styled.div`
   align-items: center;
   padding: ${({ theme }) => theme.dim[3]};
   background-color: ${({ theme }) => theme.palette.surface};
+  border-top-right-radius:${({theme})=>theme.defaults.borderRadius};
+  border-top-left-radius:${({theme})=>theme.defaults.borderRadius};
 `;
 
 export const StyledContent = styled.div`
