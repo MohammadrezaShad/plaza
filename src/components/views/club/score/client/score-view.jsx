@@ -1,38 +1,30 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
+import ScoreChart from './score-chart'
+import ScorePorgress from './score-progress'
+import ScoreWays from './score-ways/score-ways'
+
 import {
     StyledWrapper,
-    StyledHeader,
-    StyledHeaderContent,
-    StyledHeaderTitle,
-    StyledChartGuide,
-    StyledChartGuideIcon,
-    StyledHeaderActions
+    StyledBlock
 } from './score-view.styled'
-
 
 const ScoreView = () => {
     const {t} = useTranslation();
 
     return (
         <StyledWrapper>
-            <StyledHeader>
-                <StyledHeaderContent>
-                    <StyledHeaderTitle>{t('clubScoreView.title')}</StyledHeaderTitle>
-                    <StyledChartGuide><StyledChartGuideIcon />{t('clubScoreView.monthlyScore')}</StyledChartGuide>
-                    <StyledChartGuide><StyledChartGuideIcon $all={true} />{t('clubScoreView.totalScore')}</StyledChartGuide>
-                </StyledHeaderContent>
-                <StyledHeaderActions>
-                    
-                </StyledHeaderActions>
-            </StyledHeader>
+            <StyledBlock>
+                <ScoreChart/>
+            </StyledBlock>
+            <StyledBlock>
+                <ScorePorgress/>
+            </StyledBlock>
+            <StyledBlock>
+                <ScoreWays/>
+            </StyledBlock>
         </StyledWrapper>
     )
-}
-
-ScoreView.propTypes = {
-
 }
 
 export default ScoreView
