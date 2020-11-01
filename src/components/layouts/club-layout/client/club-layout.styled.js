@@ -12,24 +12,20 @@ const Container = styled.div`
   padding: ${({ theme }) => theme.dim[4]} ${({ theme }) => theme.defaults.screenSideDim};
 `;
 
-const Layout=styled.div`
+const Layout = styled.div`
   display: flex;
   max-width: 1600px;
   margin: 0 auto;
-`
+`;
 
- const CardWrapper = styled.div`
+const CardWrapper = styled.div`
   align-self: flex-start;
   margin-left: ${({ theme }) => theme.dim[4]};
   flex: 0 0 23.5%;
 `;
 
- const MainWrapper = styled.div``;
+const MainWrapper = styled.div`
+  overflow: hidden;
+`;
 
-export { 
-    Wrapper, 
-    Container, 
-    CardWrapper, 
-    MainWrapper,
-    Layout 
-};
+export { Wrapper, Container, CardWrapper, MainWrapper, Layout };
