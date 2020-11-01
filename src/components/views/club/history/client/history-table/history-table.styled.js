@@ -2,8 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledWrapper = styled.div`
-  width: 75%;
-  padding: 0 ${({ theme }) => theme.dim[2]};
+  width: 100%;
 `;
 
 export const StyledContent = styled.div``;
