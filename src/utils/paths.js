@@ -9,7 +9,6 @@ class Uri {
     }
 
     getPath() {
-        // TODO : remove querystring and return path
         return this.url
     }
 
