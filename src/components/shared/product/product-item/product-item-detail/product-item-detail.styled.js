@@ -32,8 +32,8 @@ export const StyledPoint = styled.span`
 export const StyledPrice = styled.span`
   display: inline-flex;
   position: absolute;
-  right:${({specialOffer})=> specialOffer ? 0:'50%'};
-  transform:${({specialOffer})=> specialOffer ? 'translateX(0)':'translateX(50%)'};
+  right:50%;
+  transform:translateX(50%);
   top: -14px;
   ${({ theme }) => theme.typography.subtitleXsNormal};
   color: ${({ theme }) => theme.palette.subtitle};
