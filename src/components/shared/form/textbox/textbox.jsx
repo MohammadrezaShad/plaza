@@ -32,7 +32,6 @@ const Textbox = ({
                 placeholder={placeholder} 
                 hasIcon={iconIsShow} 
                 onChange={onChange} 
-                value={inputValue} 
                 ref={reference} 
                 autoComplete={autocomplete}
                 />

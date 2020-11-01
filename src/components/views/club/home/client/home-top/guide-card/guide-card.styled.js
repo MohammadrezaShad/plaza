@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const StyledWrapper = styled.div`
   display: flex;
   flex-flow: column;
-  flex: 0 0 25%;
-  padding:0 ${({theme})=>theme.dim[2]};
+  flex: 0 0 31.5%;
   overflow:hidden;
+  margin-right: ${({ theme }) => theme.dim[4]};
 `;
 
 export const StyledNumber = styled.span`

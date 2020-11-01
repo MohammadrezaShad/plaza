@@ -23,7 +23,7 @@ const FooterNavigation = ({ title, items, arrow, dir }) => {
             <Item key={index} $dir={dir} $arrow={arrow}>
               <ItemWrap $arrow={arrow}>
                 <IconRight as={IconProvider} icon="chevron-left" size="6px" $arrow={arrow} />
-                <Text>{item}</Text>
+                <Text dir={dir}>{item}</Text>
                 <Icon as={IconProvider} icon="chevron-left" size="6px" $arrow={arrow} />
               </ItemWrap>
             </Item>

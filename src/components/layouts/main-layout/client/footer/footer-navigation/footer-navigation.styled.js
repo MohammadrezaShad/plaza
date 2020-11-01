@@ -57,6 +57,7 @@ const Text = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme }) => theme.palette.onSurface};
+  direction:${({dir})=>dir ? dir:'rtl'} !important;
 `;
 
 const ItemWrap=styled.div`
