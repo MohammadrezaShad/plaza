@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
-  flex:0 0 50%;
-  padding:0 ${({theme})=>theme.dim[2]};
+  flex:1;
 `;
 
 export const StyledContainer = styled.div`
