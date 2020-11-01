@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const StyledWrapper = styled.div`
-  width: 25%;
-  padding: 0 ${({ theme }) => theme.dim[2]};
+export const StyledWrapper = styled.li`
+  flex:0 0 25%;
+  padding: 0 ${({ theme }) => theme.dim[3]};
   text-align: center;
 `;
 
@@ -11,8 +11,6 @@ export const StyledContainer = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  border: 1px solid ${({ theme }) => theme.palette.stroke};
-  padding: ${({ theme,specialOffer }) =>specialOffer ? theme.dim[4]:theme.dim[3]};
   height: 100%;
 `;
 
@@ -23,7 +21,7 @@ export const StyledColors = styled.div`
 `;
 
 export const StyledImgWrapper = styled.div`
-  padding:0 44px;
+  padding:0 ${({ theme }) => theme.dim[4]};
   margin-bottom: ${({ theme }) => theme.dim[4]};
 `;
 
