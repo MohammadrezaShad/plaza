@@ -262,9 +262,9 @@ const NavSubmenu = ({list}) => {
         {
             title: "بازی و سرگرمی"
         },
-        {
-            title: "لوازم پزشکی و سلامت"
-        },
+        // {
+        //     title: "لوازم پزشکی و سلامت"
+        // },
     ]
 
     const [finalList, setFinalList] = useState(list)
