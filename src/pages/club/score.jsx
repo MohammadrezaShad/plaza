@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Helmet } from "react-helmet";
 import loadable from '@loadable/component';
 
@@ -11,7 +11,7 @@ const Client = loadable(() => import('../../components/views/club/score/client')
 
 
 const Score = ({deviceType}) => (
-    <div>
+    <Fragment>
         <Helmet>
             <title>{process.env.REACT_APP_NAME + ' |  پلازا کلاب | نمودار امتیازات'}</title>
         </Helmet>
@@ -22,7 +22,7 @@ const Score = ({deviceType}) => (
             :
             <Client />
         }
-    </div>
+    </Fragment>
 )
 
 export default withDeviceDetection(Score);
