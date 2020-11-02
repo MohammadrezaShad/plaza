@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 
 export const StyledWrapper = styled.section`
-    margin-right:25%;
-
 `
 
 export const StyledBlock = styled.section`
