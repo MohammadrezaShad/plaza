@@ -28,6 +28,7 @@ const palette = {
     hotPink:'#F574B5',
     whisper: '#eeeeee',
     atlantis: '#A5C63C',
+    ghostWhite:'#F2F3F8',
     greenUser: '#42D9BB',
     silverUser: '#BBBAC0',
     goldenUser: '#FBC635',

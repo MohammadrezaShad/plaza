@@ -27,6 +27,7 @@ declare module "styled-components" {
         hotPink:string,
         whisper:string,
         atlantis:string,
+        ghostWhite:string,
         greenUser: string,
         silverUser: string,
         goldenUser: string,
