@@ -78,8 +78,8 @@ position:relative;
       right:4px;
       opacity:1;
       visibility:visible;
-      width:6px !important;
-      height:6px !important;
+      width:8px !important;
+      height:8px !important;
       transition:right .3s ,.2s opacity,.4s visibility .1s;
 
     }
