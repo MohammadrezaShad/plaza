@@ -31,6 +31,8 @@ class Paths {
 
     static faq = new Uri('/faq')
 
+    static notFound = new Uri('/404')
+
     static club = class {
         static base = "/club"
 
