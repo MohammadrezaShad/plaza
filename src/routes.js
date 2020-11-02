@@ -12,6 +12,8 @@ import HomeClub from './pages/club'
 import HistoryClub from "./pages/club/history";
 import ScoreClub from "./pages/club/score";
 
+import NotFound from './pages/404'
+
 const routes = [
   {
     path: Paths.signin.getRoute(),
@@ -61,6 +63,13 @@ const routes = [
             component: ScoreClub,
           }
         ]
+      },
+      {
+        path: Paths.notFound.getRoute(),
+        component:NotFound ,
+      },
+      {
+        component:NotFound
       }
     ]
   }
