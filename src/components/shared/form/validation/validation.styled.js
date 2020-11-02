@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const lineHeight = 16
 export const StyledWrapper = styled.p`
-    margin-top:2px;
+    margin-top:${({show}) => show ? '2px' : '0'};
     ${({theme}) => theme.typography.subtitleXsNormal};
     color:${({theme}) => theme.palette.error};
     padding-right:${({theme}) => theme.dim[2]};
