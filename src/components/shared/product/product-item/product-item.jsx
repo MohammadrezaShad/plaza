@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -14,15 +14,10 @@ import {
 import ProductItemDetail from "./product-item-detail";
 import ProductItemColor from "./product-item-color";
 
-const ProductItem = ({ itemWidth,itemWidthHandler,title, href, imgSrc, point, offPrice, price, colors, children }) => {
-  const node=useRef()
-  useEffect(() => {
-    if((!itemWidth ||  itemWidth!==node.current.clientWidth)&& itemWidthHandler){
-      itemWidthHandler(node.current.clientWidth)
-    }
-  })
+const ProductItem = ({title, href, imgSrc, point, offPrice, price, colors, children }) => {
+  
   return (
-    <StyledWrapper ref={node}>
+    <StyledWrapper>
       <StyledContainer >
         <StyledContent>
           <StyledImgWrapper >
