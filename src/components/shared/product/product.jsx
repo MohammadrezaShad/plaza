@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 
 import { StyledWrapper, StyledContent, StyledContainer, StyledIcon } from "./product.styled";
@@ -12,13 +12,14 @@ import Button from "../button";
 import { buttonSizes, buttonVariants } from "../../../constants/button-configs";
 import IconProvider from "../../../providers/icon/icon-provider";
 
-const Product = (props) => {
+const Product = ({ items = [1, 2, 3, 4, 5] }) => {
     const node = useRef()
-    const [itemWidth, setItemWidth] = useState(0)
-    const [parentScrollWidth, setParentScrollWidth] = useState(0)
+    const [itemWidth, setItemWidth] = useState(25)
     const [parentWidth, setParentWidth] = useState(0)
-    const [rightArrowStatus, setRightArrowStatus] = useState(false)
-    const [leftArrowStatus, setLeftArrowStatus] = useState(false)
+    const [itemToShow, setitemToShow] = useState(4)
+    const [itemShowed, setItemShowed] = useState(itemToShow)
+    const [rightArrowStatus, setRightArrowStatus] = useState(true)
+    const [leftArrowStatus, setLeftArrowStatus] = useState(true)
     const [left, setLeft] = useState(0)
 
     const itemWidthHandler = (width) => {
@@ -27,41 +28,50 @@ const Product = (props) => {
     const moveLeftHandler = () => {
         if (leftArrowStatus) {
             setLeft(left + itemWidth)
+            setItemShowed(itemShowed + 1)
         }
     }
     const moveRightHandler = () => {
         if (rightArrowStatus) {
             setLeft(left - itemWidth)
+            setItemShowed(itemShowed - 1)
         }
     }
 
     useEffect(() => {
-        setParentScrollWidth(node.current.scrollWidth)
-        setParentWidth(node.current.clientWidth)
-    }, [])
-    useEffect(() => {
-        if (left <= 0 && rightArrowStatus) {
+        if ((itemShowed === itemToShow || itemToShow >= items.length) && rightArrowStatus) {
             setRightArrowStatus(false)
-        } else if (left > 0 && !rightArrowStatus) {
+        } else if (!rightArrowStatus) {
             setRightArrowStatus(true)
         }
-
-        if (Math.abs(left) + parentWidth >= parentScrollWidth && leftArrowStatus) {
+        if ((itemShowed === items.length || itemToShow >= items.length) && leftArrowStatus) {
             setLeftArrowStatus(false)
-        } else if (Math.abs(left) + parentWidth <= parentScrollWidth && !leftArrowStatus) {
+        } else if (!leftArrowStatus) {
             setLeftArrowStatus(true)
         }
-    }, [left])
+    }, [itemShowed])
+
+    useLayoutEffect(() => {
+        const resizeHandler = () => {
+            setParentWidth(node.current.clientWidth)
+        };
+        resizeHandler()
+        window.addEventListener('resize', resizeHandler)
+        return () => {
+            window.removeEventListener('resize', resizeHandler);
+        }
+
+    }, [])
 
     return (
-        <StyledWrapper>
+        <StyledWrapper ref={node}>
             <Button variant={buttonVariants.OUTLINE} size={buttonSizes.S_MEDIUM} onClick={moveRightHandler} $disabled={!rightArrowStatus}>
                 <IconProvider icon="arrow-right" size="16px" />
             </Button>
             <Button variant={buttonVariants.OUTLINE} size={buttonSizes.S_MEDIUM} onClick={moveLeftHandler} $disabled={!leftArrowStatus}>
                 <IconProvider icon="arrow-left" size="16px" />
             </Button>
-            <StyledContent ref={node} $left={left}>
+            <StyledContent $left={left}>
                 <StyledContainer>
                     <ProductItem
                         href={Paths.home.getPath()}
@@ -104,6 +114,7 @@ const Product = (props) => {
                         point={102}
                         Product={true}
                     />
+
                     <ProductItem
                         href={Paths.home.getPath()}
                         imgSrc={ProdFour}
@@ -113,12 +124,15 @@ const Product = (props) => {
                         point={102}
                         Product={true}
                     />
+
                 </StyledContainer>
             </StyledContent>
         </StyledWrapper>
     );
 };
 
-Product.propTypes = {};
+Product.propTypes = {
+    items:PropTypes.array
+};
 
 export default Product;

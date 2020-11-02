@@ -22,7 +22,7 @@ export const StyledWrapper = styled.div`
 export const StyledContent = styled.div`
   position: relative;
   transition: all 500ms ease 0s;
-  left: ${({$left})=>`${$left}px`};
+  left: ${({$left})=>`${$left}%`};
   right: auto;
   top: auto;
 `;
