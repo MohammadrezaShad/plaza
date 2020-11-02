@@ -56,6 +56,12 @@ class Paths {
         }
     }
 
+    static order = class {
+        static base = "/order"
+        
+        static index = new Uri(this.base)
+    }
+
     static brand = class {
         static home = new Uri('/brands')
     }

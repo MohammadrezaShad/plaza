@@ -5,6 +5,7 @@ import ProductDetail from "./pages/product";
 import Paths from "./utils/paths";
 import Signup from "./pages/signup";
 import Profile from "./pages/profile";
+import Order from "./pages/order";
 import ProfileOrders from "./pages/profile/orders";
 
 import ClubLayout from "./components/layouts/club-layout";
@@ -41,6 +42,10 @@ const routes = [
       {
         path: Paths.profile.orders.getRoute(),
         component: ProfileOrders,
+      },
+      {
+        path: Paths.order.index.getRoute(),
+        component: Order,
       },
       {
         path: Paths.club.home.getRoute(),
