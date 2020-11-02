@@ -43,7 +43,6 @@ const ServerMiddleware = (req, res) => {
         res
       },
       preloadedState = getPreloadedState(req, res) || {};
-
     const sheet = new ServerStyleSheet();
     const store = initStore(preloadedState);
 
@@ -71,7 +70,9 @@ const ServerMiddleware = (req, res) => {
     } finally {
       sheet.seal();
     }
-
+    if (context.notFound) {
+      res.status(404);
+    }
     if (context.url) {
       // Somewhere a `<Redirect>` was rendered
       res.redirect(context.url);
