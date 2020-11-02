@@ -15,7 +15,7 @@ const Mobile = loadable(() => import('../components/views/404/mobile'));
 const NotFound = ({ deviceType, staticContext = {} }) => {
     staticContext.notFound = true
     const location = useLocation();
-    if(staticContext.notFound && location.pathname !==Paths.notFound.getPath()){
+    if (staticContext.notFound && location.pathname !== Paths.notFound.getPath()) {
         return <Redirect to={Paths.notFound.getPath()} />;
     }
     return (
