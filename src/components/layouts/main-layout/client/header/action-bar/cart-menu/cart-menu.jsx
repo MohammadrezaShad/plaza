@@ -1,12 +1,18 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
+import { useHistory } from "react-router-dom";
+
+import { useTranslation } from 'react-i18next'
+import { removeAll, remove } from '../../../../../../../redux/actions/cart-actions'
+
+import Button from '../../../../../../shared/button/button'
+import { buttonColors, buttonSizes, buttonVariants } from '../../../../../../../constants/button-configs'
+import CartMenuItem from './cart-menu-item/cart-menu-item';
+import WithCartState from '../../../../../../../hoc/with-cart-state'
+import Paths from '../../../../../../../utils/paths'
 import HeaderMenu from '../header-menu'
-import CartMenuEmpty from './cart-menu-empty';
-import {
-    removeAll,
-    remove
-} from '../../../../../../../redux/actions/cart-actions'
+import CartMenuEmpty from './cart-menu-empty'
 
 import {
     StyledWrapper,
@@ -20,14 +26,10 @@ import {
     StyledFooterPrice,
     StyledFooterActions,
 } from './cart-menu.styled'
-import { useTranslation } from 'react-i18next';
-import Button from '../../../../../../shared/button/button';
-import { buttonColors, buttonSizes, buttonVariants } from '../../../../../../../constants/button-configs';
-import CartMenuItem from './cart-menu-item/cart-menu-item';
-import WithCartState from '../../../../../../../hoc/with-cart-state';
-import Paths from '../../../../../../../utils/paths';
+
 
 const CartMenu = ({items, payablePrice}) => {
+    const history = useHistory();
     const [isOpen, setIsOpen] = useState(false);
     const {t} = useTranslation();
     const dispatch = useDispatch()
@@ -46,8 +48,9 @@ const CartMenu = ({items, payablePrice}) => {
         setIsOpen(true);
     }
 
-    
-
+    const createOrderHandler = () => {
+        history.push(Paths.order.index.getPath());
+    }
 
     return (
         <HeaderMenu icon="cart-o" count={count} hasHeader={!!count} onOpen={openHandler}>
@@ -87,7 +90,7 @@ const CartMenu = ({items, payablePrice}) => {
                             <StyledFooterPrice>{`${(payablePrice || 0).toLocaleString()} ${t('currencyUnit')}`} </StyledFooterPrice>
                         </StyledFooterContent>
                         <StyledFooterActions>
-                            <Button text={t('createOrder')} matchParent={true}/>
+                            <Button text={t('createOrder')} matchParent={true} onClick={createOrderHandler} />
                         </StyledFooterActions>
                     </StyledFooter>
                 </StyledWrapper>
