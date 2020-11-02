@@ -45,6 +45,7 @@ export default createGlobalStyle`
             url(${ShabnamWoff}) format('woff'),
             url(${ShabnamTtf}) format('truetype');
       font-weight: normal;
+      font-display:fallback;
    }
 
     @font-face {
@@ -54,6 +55,7 @@ export default createGlobalStyle`
             url(${ShabnamBoldWoff}) format('woff'),
             url(${ShabnamBoldTtf}) format('truetype');
       font-weight: bold;
+      font-display:fallback;
    }
 
    @font-face {
@@ -63,6 +65,7 @@ export default createGlobalStyle`
             url(${ShabnamThinWoff}) format('woff'),
             url(${ShabnamThinTtf}) format('truetype');
       font-weight: 100;
+      font-display:fallback;
    }
 
    @font-face {
@@ -72,6 +75,7 @@ export default createGlobalStyle`
             url(${ShabnamLightWoff}) format('woff'),
             url(${ShabnamLightTtf}) format('truetype');
       font-weight: 300;
+      font-display:fallback;
    }
 
    @font-face {
@@ -81,6 +85,7 @@ export default createGlobalStyle`
             url(${ShabnamMediumWoff}) format('woff'),
             url(${ShabnamMediumTtf}) format('truetype');
       font-weight: 500;
+      font-display:fallback;
    }
 
    html{
