@@ -6,7 +6,7 @@ import loadable from '@loadable/component';
 import { DeviceTypes } from '../../utils/device-detection';
 import withDeviceDetection from '../../hoc/with-device-detection';
 
-const Client = loadable(() => import('../..//components/views/club/history/client'));
+const Client = loadable(() => import('../../components/views/club/history/client'));
 const Mobile = loadable(() => import('../../components/views/club/history/mobile'));
 
 
