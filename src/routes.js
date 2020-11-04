@@ -9,11 +9,12 @@ import Order from "./pages/order";
 import ProfileOrders from "./pages/profile/orders";
 
 import ClubLayout from "./components/layouts/club-layout";
-import HomeClub from './pages/club'
+import HomeClub from "./pages/club";
 import HistoryClub from "./pages/club/history";
 import ScoreClub from "./pages/club/score";
+import BuyTogetherClub from "./pages/club/buy-together";
 
-import NotFound from './pages/404'
+import NotFound from "./pages/404";
 
 const routes = [
   {
@@ -66,18 +67,25 @@ const routes = [
           {
             path: Paths.club.score.getRoute(),
             component: ScoreClub,
-          }
-        ]
+          },
+          {
+            path: Paths.club.buyTogether.getRoute(),
+            component: BuyTogetherClub,
+          },
+          {
+            component: NotFound,
+          },
+        ],
       },
       {
         path: Paths.notFound.getRoute(),
-        component:NotFound ,
+        component: NotFound,
       },
       {
-        component:NotFound
-      }
-    ]
-  }
+        component: NotFound,
+      },
+    ],
+  },
 ];
 
 export default routes;
