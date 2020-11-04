@@ -30,7 +30,7 @@ export const StyledTitle = styled(Link)`
   text-decoration: none;
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme }) => theme.palette.onSurface};
-  margin-bottom: ${({ theme }) => theme.dim[4]};
+  margin-bottom: ${({ theme }) => theme.dim[6]};
 `;
 
 export const StyledLink = styled(Link)`
