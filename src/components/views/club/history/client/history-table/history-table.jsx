@@ -19,12 +19,12 @@ import {
 } from './history-table.styled'
 import Pagination from '../../../../../shared/pagination'
 import Paths from '../../../../../../utils/paths'
-import HistoryEmpty from './history-empty'
 import Table from '../../../../../shared/table'
 import BadgeButton from '../../../../../shared/badge-button'
 import { badgeButtonVariants } from '../../../../../../constants/badge-button-config'
 import Button from '../../../../../shared/button'
 import { buttonVariants } from '../../../../../../constants/button-configs'
+import TableEmpty from '../../../../../shared/table/table-empty'
 
 const data = [
     { score: 1000, pointTitle: "دعوت دوستان", pointSubTitle: "ahmad.n33@gmail.com", persuasivePoint: "ندارد", status: { confirm: 1, date: "‏1 فروردین 1399" }, href: Paths.home.getPath(), detail: false },
@@ -89,7 +89,7 @@ const HistoryTable = () => {
                 <Pagination />
             </StyledContainer>
             <StyledEmpty>
-                <HistoryEmpty />
+                <TableEmpty />
             </StyledEmpty>
         </StyledWrapper>
     )
