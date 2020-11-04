@@ -38,6 +38,7 @@ class Paths {
 
         static home = new Uri(this.base)
         static history = new Uri(this.base + '/history')
+        static buyTogether = new Uri(this.base + '/buy-together')
         static score = new Uri(this.base + '/score')
     }
 
