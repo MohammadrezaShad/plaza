@@ -26,9 +26,11 @@ export const StyledTableCell = styled.div`
 export const StyledTableHeadCell = styled.div`
   display: table-cell;
   vertical-align: middle;
+  white-space:nowrap;
   ${({ theme }) => theme.typography.bodyLgBold};
   padding-top: ${({ theme }) => theme.dim[3]};
   padding-bottom: ${({ theme }) => theme.dim[3]};
+  width:${({$width})=>$width ? $width:'auto'};
   &:not(:last-child) {
     padding-left: ${({ theme }) => theme.dim[1]};
   }

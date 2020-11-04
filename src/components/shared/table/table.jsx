@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { StyledTable, StyledTableHead, StyledTableRow, StyledTableCell, StyledTableHeadCell } from './table.styled'
+import { StyledTable, StyledTableHead, StyledTableRow, StyledTableCell, StyledTableHeadCell,children } from './table.styled'
 
 const Table = ({ headerConfig, rowConfig }) => {
     return (
@@ -9,7 +9,7 @@ const Table = ({ headerConfig, rowConfig }) => {
             <StyledTableHead>
                 {
                     headerConfig.map((config, index) => {
-                        return <StyledTableHeadCell key={index}>{config.title}</StyledTableHeadCell>
+                        return <StyledTableHeadCell $width={config.width} key={index}>{config.title}</StyledTableHeadCell>
                     })
                 }
             </StyledTableHead>
