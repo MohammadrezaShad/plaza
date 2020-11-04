@@ -20,6 +20,7 @@ const CartMenuItem = ({ id, photo, title, url, price, count, feature, onDelete }
 
     const removeHandler = (e) => {
         e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
         onDelete && onDelete(id);
     }
 
