@@ -22,6 +22,8 @@ const CardWrapper = styled.div`
   align-self: flex-start;
   margin-left: ${({ theme }) => theme.dim[4]};
   flex: 0 0 23.5%;
+  position:sticky;
+  top:0;
 `;
 
 const MainWrapper = styled.div`
