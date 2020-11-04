@@ -31,6 +31,8 @@ export const StyledContainer = styled.ul`
   display: flex;
 `;
 
+export const StyledProducts=styled.div``
+
 export const StyledIcon=styled(IconProvider)`
  position:absolute;
  top:0;
