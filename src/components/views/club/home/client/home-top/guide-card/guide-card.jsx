@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Trans, useTranslation } from "react-i18next";
 
 import { StyledWrapper, StyledNumber } from "./guide-card.styled";
-import GuideCardItem from "./guide-card-item";
+import GuideCardItem from "../../../../../../shared/guide-card-item";
 import BuyTogether from "../../../../../../dialogs/club/buy-together";
 import Confirm from "../../../../../../dialogs/club/confirm";
 

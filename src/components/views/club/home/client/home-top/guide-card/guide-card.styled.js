@@ -4,7 +4,7 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-flow: column;
   flex: 0 0 31.5%;
-  overflow:hidden;
+  min-width:0;
   margin-right: ${({ theme }) => theme.dim[4]};
 `;
 
