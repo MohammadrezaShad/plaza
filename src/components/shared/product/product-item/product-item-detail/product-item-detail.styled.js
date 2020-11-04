@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 export const StyledWrapper = styled.div`
   display: flex;
   align-items: flex-end;
-  margin-top: ${({ theme }) => theme.dim[2]};
+  margin-top: auto;
   justify-content:center;
+  
 `;
 
 export const StyledContent = styled.div`
