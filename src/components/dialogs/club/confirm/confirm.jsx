@@ -7,7 +7,8 @@ import Dialog from '../../../shared/dialog'
 import Button from '../../../shared/button'
 import { buttonSizes, buttonVariants } from '../../../../constants/button-configs'
 
-const Confirm = ({ onClose, OnRemove, name = "احسان جلالی", ...props }) => {
+const Confirm = ({ onClose, OnRemove, configItem, ...props }) => {
+
     const { t } = useTranslation()
     const RemoveHandler = () => {
         OnRemove()
@@ -19,7 +20,7 @@ const Confirm = ({ onClose, OnRemove, name = "احسان جلالی", ...props }
         <Dialog onClose={onClose} {...props}>
             <StyledWrapper>
                 <StyledText>
-                    <Trans i18nKey="plazaClubArea.confirmText" values={{ name }} components={[<StyledName></StyledName>]}> </Trans>
+                    <Trans i18nKey="plazaClubArea.confirmText" values={{ name:configItem }} components={[<StyledName></StyledName>]}> </Trans>
                 </StyledText>
                 <StyledButtonsWrap>
                     <Button variant={buttonVariants.LINK} size={buttonSizes.MEDIUM} onClick={onClose}>{t('myMistake')}</Button>
@@ -33,7 +34,7 @@ const Confirm = ({ onClose, OnRemove, name = "احسان جلالی", ...props }
 Confirm.propTypes = {
     onClose:PropTypes.func,
     OnRemove:PropTypes.func,
-    name:PropTypes.string
+    configItem:PropTypes.string
 }
 
 export default Confirm
