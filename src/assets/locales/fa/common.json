@@ -80,6 +80,9 @@
   "add": "افزودن",
   "myMistake": "نه دستم خورد",
   "iMSure": "بله مطمئن هستم",
+  "notFound":"صفحه مورد نظر یافت نشد",
+  "notFoundHint":"احتمالا آدرس این صفحه تغییر کرده و یا حذف شده است لطفا آدرس  را دوباره چک کنید",
+  "return":"بازگشت",
   "plazaClubArea": {
     "dashboard": "داشبورد",
     "pointGraph": "نمودار امتیازات",
@@ -116,7 +119,14 @@
     "usernameInputPlaceholder": "آدرس ایمیل یا شماره موبایل",
     "displayNameInputPlaceholder": "نام و نام خانوادگی",
     "usernameValidationText": "درج یک ایمیل یا شماره موبایل الزامی است.",
-    "displayNameValidationText": "درج نام و نام خانوادگی الزامی است."
+    "displayNameValidationText": "درج نام و نام خانوادگی الزامی است.",
+    "increaseLevelBar":"نوار افزایش سطح",
+    "increaseSilverLevelBar":" نوار افزایش سطج نقره ای",
+    "increaseGoldLevelBar":"طلایی",
+    "silverLevel":25000,
+    "goldLevel":50000,
+    "diamondLevel":400000,
+    "greenLevel":0
   },
   "signinView": {
     "title": "لطفا وارد شوید",
