@@ -11,15 +11,16 @@ export const StyledContainer = styled.div`
   padding-top: 50%;
   position: relative;
   height: 100%;
-  background-image:url(${BannerGraphicImg});
-  background-repeat:no-repeat;
-  background-position:right bottom;
+  background-image: url(${BannerGraphicImg});
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
+  background-size: contain;
 `;
 
 export const StyledImg = styled.img`
   position: absolute;
-  z-index:-1;
-  object-fit:cover;
+  z-index: -1;
+  object-fit: cover;
   top: 0;
   left: 0;
   width: 100%;
