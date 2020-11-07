@@ -59,7 +59,7 @@ export const StyledLevel=styled(StyledNumber)`
 export const StyledProgressGreenLevel = styled.div`
   flex: 0 0 85.8%;
   border-radius: 5px;
-  border-right: 20px solid ${({ theme }) => theme.palette.surface};
+  background-color: ${({ theme }) => theme.palette.surface};
   position: relative;
   ${StyledNumber}{
     transform:translateX(0);
@@ -69,19 +69,19 @@ export const StyledProgressGreenLevel = styled.div`
 export const StyledProgressSilverLevel = styled.div`
   flex: 0 0 7%;
   border-radius: 5px;
-  border-right: 20px solid ${({ theme }) => theme.palette.stroke};
+  background-color: ${({ theme }) => theme.palette.stroke};
   position: relative;
 `;
 
 export const StyledProgressGoldLevel = styled.div`
   flex:1;
   border-radius: 5px;
-  border-right: 20px solid ${({ theme }) => theme.palette.disabled};
+  background-color: ${({ theme }) => theme.palette.disabled};
   position: relative;
 `;
 
 export const StyledProgressDiamondLevel=styled.div`
-  flex: 0 0 0;
+  flex: 0;
   position: relative;
 
 `
