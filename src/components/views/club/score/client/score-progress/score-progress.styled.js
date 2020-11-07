@@ -26,7 +26,7 @@ export const StyledProgress = styled.div`
   flex-flow: row-reverse;
   position: relative;
   margin-top: ${({ theme }) => theme.dim[3]};
-  margin-bottom:${({ theme }) => theme.dim[6]};
+  margin-bottom: ${({ theme }) => theme.dim[6]};
   background-image: ${({ theme }) => `linear-gradient(to right, ${theme.palette.surface} 85.3%,${theme.palette.stroke} 85.4%,${theme.palette.stroke} 92.3%,${theme.palette.disabled} 92.4%,${theme.palette.disabled} 100%)`};
   &:after {
     content: "";
@@ -35,34 +35,41 @@ export const StyledProgress = styled.div`
     height: 10px;
     left: 0;
     width: ${({ progress }) => `${progress * 100}%`};
-    background-color: ${({ theme }) => theme.palette.success};
+    background-color: ${({ theme, progress }) => {
+      if (progress * 100 >= 85.4 && progress * 100 < 92.4) {
+        return theme.palette.goldenUser;
+      } else if (progress * 100 >= 92.4) {
+        return theme.palette.diamondUser;
+      } else {
+        return theme.palette.success;
+      }
+    }};
   }
 `;
 
-export const StyledNumber=styled.span`
-    position: absolute;
-    display: inline-block;
-    color: ${({ theme }) => theme.palette.subtitle};
-    left: 0;
-    transform:translateX(-100%);
-    top: -16px;
-    ${({ theme }) => theme.typography.subtitleXsNormal};
-`
+export const StyledNumber = styled.span`
+  position: absolute;
+  display: inline-block;
+  color: ${({ theme }) => theme.palette.subtitle};
+  left: 0;
+  transform: translateX(-100%);
+  top: -16px;
+  ${({ theme }) => theme.typography.subtitleXsNormal};
+`;
 
-
-export const StyledLevel=styled(StyledNumber)`
-  top:auto;
-  bottom:-24px;
-  white-space:nowrap;
-`
+export const StyledLevel = styled(StyledNumber)`
+  top: auto;
+  bottom: -24px;
+  white-space: nowrap;
+`;
 
 export const StyledProgressGreenLevel = styled.div`
   flex: 0 0 85.8%;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.palette.surface};
   position: relative;
-  ${StyledNumber}{
-    transform:translateX(0);
+  ${StyledNumber} {
+    transform: translateX(0);
   }
 `;
 
@@ -74,22 +81,20 @@ export const StyledProgressSilverLevel = styled.div`
 `;
 
 export const StyledProgressGoldLevel = styled.div`
-  flex:1;
+  flex: 1;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.palette.disabled};
   position: relative;
 `;
 
-export const StyledProgressDiamondLevel=styled.div`
+export const StyledProgressDiamondLevel = styled.div`
   flex: 0;
   position: relative;
-
-`
+`;
 
 export const StyledTooltipContent = styled.span`
   display: inline-flex;
   color: ${({ theme }) => theme.palette.onSurface};
   ${({ theme }) => theme.typography.bodyMdNormal};
-  line-height:1;
+  line-height: 1;
 `;
-
