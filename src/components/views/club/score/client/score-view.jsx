@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import ScoreChart from './score-chart'
 import ScorePorgress from './score-progress'
-import ScoreWays from './score-ways/score-ways'
+import ScoreWays from './score-ways'
 
 import {
     StyledWrapper,
