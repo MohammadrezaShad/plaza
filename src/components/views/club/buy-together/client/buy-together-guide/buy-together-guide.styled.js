@@ -9,3 +9,10 @@ export const StyledContent = styled.div`
     margin-bottom: ${({ theme }) => theme.dim[2]};
   }
 `;
+
+export const StyledContainer = styled.div`
+  display: ${({ $display }) => ($display ? "none" : "block")};
+  ${({ theme }) => theme.breakPoints.desktop} {
+    display: ${({ $display }) => ($display ? "block" : "none")};
+  }
+`;
