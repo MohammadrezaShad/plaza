@@ -126,7 +126,10 @@
     "silverLevel":25000,
     "goldLevel":50000,
     "diamondLevel":400000,
-    "greenLevel":0
+    "greenLevel":0,
+    "profitHashtag":"#باهم_سود_کنیم",
+    "profit":"باهم سود کنیم!",
+    "clubSLogan":"خرید بیشتر، امتیاز بیشتر، سطح کاربری بالاتر و تخفیف بیشتر"
   },
   "signinView": {
     "title": "لطفا وارد شوید",
