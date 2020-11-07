@@ -8,14 +8,14 @@ import {
     StyledTitle,
     StyledLevel,
     StyledNumber,
-    StyledTooltipNumber,
     StyledProgressGreenLevel,
     StyledProgressSilverLevel,
     StyledProgressGoldLevel,
     StyledProgressDiamondLevel,
-    StyledTooltip
+    StyledTooltipContent
 } from './score-progress.styled'
 import IconProvider from '../../../../../../providers/icon/icon-provider'
+import Tooltip from '../../../../../shared/tooltip'
 
 const ScorePorgress = ({ point = 2410, maxPoint = 25000 }) => {
     const { t } = useTranslation()
@@ -54,11 +54,11 @@ const ScorePorgress = ({ point = 2410, maxPoint = 25000 }) => {
                         <IconProvider icon="diamond" size="16px" />
                     </StyledLevel>
                 </StyledProgressDiamondLevel>
-                <StyledTooltip progress={point / maxPoint}>
-                    <StyledTooltipNumber>
+                <Tooltip top="-45px" left={`${(point / maxPoint) * 100}%`} >
+                    <StyledTooltipContent>
                         {point.toLocaleString()}
-                    </StyledTooltipNumber>
-                </StyledTooltip>
+                    </StyledTooltipContent>
+                </Tooltip>
             </StyledProgress>
         </StyledWrapper>
     )
