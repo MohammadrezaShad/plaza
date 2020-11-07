@@ -86,48 +86,10 @@ export const StyledProgressDiamondLevel=styled.div`
 
 `
 
-export const StyledTooltip = styled.span`
+export const StyledTooltipContent = styled.span`
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
   color: ${({ theme }) => theme.palette.onSurface};
   ${({ theme }) => theme.typography.bodyMdNormal};
-  top: -42px;
-  left: ${({ progress }) => `${progress * 100}%`};
-  transform: translateX(-50%);
-  width: 72px;
-  height: 31px;
-  border: 1px solid ${({ theme }) => theme.palette.stroke};
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -7px;
-    right: 50%;
-    transform: translateX(50%);
-    width: 0px;
-    height: 0px;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 7px solid ${({ theme }) => theme.palette.back};
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    right: 50%;
-    transform: translateX(50%);
-    width: 0px;
-    height: 0px;
-    border-left: 8.5px solid transparent;
-    border-right: 8.5px solid transparent;
-    border-top: 8px solid ${({ theme }) => theme.palette.stroke};
-  }
+  line-height:1;
 `;
-
-export const StyledTooltipNumber=styled.span`
- display:inline-flex;
- line-height:1;
- transform:translateY(20%);
-`
 
