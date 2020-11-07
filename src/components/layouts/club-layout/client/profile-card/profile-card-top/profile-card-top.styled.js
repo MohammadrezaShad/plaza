@@ -5,8 +5,8 @@ export const StyledWrapper = styled.div`
   align-items: center;
   padding: ${({ theme }) => theme.dim[3]};
   background-color: ${({ theme }) => theme.palette.surface};
-  border-top-right-radius:${({theme})=>theme.defaults.borderRadius};
-  border-top-left-radius:${({theme})=>theme.defaults.borderRadius};
+  border-top-right-radius: ${({ theme }) => theme.defaults.borderRadius};
+  border-top-left-radius: ${({ theme }) => theme.defaults.borderRadius};
 `;
 
 export const StyledContent = styled.div`
@@ -27,6 +27,9 @@ export const StyledTitle = styled.span`
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
+  ${({ theme }) => theme.breakPoints.desktop} {
+    ${({ theme }) => theme.typography.headline2};
+  }
 `;
 
 export const StyledContainer = styled.div`
@@ -39,7 +42,7 @@ export const StyledContainer = styled.div`
 export const StlyedLevel = styled.span`
   display: inline-flex;
   align-items: center;
-  margin-left: ${({ theme }) => theme.dim[2]};
+  margin-left: auto;
 `;
 
 export const StyledLevelText = styled.span`
@@ -54,7 +57,15 @@ export const StyledLevelValue = styled.span`
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-right: ${({ theme }) => theme.dim[1]};
+  margin-right: 4px;
   color: ${({ theme, userLevel }) => theme.getUserLevelColor(userLevel)};
   ${({ theme }) => theme.typography.bodyMdBold};
+`;
+
+export const StyledButtonWrap = styled.div`
+  display: ${({ $display }) => ($display ? "none" : "block")};
+  margin-right:${({theme})=>theme.dim[1]};
+  ${({ theme }) => theme.breakPoints.desktop} {
+    display: ${({ $display }) => ($display ? "block" : "none")};
+  }
 `;
