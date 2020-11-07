@@ -97,4 +97,5 @@ export const StyledTooltipContent = styled.span`
   color: ${({ theme }) => theme.palette.onSurface};
   ${({ theme }) => theme.typography.bodyMdNormal};
   line-height: 1;
+  transform: translateY(3px);
 `;
