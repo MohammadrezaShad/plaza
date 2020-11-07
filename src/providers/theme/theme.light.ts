@@ -142,7 +142,8 @@ const breakPoints = {
     tablet: mediaQueries('768px'),
     laptop: mediaQueries('1024px'),
     laptopL: mediaQueries('1440px'),
-    desktop: mediaQueries('2560px')
+    desktop:mediaQueries('1280px'),
+    desktopL: mediaQueries('2560px')
 }
 // xs: 480,
 // sm: 768,

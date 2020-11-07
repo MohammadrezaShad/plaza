@@ -79,6 +79,7 @@ declare module "styled-components" {
       laptop: string;
       laptopL: string;
       desktop: string;
+      desktopL:string;
   }
   }
 }
