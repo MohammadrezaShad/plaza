@@ -77,6 +77,9 @@ const typography = {
     headline3: `font-size: 16px;
                 font-weight: bold;
                 line-height: 1.5;`,
+    body2XLgBold: `font-size: 32px;
+                font-weight: bold;
+                line-height: 1.5;`,
     bodyXLgBold: `font-size: 24px;
                 font-weight: bold;
                 line-height: 1.5;`,
