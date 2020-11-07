@@ -2,8 +2,8 @@ import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Trans, useTranslation } from 'react-i18next'
 
-import { StyledWrapper, StyledContent } from './buy-together-guide.styled'
-import GuideCardItem from '../../../../../shared/guide-card-item'
+import { StyledWrapper, StyledContent, StyledContainer } from './buy-together-guide.styled'
+import BuyGuideCard from '../../../../../shared/guide-card'
 import BuyTogether from '../../../../../dialogs/club/buy-together'
 import BuyTogetherItem from './buy-together-item'
 
@@ -20,13 +20,12 @@ const BuyTogetherGuide = () => {
 
     return (
         <Fragment>
-            <GuideCardItem
-                title={t("plazaClubArea.guideTitleTwo")}
-                buttonText={t("plazaClubArea.addNewBuyTogether")}
-                text={t("plazaClubArea.guideTextTwo")}
-                buttonColor={true}
-                onOpen={onOpen}>
-            </GuideCardItem>
+            <StyledContainer $display="responsive">
+                <BuyGuideCard onOpen={onOpen} title={t("plazaClubArea.guideTitleTwoResponsive")} />
+            </StyledContainer>
+            <StyledContainer>
+                <BuyGuideCard onOpen={onOpen} title={t("plazaClubArea.guideTitleTwo")} />
+            </StyledContainer>
             <BuyTogether open={showModal} onClose={onClose} />
             <StyledWrapper>
                 <StyledContent>
