@@ -24,11 +24,11 @@ const palette = {
     overlay: 'rgba(0,0,0,.5)',
     lightGrey: '#908D99',
     nightRider: '#333333',
-    nero:'#222222',
-    hotPink:'#F574B5',
+    nero: '#222222',
+    hotPink: '#F574B5',
     whisper: '#eeeeee',
     atlantis: '#A5C63C',
-    ghostWhite:'#F2F3F8',
+    ghostWhite: '#F2F3F8',
     greenUser: '#42D9BB',
     silverUser: '#BBBAC0',
     goldenUser: '#FBC635',
@@ -75,6 +75,9 @@ const typography = {
                 line-height: 1.5;`,
 
     headline3: `font-size: 16px;
+                font-weight: bold;
+                line-height: 1.5;`,
+    body3XLgBold: `font-size: 40px;
                 font-weight: bold;
                 line-height: 1.5;`,
     body2XLgBold: `font-size: 32px;

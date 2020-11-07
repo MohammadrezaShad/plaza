@@ -50,6 +50,7 @@ declare module "styled-components" {
         headline2: string;
         headline3: string;
         body2XLgBold:string;
+        body3XLgBold:string;
         bodyXLgBold:string;
         bodyLgBold: string;
         bodyMdBold: string;
