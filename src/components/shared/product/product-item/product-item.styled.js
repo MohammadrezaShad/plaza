@@ -5,6 +5,9 @@ export const StyledWrapper = styled.li`
   flex:0 0 25%;
   padding: 0 ${({ theme }) => theme.dim[3]};
   text-align: center;
+  ${({theme})=>theme.breakPoints.desktop}{
+    flex:0 0 33.33%;
+  }
 `;
 
 export const StyledContainer = styled.div`
