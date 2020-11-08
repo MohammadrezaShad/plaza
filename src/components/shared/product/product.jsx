@@ -91,8 +91,6 @@ const Product = ({ items = [1, 2, 3, 4, 5] }) => {
                             offPrice={2550000}
                             point={102}
                             Product={true}
-                            itemWidth={itemWidth}
-                            itemWidthHandler={itemWidthHandler}
                         />
 
                         <ProductItem
