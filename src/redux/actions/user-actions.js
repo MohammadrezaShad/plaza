@@ -39,3 +39,9 @@ export const login = (username, password, rememberMe) => {
         // });
     }
 }
+
+export const signup=(username, password)=>{
+       return dispatch=>{
+           console.log(username,password)
+       }
+}
