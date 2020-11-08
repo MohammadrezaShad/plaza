@@ -143,6 +143,16 @@
     "rememberMe": "منو یادت باشه!",
     "button": "ورود به سایت"
   },
+  "signupView": {
+    "title": "لطفا عضو شوید",
+    "description": "قبلا عضو شدی؟! همین حالا <1>وارد شو</1>",
+    "usernameInputPlaceholder": "آدرس ایمیل یا شماره موبایل",
+    "usernameValidationText": "درج یک ایمیل یا شماره موبایل الزامی است.",
+    "passwordInputPlaceholder": "رمز عبور",
+    "passwordValidationText": "درج رمز عبور الزامی است.",
+    "privacy": "<1>حریم خصوصی</1> و <2>شرایط و قوانین</2> استفاده از سرویس های سایت پلازا را مطالعه کرده و با کلیه موارد آن موافقم",
+    "button": "عضویت در سایت"
+  },
   "clubScoreView": {
     "title": "نمودار امتیازات شما",
     "monthlyScore": "امتیاز ماهانه",
