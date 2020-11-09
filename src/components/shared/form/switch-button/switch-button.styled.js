@@ -5,7 +5,7 @@ export const StyledWrapper = styled.label`
   display: inline-block;
   width: 45px;
   height: 24px;
-  border-radius: 50px;
+  border-radius: 12px;
 `;
 
 export const StyledLayout = styled.span`
