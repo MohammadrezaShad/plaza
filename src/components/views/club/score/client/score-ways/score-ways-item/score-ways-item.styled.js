@@ -26,14 +26,14 @@ export const StyledTitle = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyLgBold};
   color: ${({ theme }) => theme.palette.onSurface};
-  margin-bottom: ${({ theme }) => theme.dim[2]};
+  margin-bottom: ${({marginBottom,theme})=>marginBottom===1 ? theme.dim[1]:theme.dim[4]};
   text-align:center;
+  max-width:135px;
 `;
 export const StyledContent = styled.span`
   display: inline-flex;
   flex-flow: column;
   align-items: center;
-  margin-top:auto;
   min-height:64px;
 `;
 

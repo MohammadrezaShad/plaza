@@ -12,13 +12,13 @@ import {
 } from './score-ways-item.styled'
 import IconProvider from '../../../../../../../providers/icon/icon-provider'
 
-const ScoreWaysItem = ({icon,score,text,title}) => {
+const ScoreWaysItem = ({icon,score,text,title,marginBottom=4}) => {
     return (
         <StyledWrapper>
             <StyledIconWrap>
                 <StyledIcon as={IconProvider} icon={icon} size="30px" />
             </StyledIconWrap>
-            <StyledTitle>{title}</StyledTitle>
+            <StyledTitle marginBottom={marginBottom}>{title}</StyledTitle>
             <StyledContent>
                 <StyledScore>{score}</StyledScore>
                 <StyledText>{text}</StyledText>
