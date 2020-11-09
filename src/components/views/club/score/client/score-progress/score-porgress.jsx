@@ -18,7 +18,7 @@ import {
 import IconProvider from '../../../../../../providers/icon/icon-provider'
 import Tooltip from '../../../../../shared/tooltip'
 
-const ScorePorgress = ({ point = 2410, maxPoint = 50000, level = 4 }) => {
+const ScorePorgress = ({ point = 2410, maxPoint = 50000, level = 1 }) => {
     const { t } = useTranslation()
     return (
         <StyledWrapper>
