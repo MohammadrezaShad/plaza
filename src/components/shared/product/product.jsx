@@ -60,7 +60,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
             }
             setItemWidth(25)
         }
-
+ 
         if ((itemShowed === itemToShow || itemToShow >= items.length) && rightArrowStatus) {
             setRightArrowStatus(false)
         } else if (!rightArrowStatus) {
