@@ -160,6 +160,22 @@
     "title": "نمودار امتیازات شما",
     "monthlyScore": "امتیاز ماهانه",
     "totalScore": "امتیاز کل",
-    "monthlyChart": "نمودار ماهانه"
+    "monthlyChart": "نمودار ماهانه",
+    "completeProfile":"تکمیل پروفایل",
+    "completeProfileScore":1000,
+    "earnScoreTips":"راه های کسب امتیاز",
+    "shopping":"خرید کالا",
+    "shoppingScore":"امتیاز به نسبت قیمت کالا محاسبه می‌شود",
+    "comment":"ثبت نظر",
+    "commentScore":50,
+    "likeComments":"لایک نظرات کاربران",
+    "likeCommentsScore":1,
+    "review":"نقد و بررسی کالای خریداری شده",
+    "reviewScore":250,
+    "inviteFriends":"دعوت دوستان",
+    "inviteFiendsScore":500,
+    "scoreGuide":"ما راه های مختلفی را برایتان فراهم کرده ایم تا بتوانید امتیازهای خود را افزایش دهید",
+    "numberOfPurchase":"تعداد خرید: {{count}} کالا",
+    "monthScore":"امتیاز ماه: {{count}}"
   }
 }
