@@ -12,38 +12,53 @@ import {
     StyledProgressSilverLevel,
     StyledProgressGoldLevel,
     StyledProgressDiamondLevel,
-    StyledTooltipContent
+    StyledTooltipContent,
+    StyledIcon
 } from './score-progress.styled'
 import IconProvider from '../../../../../../providers/icon/icon-provider'
 import Tooltip from '../../../../../shared/tooltip'
 
-const ScorePorgress = ({ point = 2410, maxPoint = 25000 }) => {
+const ScorePorgress = ({ point = 2410, maxPoint = 50000, level = 4 }) => {
     const { t } = useTranslation()
     return (
         <StyledWrapper>
             <StyledTitle>
                 {t("plazaClubArea.increaseLevelBar")}
             </StyledTitle>
-            <StyledProgress progress={point / maxPoint}>
+            <StyledProgress level={level} progress={point / maxPoint}>
                 <StyledProgressGreenLevel>
                     <StyledNumber>
                         {t("plazaClubArea.greenLevel").toLocaleString()}
                     </StyledNumber>
                 </StyledProgressGreenLevel>
-                <StyledProgressSilverLevel>
+                <StyledProgressSilverLevel level={level}>
                     <StyledNumber>
-                        {t("plazaClubArea.silverLevel").toLocaleString()}
+                        {
+                            level === 1 ?
+                                t("plazaClubArea.silverLevel").toLocaleString() : ''
+                        }
                     </StyledNumber>
                     <StyledLevel>
-                        {t("plazaClubArea.increaseSilverLevelBar")}
+                        {
+                            level === 1 ?
+                                t("plazaClubArea.increaseSilverLevelBar") : ''
+                        }
                     </StyledLevel>
                 </StyledProgressSilverLevel>
-                <StyledProgressGoldLevel>
+                <StyledProgressGoldLevel level={level} >
                     <StyledNumber>
-                        {t("plazaClubArea.goldLevel").toLocaleString()}
+                        {
+                            level === 1 || level === 2 ?
+                                t("plazaClubArea.goldLevel").toLocaleString() : ''
+                        }
                     </StyledNumber>
                     <StyledLevel>
-                        {t("plazaClubArea.increaseGoldLevelBar")}
+                        {
+                            level === 2 ?
+                                t("plazaClubArea.increaseGoldenLevelBar") :
+                                level === 1 ?
+                                    t("plazaClubArea.increaseGoldLevelBar") : ''
+                        }
                     </StyledLevel>
                 </StyledProgressGoldLevel>
                 <StyledProgressDiamondLevel>
@@ -51,7 +66,13 @@ const ScorePorgress = ({ point = 2410, maxPoint = 25000 }) => {
                         {t("plazaClubArea.diamondLevel").toLocaleString()}
                     </StyledNumber>
                     <StyledLevel>
-                        <IconProvider icon="diamond" size="16px" />
+                        <StyledIcon as={IconProvider} icon="diamond" size="16px" />
+                        {
+                            level === 3 ?
+                                t("plazaClubArea.increaseDiamondLevelBar").toLocaleString() :
+                                level === 4 ?
+                                    t("plazaClubArea.stayDiamondLevelBar").toLocaleString() : ''
+                        }
                     </StyledLevel>
                 </StyledProgressDiamondLevel>
                 <Tooltip top="-45px" left={`${(point / maxPoint) * 100}%`} >
@@ -66,7 +87,8 @@ const ScorePorgress = ({ point = 2410, maxPoint = 25000 }) => {
 
 ScorePorgress.propTypes = {
     point: PropTypes.number,
-    maxPoint: PropTypes.number
+    maxPoint: PropTypes.number,
+    level:PropTypes.number
 }
 
 export default ScorePorgress
