@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useSwipeable } from "react-swipeable";
 
@@ -13,12 +13,11 @@ import Button from "../button";
 import { buttonSizes, buttonVariants } from "../../../constants/button-configs";
 import IconProvider from "../../../providers/icon/icon-provider";
 
-const Product = ({ items = [1, 2, 3, 4, 5] }) => {
-    const node = useRef()
+const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
 
-    const [itemWidth, setItemWidth] = useState(25)
-    const [parentWidth, setParentWidth] = useState(0)
-    const [itemToShow, setitemToShow] = useState(4)
+    const [itemWidth, setItemWidth] = useState(window.innerWidth > 1280 ? 25 : 33.33)
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    const [itemToShow, setItemToShow] = useState(window.innerWidth > 1280 ? 4 : 3)
     const [itemShowed, setItemShowed] = useState(itemToShow)
     const [rightArrowStatus, setRightArrowStatus] = useState(true)
     const [leftArrowStatus, setLeftArrowStatus] = useState(true)
@@ -31,27 +30,36 @@ const Product = ({ items = [1, 2, 3, 4, 5] }) => {
         trackMouse: true
     });
 
-    const itemWidthHandler = (width) => {
-        setItemWidth(width)
-    }
     const moveLeftHandler = () => {
         if (leftArrowStatus) {
-            setLeft(left + itemWidth)
+            setLeft(left + 1)
             setItemShowed(itemShowed + 1)
         }
     }
     const moveRightHandler = () => {
         if (rightArrowStatus) {
-            setLeft(left - itemWidth)
+            setLeft(left - 1)
             setItemShowed(itemShowed - 1)
         }
     }
+    const resizeHandler = () => {
+        setWindowWidth(window.innerWidth)
+    };
 
     useEffect(() => {
-        const resizeHandler = () => {
-            setParentWidth(node.current.clinetWidth)
-        };
-        resizeHandler()
+        if (windowWidth <= 1280 && itemWidth !== 33.33) {
+            setItemToShow(3)
+            setItemShowed(itemShowed - 1)
+            setItemWidth(33.33)
+        } else if (windowWidth > 1280 && itemWidth === 33.33) {
+            setItemToShow(4)
+            if (itemShowed === items.length) {
+                setLeft(left - 1)
+            } else {
+                setItemShowed(itemShowed + 1)
+            }
+            setItemWidth(25)
+        }
 
         if ((itemShowed === itemToShow || itemToShow >= items.length) && rightArrowStatus) {
             setRightArrowStatus(false)
@@ -68,12 +76,12 @@ const Product = ({ items = [1, 2, 3, 4, 5] }) => {
         return () => {
             window.removeEventListener('resize', resizeHandler);
         }
-    }, [itemShowed])
+    }, [itemShowed, itemToShow, itemWidth, windowWidth, left])
 
 
 
     return (
-        <StyledWrapper ref={node} >
+        <StyledWrapper  >
             <Button variant={buttonVariants.OUTLINE} size={buttonSizes.S_MEDIUM} onClick={moveRightHandler} $disabled={!rightArrowStatus}>
                 <IconProvider icon="arrow-right" size="16px" />
             </Button>
@@ -81,7 +89,7 @@ const Product = ({ items = [1, 2, 3, 4, 5] }) => {
                 <IconProvider icon="arrow-left" size="16px" />
             </Button>
             <StyledProducts {...handlers}>
-                <StyledContent $left={left}>
+                <StyledContent $left={left} itemWidth={itemWidth}>
                     <StyledContainer>
                         <ProductItem
                             href={Paths.home.getPath()}
@@ -132,7 +140,35 @@ const Product = ({ items = [1, 2, 3, 4, 5] }) => {
                             point={102}
                             Product={true}
                         />
+                        <ProductItem
+                            href={Paths.home.getPath()}
+                            imgSrc={ProdFour}
+                            title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
+                            price={3000000}
+                            offPrice={2550000}
+                            point={102}
+                            Product={true}
+                        />
 
+                        <ProductItem
+                            href={Paths.home.getPath()}
+                            imgSrc={ProdFour}
+                            title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
+                            price={3000000}
+                            offPrice={2550000}
+                            point={102}
+                            Product={true}
+                        />
+
+                        <ProductItem
+                            href={Paths.home.getPath()}
+                            imgSrc={ProdOne}
+                            title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
+                            price={3000000}
+                            offPrice={2550000}
+                            point={102}
+                            Product={true}
+                        />
                     </StyledContainer>
                 </StyledContent>
             </StyledProducts>
