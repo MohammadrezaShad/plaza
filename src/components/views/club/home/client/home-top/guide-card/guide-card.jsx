@@ -6,7 +6,7 @@ import { StyledWrapper, StyledContent, StyledNumber } from "./guide-card.styled"
 import GuideCardItem from "../../../../../../shared/guide-card/guide-card-item";
 import BuyGuideCard from "../../../../../../shared/guide-card";
 
-import BuyTogether from "../../../../../../dialogs/club/buy-together";
+import BuyTogether from "../../../../../../dialogs/club/customer-relationship";
 
 const GuideCard = ({ point = 10000, nextLevelPoint = 15000 }) => {
   const { t } = useTranslation();
