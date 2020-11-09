@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledWrapper = styled.div`
   display: flex;
@@ -11,15 +12,19 @@ export const StyledContainer = styled.div`
 
 export const StyledDetail = styled.div`
   display: flex;
-  flex-wrap:wrap;
-  flex:1;
+  flex-wrap: wrap;
+  flex: 1;
+  &:last-child {
+    margin-top: ${({ theme }) => theme.dim[2]};
+  }
 `;
 
 export const StyledContent = styled.div`
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   flex: 0 0 51.83%;
   min-width: 0;
+  position: relative;
 `;
 
 export const StyledImgWrap = styled.div`
@@ -48,4 +53,21 @@ export const StyledText = styled.span`
   display: inline-flex;
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme }) => theme.palette.onSurface};
+`;
+
+export const StyledTooltipWrap = styled.div`
+  padding: ${({ theme }) => theme.dim[2]};
+`;
+
+export const StyledItem = styled.span`
+  display: flex;
+  ${({ theme }) => theme.typography.bodyMdNormal};
+`;
+
+export const StyledButtonWrap = styled(Link)`
+  display: flex;
+  justify-content:center;
+  width: 126px;
+  text-decoration: none;
+  margin-top:${({theme})=>theme.dim[1]};
 `;
