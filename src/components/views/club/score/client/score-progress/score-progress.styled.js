@@ -2,8 +2,6 @@ import styled, { css } from "styled-components";
 import IconProvider from "../../../../../../providers/icon/icon-provider";
 
 const backgroundPicker = (level) => {
-  console.log(level);
-
   if (level === 1) {
     return css`
       background-image: ${({ theme }) => `linear-gradient(to right, ${theme.palette.surface} 85.3%,${theme.palette.stroke} 85.4%,${theme.palette.stroke} 92.3%,${theme.palette.disabled} 92.4%,${theme.palette.disabled} 100%)`};
@@ -120,12 +118,18 @@ export const StyledProgressDiamondLevel = styled.div`
 `;
 
 export const StyledTooltipContent = styled.span`
-  display: inline-flex;
+  display: flex;
+  padding: ${({ theme }) => theme.dim[1]} ${({ theme }) => theme.dim[2]};
+  background-color: ${({ theme }) => theme.palette.back};
+  border-radius: ${({ theme }) => theme.defaults.borderRadius};
+`;
+
+export const StyledTooltipText=styled.span`
   color: ${({ theme }) => theme.palette.onSurface};
   ${({ theme }) => theme.typography.bodyMdNormal};
   line-height: 1;
-  transform: translateY(3px);
-`;
+  transform:translateY(2px);
+`
 
 export const StyledIcon = styled.span`
   margin-left: ${({ theme }) => theme.dim[3]};
