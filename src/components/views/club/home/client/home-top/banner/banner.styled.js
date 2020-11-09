@@ -11,6 +11,8 @@ export const StyledContainer = styled.div`
   padding-top: 50%;
   position: relative;
   height: 100%;
+  overflow:hidden;
+  border-radius:${({theme})=>theme.defaults.borderRadius};
   background-image: url(${BannerGraphicImg});
   background-repeat: no-repeat;
   background-position: 0 bottom;
