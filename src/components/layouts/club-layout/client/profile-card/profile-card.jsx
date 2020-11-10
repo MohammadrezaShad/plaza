@@ -4,15 +4,15 @@ import PropTypes from "prop-types";
 import ProfileCardTop from "./profile-card-top";
 import ProfileCardContent from "./profile-card-content";
 import ProfileCardBottom from "./profile-card-bottom";
-import Panel from "../../../../shared/panel";
+import Card from "../../../../shared/card";
 
 const ProfileCard = () => {
   return (
-      <Panel>
+      <Card>
         <ProfileCardTop />
         <ProfileCardContent />
         <ProfileCardBottom />
-      </Panel>
+      </Card>
   );
 };
 
