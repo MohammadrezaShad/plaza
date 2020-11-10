@@ -14,6 +14,7 @@ import Paths from '../../../../../../utils/paths'
 import CommercialBusiness from '../../../../../../assets/images/CommercialBusiness.png'
 import OnlineBusiness from '../../../../../../assets/images/OnlineBusiness.png'
 import Organizing from '../../../../../../assets/images/Organizing.png'
+import Panel from '../../../../../shared/panel'
 
 const FooterDetail = props => {
     const { t } = useTranslation()
@@ -21,24 +22,30 @@ const FooterDetail = props => {
     return (
         <Fragment>
             <Enamad>
-                <EnamadLink >
-                    <EnamadLogo src={CommercialBusiness} alt={t('nationalAssociationOfVirtualBusinesses')}/>
-                </EnamadLink>
-                <EnamadLink >
-                    <EnamadLogo src={OnlineBusiness} alt={t('eCommerceDevelopmentCenter')}/>
-                </EnamadLink>
-                <EnamadLink  >
-                    <EnamadLogo src={Organizing} alt={t('nationalRegistrationMark')}/>
-                </EnamadLink >
+                <Panel>
+                    <EnamadLink >
+                        <EnamadLogo src={CommercialBusiness} alt={t('nationalAssociationOfVirtualBusinesses')} />
+                    </EnamadLink>
+                </Panel>
+                <Panel>
+                    <EnamadLink >
+                        <EnamadLogo src={OnlineBusiness} alt={t('eCommerceDevelopmentCenter')} />
+                    </EnamadLink>
+                </Panel>
+                <Panel>
+                    <EnamadLink  >
+                        <EnamadLogo src={Organizing} alt={t('nationalRegistrationMark')} />
+                    </EnamadLink >
+                </Panel>
             </Enamad>
             <Description>
                 <DescriptionLink to={Paths.home.getPath()}>
                     <Logo />
                 </DescriptionLink>
                 <Text>
-                {t('footerDescriptionOne')}
-                <br/>
-                {t('footerDescriptionTwo')}
+                    {t('footerDescriptionOne')}
+                    <br />
+                    {t('footerDescriptionTwo')}
                 </Text>
             </Description>
         </Fragment>

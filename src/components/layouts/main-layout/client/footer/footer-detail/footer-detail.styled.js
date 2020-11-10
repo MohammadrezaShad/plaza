@@ -7,6 +7,9 @@ const Enamad = styled.div`
   margin-left: ${({ theme }) => theme.dim[7]};
   height: 100%;
   align-self: flex-start;
+  & > div:not(:first-child) {
+    margin-right: ${({ theme }) => theme.dim[4]};
+  }
 `;
 
 const EnamadLink = styled.a`
@@ -15,10 +18,6 @@ const EnamadLink = styled.a`
   align-items: center;
   width: 140px;
   height: 200px;
-  border: 1px solid ${({ theme }) => theme.palette.stroke};
-  &:not(:first-child) {
-    margin-right: ${({ theme }) => theme.dim[4]};
-  }
 `;
 
 const EnamadLogo = styled.img`
@@ -44,12 +43,4 @@ const Text = styled.p`
   ${({ theme }) => theme.typography.bodySmNormal};
 `;
 
-export {
-  Enamad,
-  EnamadLink,
-  EnamadLogo,
-  Description,
-  DescriptionLink,
-  Logo,
-  Text,
-};
+export { Enamad, EnamadLink, EnamadLogo, Description, DescriptionLink, Logo, Text };
