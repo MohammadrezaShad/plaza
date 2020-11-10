@@ -19,7 +19,6 @@ const backgroundPicker = (level) => {
 
 export const StyledWrapper = styled.div`
   padding: ${({ theme }) => theme.dim[3]} ${({ theme }) => theme.dim[4]};
-  border: 1px solid ${({ theme }) => theme.palette.stroke};
 `;
 
 export const StyledTitle = styled.span`
