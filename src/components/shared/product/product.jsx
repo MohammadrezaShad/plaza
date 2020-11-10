@@ -13,12 +13,13 @@ import Button from "../button";
 import { buttonSizes, buttonVariants } from "../../../constants/button-configs";
 import IconProvider from "../../../providers/icon/icon-provider";
 
-const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
-
+const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9] }) => {
+    const [pageSpeed, setPageSpeed] = useState(window.innerWidth > 1280 ? 4 : 3)
     const [itemWidth, setItemWidth] = useState(window.innerWidth > 1280 ? 25 : 33.33)
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const [itemToShow, setItemToShow] = useState(window.innerWidth > 1280 ? 4 : 3)
     const [itemShowed, setItemShowed] = useState(itemToShow)
+    const [remainingItem, setRemainingItem] = useState(items.length - itemShowed)
     const [rightArrowStatus, setRightArrowStatus] = useState(true)
     const [leftArrowStatus, setLeftArrowStatus] = useState(true)
     const [left, setLeft] = useState(0)
@@ -32,14 +33,29 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
 
     const moveLeftHandler = () => {
         if (leftArrowStatus) {
-            setLeft(left + 1)
-            setItemShowed(itemShowed + 1)
+            if (remainingItem < pageSpeed) {
+                setLeft(left + remainingItem)
+                setRemainingItem(0)
+                setItemShowed(itemShowed + remainingItem)
+            } else {
+                setRemainingItem(remainingItem - pageSpeed)
+                setLeft(left + pageSpeed)
+                setItemShowed(itemShowed + pageSpeed)
+            }
         }
     }
     const moveRightHandler = () => {
         if (rightArrowStatus) {
-            setLeft(left - 1)
-            setItemShowed(itemShowed - 1)
+            if (itemShowed - pageSpeed < pageSpeed) {
+                setRemainingItem(items.length - pageSpeed)
+                setLeft(left - (itemShowed - pageSpeed))
+                setItemShowed(itemShowed - (itemShowed - pageSpeed))
+            } else {
+                setRemainingItem(remainingItem + pageSpeed)
+                setLeft(left - pageSpeed)
+                setItemShowed(itemShowed - pageSpeed)
+            }
+
         }
     }
     const resizeHandler = () => {
@@ -49,18 +65,22 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
     useEffect(() => {
         if (windowWidth <= 1280 && itemWidth !== 33.33) {
             setItemToShow(3)
+            setPageSpeed(3)
+            setRemainingItem(remainingItem + 1)
             setItemShowed(itemShowed - 1)
             setItemWidth(33.33)
         } else if (windowWidth > 1280 && itemWidth === 33.33) {
             setItemToShow(4)
+            setPageSpeed(4)
             if (itemShowed === items.length) {
                 setLeft(left - 1)
             } else {
                 setItemShowed(itemShowed + 1)
+                setRemainingItem(remainingItem - 1)
             }
             setItemWidth(25)
         }
- 
+
         if ((itemShowed === itemToShow || itemToShow >= items.length) && rightArrowStatus) {
             setRightArrowStatus(false)
         } else if (!rightArrowStatus) {
@@ -71,12 +91,11 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
         } else if (!leftArrowStatus) {
             setLeftArrowStatus(true)
         }
-
         window.addEventListener('resize', resizeHandler)
         return () => {
             window.removeEventListener('resize', resizeHandler);
         }
-    }, [itemShowed, itemToShow, itemWidth, windowWidth, left])
+    }, [itemShowed, itemToShow, itemWidth, windowWidth, left, remainingItem, pageSpeed])
 
 
 
@@ -150,6 +169,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
                             Product={true}
                         />
 
+
                         <ProductItem
                             href={Paths.home.getPath()}
                             imgSrc={ProdFour}
@@ -162,8 +182,17 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
 
                         <ProductItem
                             href={Paths.home.getPath()}
-                            imgSrc={ProdOne}
-                            title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
+                            imgSrc={ProdTwo}
+                            title="دسته بازی پلی استیشن 4 قرمز رنگ"
+                            price={3000000}
+                            offPrice={2550000}
+                            point={102}
+                            Product={true}
+                        />
+                        <ProductItem
+                            href={Paths.home.getPath()}
+                            imgSrc={ProdTwo}
+                            title="دسته بازی پلی استیشن 4 قرمز رنگ"
                             price={3000000}
                             offPrice={2550000}
                             point={102}
