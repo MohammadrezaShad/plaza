@@ -6,8 +6,6 @@ export const StyledWrapper = styled.div`
   justify-content: center;
   flex: 1;
   padding:${({ theme }) => theme.dim[4]};
-  border: 1px solid ${({ theme }) => theme.palette.stroke};
-  border-radius: ${({ theme }) => theme.defaults.borderRadius};
   &:not(:first-child) {
     margin-top: ${({ theme }) => theme.dim[2]};
   }
