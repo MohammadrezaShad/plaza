@@ -4,9 +4,11 @@ import PropTypes from "prop-types";
 import { StyledWrapper, StyledTitle, ButtonWrapper, StyledText } from "./guide-card-item.styled";
 import Button from "../../button";
 import { buttonColors, buttonSizes } from "../../../../constants/button-configs";
+import Panel from "../../panel";
 
 const GuideCardItem = ({ title, text, buttonText, buttonColor, children, onOpen }) => {
   return (
+    <Panel>
     <StyledWrapper>
       <StyledTitle>{title}</StyledTitle>
       <StyledText>
@@ -23,6 +25,7 @@ const GuideCardItem = ({ title, text, buttonText, buttonColor, children, onOpen 
         />
       </ButtonWrapper>
     </StyledWrapper>
+    </Panel>
   );
 };
 
