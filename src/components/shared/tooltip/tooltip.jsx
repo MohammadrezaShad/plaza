@@ -21,7 +21,9 @@ Tooltip.propTypes = {
     left: PropTypes.string,
     top: PropTypes.string,
     children: PropTypes.node,
-    show: PropTypes.bool
+    show: PropTypes.bool,
+    minWidth:PropTypes.string,
+    above:PropTypes.bool
 }
 
 export default Tooltip
