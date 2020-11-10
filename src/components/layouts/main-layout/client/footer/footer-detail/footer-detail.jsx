@@ -14,7 +14,7 @@ import Paths from '../../../../../../utils/paths'
 import CommercialBusiness from '../../../../../../assets/images/CommercialBusiness.png'
 import OnlineBusiness from '../../../../../../assets/images/OnlineBusiness.png'
 import Organizing from '../../../../../../assets/images/Organizing.png'
-import Panel from '../../../../../shared/panel'
+import Card from '../../../../../shared/card'
 
 const FooterDetail = props => {
     const { t } = useTranslation()
@@ -22,21 +22,21 @@ const FooterDetail = props => {
     return (
         <Fragment>
             <Enamad>
-                <Panel>
+                <Card>
                     <EnamadLink >
                         <EnamadLogo src={CommercialBusiness} alt={t('nationalAssociationOfVirtualBusinesses')} />
                     </EnamadLink>
-                </Panel>
-                <Panel>
+                </Card>
+                <Card>
                     <EnamadLink >
                         <EnamadLogo src={OnlineBusiness} alt={t('eCommerceDevelopmentCenter')} />
                     </EnamadLink>
-                </Panel>
-                <Panel>
+                </Card>
+                <Card>
                     <EnamadLink  >
                         <EnamadLogo src={Organizing} alt={t('nationalRegistrationMark')} />
                     </EnamadLink >
-                </Panel>
+                </Card>
             </Enamad>
             <Description>
                 <DescriptionLink to={Paths.home.getPath()}>
