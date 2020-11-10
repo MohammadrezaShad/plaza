@@ -31,6 +31,8 @@ export const StyledLayout = styled.span`
     background-color: ${({theme})=>theme.palette.back};
     transition: 0.3s all;
     border-radius: 50%;
+    box-shadow: 0 1px 3px 0px rgba(0,0,0,0.16);
+
   }
 
   &:after {
