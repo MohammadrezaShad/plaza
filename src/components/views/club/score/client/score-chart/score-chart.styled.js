@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledContent = styled.section`
+    position:relative;
     margin-top:${({theme}) => theme.dim[2]};
 `
 
@@ -47,4 +48,9 @@ export const StyledHeaderActions = styled.div`
 export const StyledHeaderActionsItem = styled.div`
     margin-right:${({theme}) => theme.dim[2]};
     min-width:135px;
+`
+
+export const StyledRangeSlider = styled.div`
+    padding-top:${({theme}) => theme.dim[2]};
+    padding-bottom:${({theme}) => theme.dim[2]};
 `
