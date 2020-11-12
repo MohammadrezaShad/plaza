@@ -1,13 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { renderRoutes } from 'react-router-config';
+import LoadingProvider from '../../providers/loading-provider/loading-provider';
 import ThemeProvider from '../../providers/theme';
 import routes from '../../routes';
+import LoadingBar from '../shared/loading-bar';
 
-const App  = () => {
+const App = () => {
   return (
     <ThemeProvider>
+      <LoadingProvider>
+        <LoadingBar step={5} time={1000}/>
         {renderRoutes(routes)}
+      </LoadingProvider>
     </ThemeProvider>
   )
 }
