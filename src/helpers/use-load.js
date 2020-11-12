@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
-const UseLoad = (devices, loadedAction, resetLoaded, loaded) => {
+const useLoad = (devices, loadedAction, resetLoaded, loaded) => {
   const loadHandler = (devices) => {
     if (loaded) {
       resetLoaded();
@@ -26,4 +26,4 @@ const UseLoad = (devices, loadedAction, resetLoaded, loaded) => {
 };
 
 
-export default UseLoad;
+export default useLoad;
