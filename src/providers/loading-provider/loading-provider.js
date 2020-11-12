@@ -6,13 +6,11 @@ const LoadingProvider = ({children}) => {
     const [loaded, setLoaded] = useState(false);
 
 
-    const loadedAction = (a) => {
-        console.log(a)
+    const loadedAction = () => {
         setLoaded(true);
     };
     
     const resetLoaded=()=>{
-        console.log('callR')
         setLoaded(false);
     }
 
