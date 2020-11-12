@@ -8,7 +8,8 @@ export const StyledWrapper = styled.div`
   height: 4px;
   overflow: hidden;
   opacity: ${({ loaded, loading }) => (loaded && loading === 100 ? 0 : 1)};
-  transition:${({loaded})=>loaded ? '.2s opacity .3s;':'0 opacity 0;'};
+  visibility:${({ loaded, loading }) => (loaded && loading === 100 ? 'hidden' : 'visable')};
+  transition:${({loaded})=>loaded ? '.2s opacity .3s,0s visibility .5s;':'0 opacity 0,0 visibility 0;'};
   background-color: ${({ theme }) => theme.palette.stroke};
   z-index: 200;
   &::after {
