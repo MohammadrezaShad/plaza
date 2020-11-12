@@ -116,20 +116,6 @@ export const StyledProgressDiamondLevel = styled.div`
   position: relative;
 `;
 
-export const StyledTooltipContent = styled.span`
-  display: flex;
-  padding: ${({ theme }) => theme.dim[1]} ${({ theme }) => theme.dim[2]};
-  background-color: ${({ theme }) => theme.palette.back};
-  border-radius: ${({ theme }) => theme.defaults.borderRadius};
-`;
-
-export const StyledTooltipText=styled.span`
-  color: ${({ theme }) => theme.palette.onSurface};
-  ${({ theme }) => theme.typography.bodyMdNormal};
-  line-height: 1;
-  transform:translateY(2px);
-`
-
 export const StyledIcon = styled.span`
   margin-left: ${({ theme }) => theme.dim[3]};
 `;

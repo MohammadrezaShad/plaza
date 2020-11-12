@@ -44,8 +44,24 @@ export const StyledTooltip = styled.div`
 export const StyledHeader = styled.span`
   display: flex;
   ${({ theme }) => theme.typography.headline2};
+  color:${({ theme }) => theme.palette.onSurface};
   padding: ${({ theme }) => theme.dim[1]} ${({ theme }) => theme.dim[2]};
   background-color: ${({ theme }) => theme.palette.surface};
   border-top-right-radius: ${({ theme }) => theme.defaults.borderRadius};
   border-top-left-radius: ${({ theme }) => theme.defaults.borderRadius};
+`;
+
+export const StyledText = styled.span`
+  display:block;
+  padding: ${({ theme }) => theme.dim[1]} ${({ theme }) => theme.dim[2]};
+  padding-top:${({theme,$isNotFirst}) => $isNotFirst ? Math.round(parseInt(theme.dim[1])/2) + 'px' : null};
+  ${({theme}) => theme.typography.bodyMdNormal};
+  color:${({theme}) => theme.palette.onBack};
+  line-height:1;
+`
+
+export const StyledFooter = styled.span`
+  display:block;
+  padding: ${({ theme }) => theme.dim[1]} ${({ theme }) => theme.dim[2]} ${({ theme }) => theme.dim[2] };
+  
 `;

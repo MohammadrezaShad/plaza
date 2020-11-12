@@ -10,21 +10,6 @@ import ShabnamBoldWoff2 from '../../assets/fonts/shabnam/Shabnam-Bold.woff2';
 import ShabnamBoldWoff from '../../assets/fonts/shabnam/Shabnam-Bold.woff';
 import ShabnamBoldTtf from '../../assets/fonts/shabnam/Shabnam-Bold.ttf';
 
-import ShabnamThinEot from '../../assets/fonts/shabnam/Shabnam-Thin.eot';
-import ShabnamThinWoff2 from '../../assets/fonts/shabnam/Shabnam-Thin.woff2';
-import ShabnamThinWoff from '../../assets/fonts/shabnam/Shabnam-Thin.woff';
-import ShabnamThinTtf from '../../assets/fonts/shabnam/Shabnam-Thin.ttf';
-
-import ShabnamLightEot from '../../assets/fonts/shabnam/Shabnam-Light.eot';
-import ShabnamLightWoff2 from '../../assets/fonts/shabnam/Shabnam-Light.woff2';
-import ShabnamLightWoff from '../../assets/fonts/shabnam/Shabnam-Light.woff';
-import ShabnamLightTtf from '../../assets/fonts/shabnam/Shabnam-Light.ttf';
-
-import ShabnamMediumEot from '../../assets/fonts/shabnam/Shabnam-Medium.eot';
-import ShabnamMediumWoff2 from '../../assets/fonts/shabnam/Shabnam-Medium.woff2';
-import ShabnamMediumWoff from '../../assets/fonts/shabnam/Shabnam-Medium.woff';
-import ShabnamMediumTtf from '../../assets/fonts/shabnam/Shabnam-Medium.ttf';
-
 export default createGlobalStyle`
    *{
       padding: 0;
@@ -37,57 +22,6 @@ export default createGlobalStyle`
       box-sizing:border-box;
    }
 
-
-   @font-face {
-      font-family: Shabnam;
-      src: url(${ShabnamEot});
-      src: url(${ShabnamWoff2}) format('woff2'),
-            url(${ShabnamWoff}) format('woff'),
-            url(${ShabnamTtf}) format('truetype');
-      font-weight: normal;
-      font-display:fallback;
-   }
-
-    @font-face {
-      font-family: Shabnam;
-      src: url(${ShabnamBoldEot});
-      src: url(${ShabnamBoldWoff2}) format('woff2'),
-            url(${ShabnamBoldWoff}) format('woff'),
-            url(${ShabnamBoldTtf}) format('truetype');
-      font-weight: bold;
-      font-display:fallback;
-   }
-
-   @font-face {
-      font-family: Shabnam;
-      src: url(${ShabnamThinEot});
-      src: url(${ShabnamThinWoff2}) format('woff2'),
-            url(${ShabnamThinWoff}) format('woff'),
-            url(${ShabnamThinTtf}) format('truetype');
-      font-weight: 100;
-      font-display:fallback;
-   }
-
-   @font-face {
-      font-family: Shabnam;
-      src: url(${ShabnamLightEot});
-      src: url(${ShabnamLightWoff2}) format('woff2'),
-            url(${ShabnamLightWoff}) format('woff'),
-            url(${ShabnamLightTtf}) format('truetype');
-      font-weight: 300;
-      font-display:fallback;
-   }
-
-   @font-face {
-      font-family: Shabnam;
-      src: url(${ShabnamMediumEot});
-      src: url(${ShabnamMediumWoff2}) format('woff2'),
-            url(${ShabnamMediumWoff}) format('woff'),
-            url(${ShabnamMediumTtf}) format('truetype');
-      font-weight: 500;
-      font-display:fallback;
-   }
-
    html{
     height: 100%;
     font-size: 10px;
@@ -95,7 +29,7 @@ export default createGlobalStyle`
 
    body{
       height: 100%;
-      font-family: 'Shabnam';
+      font-family: ${({theme}) => theme.defaults.fontName};
       background-color: ${({theme}) => theme.palette.back};
       &::-webkit-scrollbar{width:10px;height:10px}
       &::-webkit-scrollbar-thumb{background-color:#666}
@@ -104,7 +38,7 @@ export default createGlobalStyle`
    }
 
    input{
-      font-family:'Shabnam';
+      font-family:${({theme}) => theme.defaults.fontName};
       font-weight:bold;
    }
 

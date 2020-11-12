@@ -130,7 +130,8 @@ const defaults = {
     direction: 'rtl',
     boxShadow: '0 6px 12px rgba(0,0,0,.05)',
     boxShadowInset: 'inset 0px 6px 12px 0px rgba(0, 0, 0, 0.08)',
-    shortBoxShadow: '0 3px 6px rgba(0,0,0,.05)'
+    shortBoxShadow: '0 3px 6px rgba(0,0,0,.05)',
+    fontName: 'Shabnam-p'
 }
 const mediaQueries = (breakPoint: string): string => {
     return `@media only screen and (max-width: ${breakPoint})`;
