@@ -14,10 +14,10 @@ import { buttonSizes, buttonVariants } from "../../../constants/button-configs";
 import IconProvider from "../../../providers/icon/icon-provider";
 
 const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9] }) => {
-    const [pageSpeed, setPageSpeed] = useState(window.innerWidth > 1280 ? 4 : 3)
-    const [itemWidth, setItemWidth] = useState(window.innerWidth > 1280 ? 25 : 33.33)
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-    const [itemToShow, setItemToShow] = useState(window.innerWidth > 1280 ? 4 : 3)
+    const [pageSpeed, setPageSpeed] = useState(4)
+    const [itemWidth, setItemWidth] = useState(25)
+    const [windowWidth, setWindowWidth] = useState(1600)
+    const [itemToShow, setItemToShow] = useState(4)
     const [itemShowed, setItemShowed] = useState(itemToShow)
     const [remainingItem, setRemainingItem] = useState(items.length - itemShowed)
     const [rightArrowStatus, setRightArrowStatus] = useState(true)
@@ -63,6 +63,13 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9] }) => {
     };
 
     useEffect(() => {
+         setPageSpeed(window.innerWidth > 1280 ? 4 : 3)
+         setItemWidth(window.innerWidth > 1280 ? 25 : 33.33)
+         setWindowWidth(window.innerWidth)
+         setItemToShow(window.innerWidth > 1280 ? 4 : 3)
+    }, [])
+
+    useEffect(() => {
         if (windowWidth <= 1280 && itemWidth !== 33.33) {
             setItemToShow(3)
             setPageSpeed(3)
@@ -81,12 +88,12 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9] }) => {
             setItemWidth(25)
         }
 
-        if ((itemShowed === itemToShow || itemToShow >= items.length) && rightArrowStatus) {
+        if ((itemShowed === itemToShow )||( itemToShow >= items.length && rightArrowStatus)) {
             setRightArrowStatus(false)
         } else if (!rightArrowStatus) {
             setRightArrowStatus(true)
         }
-        if ((itemShowed === items.length || itemToShow >= items.length) && leftArrowStatus) {
+        if ((itemShowed === items.length )|| (itemToShow >= items.length && leftArrowStatus)) {
             setLeftArrowStatus(false)
         } else if (!leftArrowStatus) {
             setLeftArrowStatus(true)
