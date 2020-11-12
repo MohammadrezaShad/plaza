@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import loadable from '@loadable/component'
 import { useSelector } from 'react-redux'
@@ -8,10 +8,15 @@ import withDeviceDetection from '../hoc/with-device-detection'
 import { DeviceTypes } from '../utils/device-detection'
 import EmptyLayout from '../components/layouts/empty-layout'
 import Paths from '../utils/paths'
+import LoadingContext from '../context/loading-context'
+import useLoad from '../helpers/use-load'
+
 const Desktop = loadable(() => import('../components/views/signin/client'))
 const Mobile = loadable(() => import('../components/views/signin/mobile'))
 
 const Signin = ({deviceType, route, staticContext}) => {
+    const { loadedAction, resetLoaded, loaded } = useContext(LoadingContext)
+    const loadHook = useLoad([Desktop,Mobile],loadedAction,resetLoaded,loaded)
     const history = useHistory()
     const loggedIn = useSelector(state => state.user.loggedIn)
 
