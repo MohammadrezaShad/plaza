@@ -8,24 +8,24 @@ const LoadingBar = ({step=5,time=1000}) => {
     const [loading, setLoading] = useState(0)
     const [loadingStep, setLoadingStep] = useState(step)
     const [loadingTime, setLoadingTime] = useState(time)
-    const { loaded } = useContext(LoadingContext)
+    const { loaded,reset } = useContext(LoadingContext)
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(loading + loadingStep)
         }, loadingTime);
-        if (loaded) {
+        if (loaded&&!reset) {
             setLoading(100)
             clearTimeout(timer)
-        }else if (!loaded && loading>=80 && loading<=90){
+        }else if (!loaded && loading>=80){
             clearTimeout(timer)
-        } else if (!loaded&&loading===100 ) {
+        } else if (!loaded&&loading===100 &&reset) {
             setLoading(0)
         }
         return () => clearTimeout(timer);
-    }, [loading])
+    }, [loading,reset,loaded])
 
-    return <StyledWrapper loading={loading} loaded={loaded}></StyledWrapper>
+    return <StyledWrapper loading={loading} loaded={loaded} reset={reset}></StyledWrapper>
 }
 
 LoadingBar.propTypes = {
