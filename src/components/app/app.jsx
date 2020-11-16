@@ -10,7 +10,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <LoadingProvider>
-        <LoadingBar step={10} time={1000}/>
+        <LoadingBar step={10} time={500}/>
         {renderRoutes(routes)}
       </LoadingProvider>
     </ThemeProvider>
