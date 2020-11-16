@@ -3,7 +3,7 @@ import {
 } from 'react-cookie';
 
 import cookiesName from '../../constants/cookies-name';
-import userService from '../../services/user-service'
+// import userService from '../../services/user-service'
 import userTypes from '../types/user-types'
 import decodeUserToken from '../../helpers/decode-user-token';
 
@@ -40,8 +40,9 @@ export const login = (username, password, rememberMe) => {
     }
 }
 
-export const signup=(username, password)=>{
+export const signup= (username, password)=>{
        return dispatch=>{
+           dispatch();
            console.log(username,password)
        }
 }

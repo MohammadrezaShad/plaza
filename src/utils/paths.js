@@ -1,7 +1,7 @@
 class Uri {
     constructor(url, route) {
-        this.url = url;
-        this.route = route || url;
+        this.url = url
+        this.route = route || url
     }
 
     getRoute() {
@@ -13,7 +13,7 @@ class Uri {
     }
 
     getAbsoulteUri() {
-        return process.env.DOMAIN + this.url;
+        return process.env.DOMAIN + this.url
     }
 }
 

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux'
-import QuickView from '../../../dialogs/product';
+// import QuickView from '../../../dialogs/product';
 import Button from '../../../shared/button/button';
 import ProductItem from '../../../shared/product/product-item';
 import { add } from '../../../../redux/actions/cart-actions'
@@ -19,11 +19,11 @@ import Paths from '../../../../utils/paths';
 
 const HomeView = () => {
     const dispatch = useDispatch()
-    const [modalIsShow, setModalIsShow] = useState(false);
+    // const [modalIsShow, setModalIsShow] = useState(false);
 
-    const modalCloseHandler = () => {
-        setModalIsShow(false);
-    }
+    // const modalCloseHandler = () => {
+    //     setModalIsShow(false);
+    // }
 
     const addToBasketHandler = (id, title, photo, price, feature) => {
         dispatch(add(id, title, photo, price, feature))

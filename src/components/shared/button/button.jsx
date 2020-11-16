@@ -16,7 +16,7 @@ const Button = ({
     textWrap = true,
     onClick,
     children,
-    $disabled=false
+    $disabled = false
 }) => {
     return (
         <StyledWrapper
@@ -45,7 +45,8 @@ Button.propTypes = {
     children: PropTypes.node,
     matchParent: PropTypes.bool,
     textWrap:PropTypes.bool,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    $disabled: PropTypes.bool
 }
 
 export default Button

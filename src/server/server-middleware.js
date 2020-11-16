@@ -6,7 +6,7 @@ import { StaticRouter } from 'react-router-dom';
 import { Helmet} from 'react-helmet';
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 
-import styled, { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from 'styled-components';
 import { CookiesProvider } from 'react-cookie';
 import { I18nextProvider} from 'react-i18next';
 
