@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import LoadingContext from '../../context/loading-context';
 
 const LoadingProvider = ({children}) => {
     const [loaded, setLoaded] = useState(false);
-    const [reset,setReset]=useState(false)
+    const [reset,setReset]=useState(true)
 
     const loadedAction = () => {
         setLoaded(true);
@@ -16,12 +16,8 @@ const LoadingProvider = ({children}) => {
         setReset(true)
     }
 
-   const toggleReset=()=>{
-    setReset(!reset)
-   }
-
   return (
-      <LoadingContext.Provider value={{loaded,loadedAction,resetLoaded,toggleReset,reset}}>
+      <LoadingContext.Provider value={{loaded,loadedAction,resetLoaded,reset}}>
           {children}
       </LoadingContext.Provider>
   )
