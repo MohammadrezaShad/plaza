@@ -3,22 +3,10 @@ import PropTypes from 'prop-types'
 
 import { StyledWrapper } from './pagination-item.styled'
 
-const PaginationItem = ({ text,pager,currentPage }) => {
-    const [selectedPage, setSelectedPage] = useState(false)
-    const pageChange=()=>{
-        pager(text)
-    }
-    
-    useEffect(() => {
-        if (currentPage===text && !selectedPage){
-            setSelectedPage(true)
-        }else if(currentPage !==text && selectedPage) {
-            setSelectedPage(false)
-        }
-    }, [currentPage])
+const PaginationItem = ({ text, currentPage, pager }) => {
 
     return (
-        <StyledWrapper selectedPage={selectedPage} onClick={pageChange}>
+        <StyledWrapper text={text} currentPage={currentPage} onClick={() => pager(text)}>
             {text}
         </StyledWrapper>
     )
@@ -26,8 +14,8 @@ const PaginationItem = ({ text,pager,currentPage }) => {
 
 PaginationItem.propTypes = {
     text: PropTypes.number,
-    currentPage:PropTypes.number,
-    pager:PropTypes.func
+    currentPage: PropTypes.number,
+    pager: PropTypes.func
 }
 
 export default PaginationItem
