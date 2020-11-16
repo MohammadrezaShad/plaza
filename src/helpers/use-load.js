@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 
 const useLoad = (devices, loadedAction, resetLoaded, loaded) => {
   const loadHandler = (devices) => {
-    if (loaded) {
-      resetLoaded();
-    }
     devices.map((device) => {
       return device
         .load()
@@ -19,6 +16,9 @@ const useLoad = (devices, loadedAction, resetLoaded, loaded) => {
   };
 
   useEffect(() => {
+    if(loaded){
+      resetLoaded()
+    }
     loadHandler(devices);
   }, []);
 
