@@ -4,7 +4,7 @@ import {
     parseUserReducerInitialData
 } from '../redux/reducers/user-reducer';
 
-export const getPreloadedState = (req, res) => {
+export const getPreloadedState = (req) => {
     let output = {};
     const cookies = req.universalCookies.cookies;
     if (!cookies) return output;

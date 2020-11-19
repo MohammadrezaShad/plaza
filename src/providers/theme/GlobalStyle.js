@@ -1,14 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
-import ShabnamEot from '../../assets/fonts/shabnam/Shabnam.eot';
-import ShabnamWoff2 from '../../assets/fonts/shabnam/Shabnam.woff2';
-import ShabnamWoff from '../../assets/fonts/shabnam/Shabnam.woff';
-import ShabnamTtf from '../../assets/fonts/shabnam/Shabnam.ttf';
+// import ShabnamEot from '../../assets/fonts/shabnam/Shabnam.eot';
+// import ShabnamWoff2 from '../../assets/fonts/shabnam/Shabnam.woff2';
+// import ShabnamWoff from '../../assets/fonts/shabnam/Shabnam.woff';
+// import ShabnamTtf from '../../assets/fonts/shabnam/Shabnam.ttf';
 
-import ShabnamBoldEot from '../../assets/fonts/shabnam/Shabnam-Bold.eot';
-import ShabnamBoldWoff2 from '../../assets/fonts/shabnam/Shabnam-Bold.woff2';
-import ShabnamBoldWoff from '../../assets/fonts/shabnam/Shabnam-Bold.woff';
-import ShabnamBoldTtf from '../../assets/fonts/shabnam/Shabnam-Bold.ttf';
+// import ShabnamBoldEot from '../../assets/fonts/shabnam/Shabnam-Bold.eot';
+// import ShabnamBoldWoff2 from '../../assets/fonts/shabnam/Shabnam-Bold.woff2';
+// import ShabnamBoldWoff from '../../assets/fonts/shabnam/Shabnam-Bold.woff';
+// import ShabnamBoldTtf from '../../assets/fonts/shabnam/Shabnam-Bold.ttf';
 
 export default createGlobalStyle`
    *{

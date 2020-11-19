@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { object } from 'prop-types';
 
 
 class HttpClient {
@@ -20,7 +19,7 @@ class HttpClient {
         return response;
     }
 
-    handleError = (error) => {
+    handleError(error) {
         switch (error.response.status) {
             case 401:
                 break;
