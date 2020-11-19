@@ -139,6 +139,7 @@ const mediaQueries = (breakPoint: string): string => {
 
 const breakPoints = {
     mobileSm: mediaQueries('425px'),
+    mobileMd: mediaQueries('460px'),
     mobile: mediaQueries('480px'),
     tablet: mediaQueries('768px'),
     laptop: mediaQueries('1024px'),
