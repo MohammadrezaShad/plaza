@@ -10,6 +10,7 @@ import IconProvider from '../../../providers/icon/icon-provider'
 const Pagination = ({ }) => {
     const [items, setItems] = useState([1, 2, 3, 4])
     const [currentPage, setCurrentPage] = useState(1)
+    
     const pager = (page) => {
         setCurrentPage(page)
     }

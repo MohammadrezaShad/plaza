@@ -13,6 +13,7 @@ import {
     StyledSpecialItem
 } from './home-view.styled';
 import Paths from '../../../../utils/paths';
+import StarRating from '../../../shared/star-rating';
 
 
 
@@ -41,6 +42,9 @@ const HomeView = () => {
                                 onClick={() => addToBasketHandler(100, "Gallaxy A70", "/res/mobile/100.jpg", 7500000, "مشکی")}
                             />
                         </div>
+                        <ul style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
+                            <StarRating rate={4} />
+                        </ul>
                     </StyledSpecialItem>
                     <StyledSpecialItem title="Gallaxy A50" as={ProductItem} href={Paths.product.detail(101).getPath()} price={6200000} offPrice={6500000} imgSrc="/res/mobile/101.jpg">
                         <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
@@ -49,6 +53,9 @@ const HomeView = () => {
                                 onClick={() => addToBasketHandler(101, "Gallaxy A50", "/res/mobile/101.jpg", 6200000, "سفید")}
                             />
                         </div>
+                        <ul style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
+                            <StarRating rate={4.5}/>
+                        </ul>
                     </StyledSpecialItem>
                     <StyledSpecialItem title="Gallaxy A30" as={ProductItem} href={Paths.product.detail(102).getPath()} price={5000000} offPrice={5200000} imgSrc="/res/mobile/102.jpg">
                         <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
@@ -57,6 +64,9 @@ const HomeView = () => {
                                 onClick={() => addToBasketHandler(102, "Gallaxy A30", "/res/mobile/102.jpg", 5000000, "سرمه ای")}
                             />
                         </div>
+                        <ul style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
+                            <StarRating rate={5}/>
+                        </ul>
                     </StyledSpecialItem>
                     <StyledSpecialItem title="Gallaxy A20" as={ProductItem} href={Paths.product.detail(103).getPath()} price={4300000} offPrice={4500000} imgSrc="/res/mobile/103.jpg">
                         <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
@@ -65,6 +75,9 @@ const HomeView = () => {
                                 onClick={() => addToBasketHandler(103, "Gallaxy A20", "/res/mobile/103.jpg", 5000000, "مشکی")}
                             />
                         </div>
+                        <ul style={{ marginTop: '10px', display: 'flex', justifyContent: 'center' }}>
+                            <StarRating rate={3}/>
+                        </ul>
                     </StyledSpecialItem>
                 </StyledSpecial>
             </StyledSpecialWrap>
