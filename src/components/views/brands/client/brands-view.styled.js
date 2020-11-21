@@ -12,12 +12,12 @@ export const StyledLayout = styled.div`
 
 export const StyleContentdBlock=styled.div`
  padding:0 ${({theme})=>theme.dim[2]};
- flex:0 0 75.5%;
+ flex:0 0 75%;
 `
 
 export const StyledSidebarBlock=styled.div`
  padding:0 ${({theme})=>theme.dim[2]};
- flex:0 0 24.5%;
+ flex:0 0 25%;
 `
 
 export const StyledContainer=styled.div`
