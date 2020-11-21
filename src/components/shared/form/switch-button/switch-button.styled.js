@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const StyledWrapper = styled.label`
-  position: relative;
-  display: inline-block;
-  width: 45px;
-  height: 24px;
-  border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    position:relative;
 `;
 
 export const StyledLayout = styled.span`
@@ -15,7 +13,7 @@ export const StyledLayout = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${({theme})=>theme.palette.stroke};
+  background-color: ${({ theme }) => theme.palette.stroke};
   transition: 0.4s;
   border-radius: 12px;
 
@@ -28,7 +26,7 @@ export const StyledLayout = styled.span`
     margin:0 3px;
     bottom: 50%;
     transform:translateY(50%);
-    background-color: ${({theme})=>theme.palette.back};
+    background-color: ${({ theme }) => theme.palette.back};
     transition: 0.3s all;
     border-radius: 50%;
     box-shadow: 0 1px 3px 0px rgba(0,0,0,0.16);
@@ -44,23 +42,39 @@ export const StyledLayout = styled.span`
     margin:0 6px;
     bottom: 50%;
     transform:translateY(50%);
-    background-color: ${({theme})=>theme.palette.strokeVariant};
+    background-color: ${({ theme }) => theme.palette.strokeVariant};
     transition: 0.3s all;
     border-radius: 50%;
   }
 `;
 
+export const StyledButtonWrap = styled.div`
+  position:relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+  border-radius: 12px;
+`
 export const StyledCheckBox = styled.input`
   visibility: hidden;
   opacity: 0;
   width: 0;
   height: 0;
   &:checked{
-    & + ${StyledLayout}{
-          background-color:${({theme})=>theme.palette.secondary};
+    & + ${StyledButtonWrap} ${StyledLayout}{
+          background-color:${({ theme }) =>theme.palette.success};
           &:before,&:after{
             left:21px;
           }
       }
   }
 `;
+
+
+export const StyledText = styled.span`
+cursor:pointer;
+display:inline-flex;
+color:${({ theme }) => theme.palette.onSurface};
+${({ theme }) => theme.typography.bodyMdNormal};
+margin-right:${({ theme }) => theme.dim[2]};
+`

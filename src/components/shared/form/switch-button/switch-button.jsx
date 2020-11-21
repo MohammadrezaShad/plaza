@@ -4,20 +4,27 @@ import PropTypes from 'prop-types'
 import {
     StyledWrapper,
     StyledCheckBox,
-    StyledLayout
+    StyledLayout,
+    StyledText,
+    StyledButtonWrap
 } from './switch-button.styled'
 
-const SwitchButton = ({ onChange, name }) => {
+const SwitchButton = ({ onChange, name,text }) => {
     return (
         <StyledWrapper>
-            <StyledCheckBox name={name} type="checkbox" onChange={onChange} />
-            <StyledLayout />
+            <StyledCheckBox name={name} type="checkbox" onChange={onChange}/>
+            <StyledButtonWrap>
+                <StyledLayout  />
+            </StyledButtonWrap>
+            <StyledText>{text}</StyledText>
         </StyledWrapper>
     )
 }
 
 SwitchButton.propTypes = {
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    text:PropTypes.string,
+    name:PropTypes.string,
 }
 
 export default SwitchButton
