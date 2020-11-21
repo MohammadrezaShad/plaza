@@ -26,7 +26,7 @@ const Icon = styled.span`
   padding: ${({ theme }) => theme.dim[1]};
   left: ${({ theme, onClick }) => (onClick ? theme.dim[1] : 0)};
   transform: translateY(-50%);
-  color: ${({ theme }) => theme.palette.subtitle};
+  color: ${({ theme ,iconColor}) =>iconColor==="onSurface" ?  theme.palette.onSurface:theme.palette.subtitle};
   cursor: ${({ onClick }) => (onClick ? "pointer" : "default")};
   ${({ buttonCallback }) =>
     buttonCallback

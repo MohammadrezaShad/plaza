@@ -19,6 +19,7 @@ const Textbox = ({
     buttonCallback,
     onChange,
     reference,
+    iconColor,
     ...props
 }) => {
     const [iconIsShow, setIconIsShow] = useState(showIcon || !!icon);
@@ -36,13 +37,13 @@ const Textbox = ({
     const renderIcon = () => {
         if (type === "password") {
             return (
-                <Icon text={inputIcon} onClick={toggleType}>
+                <Icon text={inputIcon} onClick={toggleType} iconColor={iconColor}>
                     <IconProvider icon={inputIcon} size="16px" />
                 </Icon>
             )
         } else if (iconIsShow) {
             return (
-                <Icon as={buttonCallback ? 'button' : 'span'} onClick={buttonCallback} buttonCallback={buttonCallback}>
+                <Icon as={buttonCallback ? 'button' : 'span'} onClick={buttonCallback} buttonCallback={buttonCallback} iconColor="onSurface">
                     {icon ? <IconProvider icon={icon} size="16px" /> : null}
                 </Icon>
             )
@@ -78,6 +79,7 @@ Textbox.propTypes = {
     type: PropTypes.string,
     error: PropTypes.bool,
     success: PropTypes.bool,
+    iconColor:PropTypes.string
 }
 
 export default Textbox
