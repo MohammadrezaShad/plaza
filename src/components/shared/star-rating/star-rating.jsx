@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import { StyledWrapper } from './star-rating.styled'
+import { StyledWrapper, StyledText } from './star-rating.styled'
 import StarRatingItem from './star-rating-item'
 
-const StarRating = ({ rate = 0, items = [1, 2, 3, 4, 5], liveHover = false }) => {
+const StarRating = ({ rate = 0, items = [1, 2, 3, 4, 5], liveHover = false,children}) => {
     const [rating, setRating] = useState(rate);
     const [hoverRating, setHoverRating] = useState(0);
     const onMouseMove = (index, e) => {
@@ -46,6 +46,7 @@ const StarRating = ({ rate = 0, items = [1, 2, 3, 4, 5], liveHover = false }) =>
     return (
         <StyledWrapper onMouseLeave={liveHover ? onMouseLeave : null}>
             {renderStars()}
+            {children}
         </StyledWrapper>
     )
 }
