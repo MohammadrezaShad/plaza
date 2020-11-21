@@ -7,6 +7,7 @@ import Signup from "./pages/signup";
 import Profile from "./pages/profile";
 import Order from "./pages/order";
 import ProfileOrders from "./pages/profile/orders";
+import Brands from "./pages/brands";
 
 import ClubLayout from "./components/layouts/club-layout";
 import HomeClub from "./pages/club";
@@ -36,6 +37,10 @@ const routes = [
       {
         path: Paths.product.detail().getRoute(),
         component: ProductDetail,
+      },
+      {
+        path: Paths.brand.home.getRoute(),
+        component: Brands,
       },
       {
         path: Paths.profile.home.getRoute(),
