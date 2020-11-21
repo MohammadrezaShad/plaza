@@ -16,7 +16,13 @@ const SwitchButton = ({ onChange, name,text }) => {
             <StyledButtonWrap>
                 <StyledLayout  />
             </StyledButtonWrap>
-            <StyledText>{text}</StyledText>
+            {
+                text
+                ?
+                <StyledText>{text}</StyledText>
+                :
+                null
+            }
         </StyledWrapper>
     )
 }
