@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 
-import { StyledWrapper, StyledTitle, StyledContainer } from './home-bottom.styled'
+import { StyledWrapper, StyledContainer } from './home-bottom.styled'
 import SpecialOffer from './special-offer'
 import Card from '../../../../../shared/card'
 
@@ -12,7 +12,6 @@ const HomeBottom = ({ }) => {
         <StyledContainer>
             <Card>
                 <StyledWrapper>
-                    <StyledTitle>{t('topRatedProduct')}</StyledTitle>
                     <SpecialOffer />
                 </StyledWrapper>
             </Card>
