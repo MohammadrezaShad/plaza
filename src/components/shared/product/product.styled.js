@@ -7,21 +7,47 @@ export const StyledBlock = styled.div`
   position: relative;
 
 `
+
+export const StyledHead = styled.div`
+  display:flex;
+  justify-content:space-between;
+  padding-bottom:${({ theme,borderTitle }) =>borderTitle ? theme.dim[2]:'0'};
+  border-bottom:${({borderTitle,theme})=>borderTitle ? 
+  `1px solid ${theme.palette.strokeVariant}`:'none'};
+  margin-right:${({ theme,marginHead}) =>marginHead ? theme.dim[6]:theme.dim[3]};
+  margin-left:${({ theme,marginHead }) =>marginHead ? theme.dim[6]:theme.dim[3]};
+`
+
+export const StyledTitle = styled.span`
+  position:relative;
+  display:inline-flex;
+  ${({ theme }) => theme.typography.headline2}
+  color: ${({ theme }) => theme.palette.onSurface};
+  &::before{
+    content: "";
+    position: absolute;
+    right: -8px;
+    transform:translateX(100%);
+    top: 6px;
+    background-color: #F89A01;
+    width: 4px;
+    height: 16px;
+  }
+`
+
 export const StyledButtonWrap = styled.div`
   display:inline-flex;
   ${({ buttonTopLeft }) => {
     if (buttonTopLeft) {
       return css`
-      position: absolute;
-      top:-21px;
-      left:16px;
-      transform: translateY(-100%);
-      &>button{
+      & > button {
         &:first-child{
           margin-left:${({ theme }) => theme.dim[2]};
         }
       }
-     `
+      
+      `
+
     } else {
       return css`
     & > button {

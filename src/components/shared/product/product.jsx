@@ -8,7 +8,9 @@ import {
     StyledBlock,
     StyledContainer,
     StyledProducts,
-    StyledButtonWrap
+    StyledButtonWrap,
+    StyledHead,
+    StyledTitle
 } from "./product.styled";
 import ProductItem from "../../shared/product/product-item";
 import Paths from "../../../utils/paths";
@@ -20,7 +22,16 @@ import Button from "../button";
 import { buttonSizes, buttonVariants } from "../../../constants/button-configs";
 import IconProvider from "../../../providers/icon/icon-provider";
 
-const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight=true,paddingUnit}) => {
+const Product = ({
+    items = [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+    buttonTopLeft, 
+    alignRight = true, 
+    title, 
+    marginHead = true, 
+    borderTitle = true ,
+    imgPaddingUnit,
+    children
+}) => {
     const [pageSpeed, setPageSpeed] = useState(4)
     const [itemWidth, setItemWidth] = useState(25)
     const [windowWidth, setWindowWidth] = useState(1600)
@@ -115,24 +126,32 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
 
     return (
         <StyledBlock >
-            <StyledButtonWrap buttonTopLeft={buttonTopLeft}>
-                <Button 
-                variant={buttonVariants.OUTLINE} 
-                size={buttonSizes.S_MEDIUM} 
-                onClick={moveRightHandler} 
-                $disabled={!rightArrowStatus}>
-                    <IconProvider icon="arrow-right" size="16px" />
-                </Button>
-                <Button 
-                variant={buttonVariants.OUTLINE} 
-                size={buttonSizes.S_MEDIUM} 
-                onClick={moveLeftHandler} 
-                $disabled={!leftArrowStatus}>
-                    <IconProvider icon="arrow-left" size="16px" />
-                </Button>
-            </StyledButtonWrap>
+            <StyledHead borderTitle={borderTitle} marginHead={marginHead}>
+                <StyledTitle >
+                    {title}
+                </StyledTitle>
+                <StyledButtonWrap buttonTopLeft={buttonTopLeft}>
+                    <Button
+                        variant={buttonVariants.OUTLINE}
+                        size={buttonSizes.S_MEDIUM}
+                        onClick={moveRightHandler}
+                        $disabled={!rightArrowStatus}>
+                        <IconProvider icon="arrow-right" size="16px" />
+                    </Button>
+                    <Button
+                        variant={buttonVariants.OUTLINE}
+                        size={buttonSizes.S_MEDIUM}
+                        onClick={moveLeftHandler}
+                        $disabled={!leftArrowStatus}>
+                        <IconProvider icon="arrow-left" size="16px" />
+                    </Button>
+                </StyledButtonWrap>
+            </StyledHead>
             <StyledWrapper buttonTopLeft={buttonTopLeft}>
-                <StyledProducts {...handlers}>
+                {
+                    children ?    
+                    children:             
+                    <StyledProducts {...handlers}>
                     <StyledContent $left={left} itemWidth={itemWidth}>
                         <StyledContainer>
                             <ProductItem
@@ -144,7 +163,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
+                                imgPaddingUnit={imgPaddingUnit}
                             />
 
                             <ProductItem
@@ -156,8 +175,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
-
+                                imgPaddingUnit={imgPaddingUnit}
                             />
 
                             <ProductItem
@@ -169,8 +187,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
-
+                                imgPaddingUnit={imgPaddingUnit}
                             />
 
                             <ProductItem
@@ -182,8 +199,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
-
+                                imgPaddingUnit={imgPaddingUnit}
                             />
 
                             <ProductItem
@@ -195,8 +211,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
-
+                                imgPaddingUnit={imgPaddingUnit}
                             />
                             <ProductItem
                                 href={Paths.home.getPath()}
@@ -207,8 +222,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
-
+                                imgPaddingUnit={imgPaddingUnit}
                             />
 
 
@@ -221,8 +235,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
-
+                                imgPaddingUnit={imgPaddingUnit}
                             />
 
                             <ProductItem
@@ -234,8 +247,7 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
-
+                                imgPaddingUnit={imgPaddingUnit}
                             />
                             <ProductItem
                                 href={Paths.home.getPath()}
@@ -246,12 +258,13 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
                                 point={102}
                                 Product={true}
                                 $alignRight={alignRight}
-                                paddingUnit={paddingUnit}
-
+                                imgPaddingUnit={imgPaddingUnit}
                             />
                         </StyledContainer>
                     </StyledContent>
                 </StyledProducts>
+                }
+
             </StyledWrapper>
         </StyledBlock>
     );
@@ -259,9 +272,8 @@ const Product = ({ items = [1, 2, 3, 4, 5, 6, 7, 8, 9], buttonTopLeft,alignRight
 
 Product.propTypes = {
     items: PropTypes.array,
-    buttonTopLeft:PropTypes.bool,
-    alignRight:PropTypes.bool,
-    paddingUnit:PropTypes.number
+    buttonTopLeft: PropTypes.bool,
+    alignRight: PropTypes.bool,
 };
 
 export default Product;
