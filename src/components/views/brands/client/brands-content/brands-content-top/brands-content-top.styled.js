@@ -14,7 +14,7 @@ export const StyledTitle = styled.span`
 `
 
 export const StyledContainer = styled.div`
- margin:0 -${({ theme }) => theme.dim[2]};
+ margin:0 -${({ theme }) => theme.dim[3]};
 `
 
 export const StyledLink = styled(Link)`

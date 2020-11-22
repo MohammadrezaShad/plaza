@@ -15,7 +15,10 @@ import Paths from '../../../../../../utils/paths'
 const BrandsContentTop = props => {
     return (
         <Fragment>
-            <StyledContent>
+
+            <StyledContainer>
+                <Product title={
+                <Fragment>
                 <StyledTitle>جدیدترین های هویت</StyledTitle>
                 <StyledLink to={Paths.home.getPath()}>
                 <Button 
@@ -24,9 +27,14 @@ const BrandsContentTop = props => {
                 color={buttonColors.SECONDARY} 
                 to={Paths.home.getPath()} />
                 </StyledLink>
-            </StyledContent>
-            <StyledContainer>
-                <Product buttonTopLeft={true} alignRight={true} paddingUnit={2}/>
+                </Fragment>
+                } 
+                borderTitle={false}
+                marginHead={false}
+                buttonTopLeft={true} 
+                alignRight={true} 
+                imgPaddingUnit={5}
+                />
             </StyledContainer>
         </Fragment>
     )
