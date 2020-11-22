@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 import { StyledWrapper } from './tabs.styled'
 import TabsItem from './tabs-item'
 
-const Tabs = ({ items = ['نقد و بررسی', 'مشخصات فنی', 'دیدگاه های کاربران', 'پرسش و پاسخ'] }) => {
-    const [selectedTab, setselectedTab] = useState(0)
-    const onClick = (index) => {
-        setselectedTab(index)
-        console.log(index)
-    }
+const Tabs = ({ 
+    items = ['نقد و بررسی', 'مشخصات فنی', 'دیدگاه های کاربران', 'پرسش و پاسخ'], 
+    onClick, 
+    selectedTab 
+}) => {
+
     const renderTabs = () => {
         return items.map((item, index) => {
             return (
@@ -25,7 +25,9 @@ const Tabs = ({ items = ['نقد و بررسی', 'مشخصات فنی', 'دید�
 }
 
 Tabs.propTypes = {
-
+    onClick:PropTypes.func,
+    selectedTab:PropTypes.number,
+    items:PropTypes.array
 }
 
 export default Tabs

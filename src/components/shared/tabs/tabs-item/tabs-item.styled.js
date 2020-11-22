@@ -20,6 +20,6 @@ export const StyledWrapper = styled.li`
     background-color: ${({ theme }) => theme.palette.primary};
     left: 0;
     right: 0;
-    bottom: -1px;
+    bottom: -1.5px;
   }
 `;
