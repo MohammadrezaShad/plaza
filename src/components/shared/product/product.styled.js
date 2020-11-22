@@ -14,7 +14,7 @@ export const StyledButtonWrap = styled.div`
       return css`
       position: absolute;
       top:-21px;
-      left:-8px;
+      left:16px;
       transform: translateY(-100%);
       &>button{
         &:first-child{
