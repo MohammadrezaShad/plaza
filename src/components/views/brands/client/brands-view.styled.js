@@ -13,11 +13,13 @@ export const StyledLayout = styled.div`
 export const StyleContentdBlock=styled.div`
  padding:0 ${({theme})=>theme.dim[2]};
  flex:0 0 75%;
+ min-width:0;
 `
 
 export const StyledSidebarBlock=styled.div`
  padding:0 ${({theme})=>theme.dim[2]};
  flex:0 0 25%;
+ min-width:0;
 `
 
 export const StyledContainer=styled.div`
