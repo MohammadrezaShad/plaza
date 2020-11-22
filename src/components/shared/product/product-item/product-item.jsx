@@ -9,27 +9,44 @@ import {
   StyledTitle,
   StyledLink,
   StyledImg,
-  StyledColors
+  StyledColors,
+  StyledGilMark,
+  StyledGilMarkText,
+  StyledSpecialWrap,
+  StyledSpecialIcon,
+  StyledSpecialText,
+  StyledSpecialLayout
+
 } from "./product-item.styled";
 import ProductItemDetail from "./product-item-detail";
 import ProductItemColor from "./product-item-color";
+import { ReactComponent as GilErtebatMark } from '../../../../assets/images/gilMark.svg'
+import IconProvider from "../../../../providers/icon/icon-provider";
 
-const ProductItem = ({ 
-  title, 
-  href, 
-  imgSrc, 
-  point, 
-  offPrice, 
-  price, 
-  colors, 
-  children, 
-  $alignRight, 
-  paddingUnit }) => {
+const ProductItem = ({
+  title,
+  href,
+  imgSrc,
+  point,
+  offPrice,
+  price,
+  colors,
+  children,
+  $alignRight,
+  paddingUnit,
+  $border,
+  specialOffer,
+  specialSale,
+  hoverable,
+  gilMark,
+  imgPaddingUnit,
+  brand,
+}) => {
   return (
-    <StyledWrapper paddingUnit={paddingUnit}>
+    <StyledWrapper brand={brand} $border={$border} paddingUnit={paddingUnit}>
       <StyledContainer >
         <StyledContent>
-          <StyledImgWrapper paddingUnit={paddingUnit}>
+          <StyledImgWrapper imgPaddingUnit={imgPaddingUnit}>
             <StyledLink to={href}>
               <StyledImg src={imgSrc} />
             </StyledLink>
@@ -49,6 +66,33 @@ const ProductItem = ({
           <ProductItemColor type={3} />
           <ProductItemColor type={4} />
         </StyledColors>
+        {
+          gilMark ?
+            <StyledGilMark>
+              <GilErtebatMark />
+              <StyledGilMarkText>
+                تکنوگیل شمال
+            </StyledGilMarkText>
+            </StyledGilMark> : null
+        }
+        {
+          specialOffer ?
+            <StyledSpecialWrap>
+              <StyledSpecialLayout $specialOffer={specialOffer} />
+              <StyledSpecialIcon $specialOffer={specialOffer} as={IconProvider} icon="special-offer" size="20px" />
+              <StyledSpecialText>پیشنهاد ویژه</StyledSpecialText>
+              <StyledSpecialLayout $specialOffer={specialOffer} />
+            </StyledSpecialWrap> : null
+        }
+        {
+          specialSale ?
+            <StyledSpecialWrap>
+              <StyledSpecialLayout $specialSale={specialSale} />
+              <StyledSpecialIcon $specialSale={specialSale} as={IconProvider} icon="special-sale" size="20px" />
+              <StyledSpecialText>فروش ویژه</StyledSpecialText>
+              <StyledSpecialLayout $specialSale={specialSale} />
+            </StyledSpecialWrap> : null
+        }
         {children}
       </StyledContainer>
     </StyledWrapper>
@@ -62,7 +106,10 @@ ProductItem.propTypes = {
   point: PropTypes.number,
   children: PropTypes.node,
   $alignRight: PropTypes.bool,
-  paddingUnit:PropTypes.number
+  paddingUnit: PropTypes.number,
+  $border: PropTypes.bool,
+  specialOffer: PropTypes.bool,
+  specialSail: PropTypes.bool
 };
 
 export default ProductItem;
