@@ -3,8 +3,10 @@ import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 
 import Tabs from '../../../../../shared/tabs'
-import { StyledBlock,StyledFilter } from './brands-content-main.styled'
+import { StyledBlock, StyledFilter, StyledProducts, StyledPagination } from './brands-content-main.styled'
 import BrandsContentFilters from './brands-content-filters'
+import BrandsContentProducts from './brands-content-products/brands-content-products'
+import Pagination from '../../../../../shared/pagination'
 
 const BrandsContentMain = props => {
     const { t } = useTranslation()
@@ -14,8 +16,8 @@ const BrandsContentMain = props => {
     }
 
     const [selectedFilter, setselectedFilter] = useState(0)
-    const filterClickHandler = (filterIndex) => { 
-        setselectedFilter(filterIndex) 
+    const filterClickHandler = (filterIndex) => {
+        setselectedFilter(filterIndex)
     }
 
     return (
@@ -27,12 +29,18 @@ const BrandsContentMain = props => {
                     onClick={tabClickHandler} />
             </StyledBlock>
             <StyledFilter>
-              <BrandsContentFilters 
-              selectedFilter={selectedFilter} 
-              items={['جدید ترین','گران ترین','ارزان ترین','پرفروش ترین']}
-              onClick={filterClickHandler}
-              />
+                <BrandsContentFilters
+                    selectedFilter={selectedFilter}
+                    items={['جدید ترین', 'گران ترین', 'ارزان ترین', 'پرفروش ترین']}
+                    onClick={filterClickHandler}
+                />
             </StyledFilter>
+            <StyledProducts>
+                <BrandsContentProducts />
+                <StyledPagination>
+                    <Pagination />
+                </StyledPagination>
+            </StyledProducts>
         </Fragment>
     )
 }
