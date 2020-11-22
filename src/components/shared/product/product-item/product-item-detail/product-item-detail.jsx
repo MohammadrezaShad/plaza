@@ -10,13 +10,13 @@ import {
     StyledCurrency
 } from './product-item-detail.styled'
 
-const ProductItemDetail = ({ price, offPrice }) => {
+const ProductItemDetail = ({ price, offPrice,$alignRight}) => {
     const { t } = useTranslation()
 
     return (
-        <StyledWrapper>
+        <StyledWrapper $alignRight={$alignRight}>
             <StyledContent>
-                <StyledPrice >{price.toLocaleString()}</StyledPrice>
+                <StyledPrice $alignRight={$alignRight}>{price.toLocaleString()}</StyledPrice>
                 <StyledOffPrice>{offPrice.toLocaleString()}</StyledOffPrice>
                 <StyledCurrency>{t('currency')}</StyledCurrency>
             </StyledContent>

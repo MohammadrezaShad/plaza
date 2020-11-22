@@ -5,7 +5,7 @@ export const StyledWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   margin-top: auto;
-  justify-content:center;
+  justify-content:${({$alignRight})=>$alignRight ? 'right':'center'};
   
 `;
 
@@ -33,8 +33,8 @@ export const StyledPoint = styled.span`
 export const StyledPrice = styled.span`
   display: inline-flex;
   position: absolute;
-  right:50%;
-  transform:translateX(50%);
+  right:${({$alignRight})=>$alignRight ? '0':'50%'} ;
+  transform:${({$alignRight})=>$alignRight ? 'translateX(0)':'translateX(50%)'};
   top: -14px;
   ${({ theme }) => theme.typography.subtitleXsNormal};
   color: ${({ theme }) => theme.palette.subtitle};
