@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const StyledWrapper = styled.li`
   flex:0 0 25%;
-  padding: 0 ${({ theme }) => theme.dim[3]};
+  padding: 0 ${({ theme,paddingUnit }) =>paddingUnit ?  theme.dim[paddingUnit]:theme.dim[1]};
   text-align: center;
   ${({theme})=>theme.breakPoints.desktop}{
     flex:0 0 33.33%;
@@ -20,20 +20,22 @@ export const StyledContainer = styled.div`
 export const StyledContent = styled.div``;
 
 export const StyledColors = styled.div`
-  margin-top: ${({ theme }) => theme.dim[2]};
+  margin-top: ${({ theme }) => theme.dim[1]};
+  text-align:${({$alignRight})=>$alignRight ? 'right':'center'};
 `;
 
 export const StyledImgWrapper = styled.div`
-  padding:0 ${({ theme }) => theme.dim[4]};
-  margin-bottom: ${({ theme }) => theme.dim[4]};
+  padding:${({paddingUnit})=>paddingUnit ? '0 46.5px':'0 44px'};
+  margin-bottom: ${({ theme }) => theme.dim[3]};
 `;
 
 export const StyledTitle = styled(Link)`
   display: block;
   text-decoration: none;
+  text-align:${({$alignRight})=>$alignRight ? 'right':'center'};
   ${({ theme }) => theme.typography.bodyMdNormal};
   color: ${({ theme }) => theme.palette.onSurface};
-  margin-bottom: ${({ theme }) => theme.dim[6]};
+  margin-bottom: ${({ theme }) => theme.dim[4]};
 `;
 
 export const StyledLink = styled(Link)`
