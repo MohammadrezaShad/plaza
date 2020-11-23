@@ -23,12 +23,12 @@ import { buttonSizes, buttonVariants } from "../../../constants/button-configs";
 import IconProvider from "../../../providers/icon/icon-provider";
 
 const Product = ({
-    items = [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-    buttonTopLeft, 
-    alignRight = true, 
-    title, 
-    marginHead = true, 
-    borderTitle = true ,
+    items = [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    buttonTopLeft,
+    alignRight = true,
+    title,
+    marginHead = true,
+    borderTitle = true,
     imgPaddingUnit,
     children
 }) => {
@@ -42,7 +42,7 @@ const Product = ({
     const [leftArrowStatus, setLeftArrowStatus] = useState(true)
     const [left, setLeft] = useState(0)
 
-    const handlers = useSwipeable({
+    const handlers =useSwipeable({
         onSwipedLeft: () => moveRightHandler(),
         onSwipedRight: () => moveLeftHandler(),
         preventDefaultTouchmoveEvent: true,
@@ -130,139 +130,149 @@ const Product = ({
                 <StyledTitle >
                     {title}
                 </StyledTitle>
-                <StyledButtonWrap buttonTopLeft={buttonTopLeft}>
-                    <Button
-                        variant={buttonVariants.OUTLINE}
-                        size={buttonSizes.S_MEDIUM}
-                        onClick={moveRightHandler}
-                        $disabled={!rightArrowStatus}>
-                        <IconProvider icon="arrow-right" size="16px" />
-                    </Button>
-                    <Button
-                        variant={buttonVariants.OUTLINE}
-                        size={buttonSizes.S_MEDIUM}
-                        onClick={moveLeftHandler}
-                        $disabled={!leftArrowStatus}>
-                        <IconProvider icon="arrow-left" size="16px" />
-                    </Button>
-                </StyledButtonWrap>
+                {
+                    items.length > itemToShow ?
+                        <StyledButtonWrap buttonTopLeft={buttonTopLeft}>
+                            <Button
+                                variant={buttonVariants.OUTLINE}
+                                size={buttonSizes.S_MEDIUM}
+                                onClick={moveRightHandler}
+                                $disabled={!rightArrowStatus}>
+                                <IconProvider icon="arrow-right" size="16px" />
+                            </Button>
+                            <Button
+                                variant={buttonVariants.OUTLINE}
+                                size={buttonSizes.S_MEDIUM}
+                                onClick={moveLeftHandler}
+                                $disabled={!leftArrowStatus}>
+                                <IconProvider icon="arrow-left" size="16px" />
+                            </Button>
+                        </StyledButtonWrap> : null
+                }
             </StyledHead>
             <StyledWrapper buttonTopLeft={buttonTopLeft}>
                 {
-                    children ?    
-                    children:             
-                    <StyledProducts {...handlers}>
-                    <StyledContent $left={left} itemWidth={itemWidth}>
-                        <StyledContainer>
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdOne}
-                                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
+                    children ?
+                        <StyledProducts {...handlers}>
+                            <StyledContent $left={left} itemWidth={itemWidth}>
+                                <StyledContainer>
+                                    {children}
+                                </StyledContainer>
+                            </StyledContent>
+                        </StyledProducts>
+                        :
+                        <StyledProducts {...handlers}>
+                            <StyledContent $left={left} itemWidth={itemWidth}>
+                                <StyledContainer>
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdOne}
+                                        title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
 
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdTwo}
-                                title="دسته بازی پلی استیشن 4 قرمز رنگ"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdTwo}
+                                        title="دسته بازی پلی استیشن 4 قرمز رنگ"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
 
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdThree}
-                                title="هدفون مشکی بی سیم به همراه کاپ های قرمز رنگ"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdThree}
+                                        title="هدفون مشکی بی سیم به همراه کاپ های قرمز رنگ"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
 
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdFour}
-                                title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdFour}
+                                        title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
 
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdFour}
-                                title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdFour}
-                                title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdFour}
+                                        title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdFour}
+                                        title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
 
 
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdFour}
-                                title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdFour}
+                                        title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
 
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdTwo}
-                                title="دسته بازی پلی استیشن 4 قرمز رنگ"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
-                            <ProductItem
-                                href={Paths.home.getPath()}
-                                imgSrc={ProdTwo}
-                                title="دسته بازی پلی استیشن 4 قرمز رنگ"
-                                price={3000000}
-                                offPrice={2550000}
-                                point={102}
-                                Product={true}
-                                $alignRight={alignRight}
-                                imgPaddingUnit={imgPaddingUnit}
-                            />
-                        </StyledContainer>
-                    </StyledContent>
-                </StyledProducts>
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdTwo}
+                                        title="دسته بازی پلی استیشن 4 قرمز رنگ"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
+                                    <ProductItem
+                                        href={Paths.home.getPath()}
+                                        imgSrc={ProdTwo}
+                                        title="دسته بازی پلی استیشن 4 قرمز رنگ"
+                                        price={3000000}
+                                        offPrice={2550000}
+                                        point={102}
+                                        Product={true}
+                                        $alignRight={alignRight}
+                                        imgPaddingUnit={imgPaddingUnit}
+                                    />
+                                </StyledContainer>
+                            </StyledContent>
+                        </StyledProducts>
                 }
 
             </StyledWrapper>
