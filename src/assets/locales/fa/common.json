@@ -86,6 +86,7 @@
   "return":"بازگشت",
   "next":"بعدی" ,
   "before" : "قبلی" ,
+  "plazaSpecialOffer":"پیشنهاد ویژه پلازا",
   "plazaClubArea": {
     "dashboard": "داشبورد",
     "pointGraph": "نمودار امتیازات",
@@ -189,6 +190,8 @@
      "enterBrand":"نام برند را وارد کنید",
      "moreCategories":"دسته بندی های بیشتر",
      "brandFeedback":"بازخورد برند",
-     "allProducts":"همه کالاها"
+     "allProducts":"همه کالاها",
+     "buyRecommend":"خرید این محصول را توصیه می‌کنم",
+     "buyNotRecommend":"خرید این محصول را توصیه نمی‌کنم"
   }
 }
