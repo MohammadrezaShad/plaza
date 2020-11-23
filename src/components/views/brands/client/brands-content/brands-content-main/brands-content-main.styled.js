@@ -18,5 +18,5 @@ export const StyledProducts = styled.div``
 export const StyledPagination = styled.div`
  display:flex;
  justify-content:flex-end;
- margin:0 ${({ theme }) => theme.dim[4]};
+ margin: ${({ theme }) => theme.dim[4]} 0;
 `
