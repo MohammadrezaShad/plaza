@@ -5,13 +5,14 @@ export const StyledWrapper = styled.button`
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:${({theme}) => theme.defaults.borderRadius};
+    border-radius:${({ theme }) => theme.defaults.borderRadius};
     text-decoration:none;
-    white-space:${({textWrap})=>textWrap ? 'normal':'nowrap'};
+    white-space:${({ textWrap }) => textWrap ? 'normal' : 'nowrap'};
     cursor:pointer;
-    width:${({matchParent}) => matchParent ? '100%' : null};
-    background-color:${({color, theme, variant}) => {
-        if (variant == buttonVariants.OUTLINE || variant == buttonVariants.LINK){
+    width:${({ matchParent }) => matchParent ? '100%' : null};
+    opacity:${({$disabled})=>$disabled ? '32%':1};
+    background-color:${({ color, theme, variant }) => {
+        if (variant == buttonVariants.OUTLINE || variant == buttonVariants.LINK) {
             return null
         }
         switch (color) {
@@ -22,12 +23,9 @@ export const StyledWrapper = styled.button`
                 return theme.palette.primary
         }
     }};
-    border:${({color, theme, variant,$disabled}) => {
-        if (variant == buttonVariants.FILL || variant == buttonVariants.LINK){
+    border:${({ color, theme, variant, $disabled }) => {
+        if (variant == buttonVariants.FILL || variant == buttonVariants.LINK) {
             return null
-        }
-        if ($disabled){
-            return `1px solid ` +theme.palette.strokeVariant
         }
         switch (color) {
             case buttonColors.PRIMARY:
@@ -39,10 +37,8 @@ export const StyledWrapper = styled.button`
                 return `1px solid ` + theme.palette.stroke
         }
     }};
-    color:${({color, theme, variant,$disabled}) => {
-        if ($disabled){
-            return theme.palette.subtitle
-        }else if(variant == buttonVariants.LINK || variant == buttonVariants.OUTLINE) {
+    color:${({ color, theme, variant, $disabled }) => {
+        if (variant == buttonVariants.LINK || variant == buttonVariants.OUTLINE) {
             switch (color) {
                 case buttonColors.PRIMARY:
                     return theme.palette.primary
@@ -63,7 +59,7 @@ export const StyledWrapper = styled.button`
             }
         }
     }};
-    min-height:${({size}) => {
+    min-height:${({ size }) => {
         switch (size) {
             case buttonSizes.MEDIUM:
                 return '40px'
@@ -78,7 +74,7 @@ export const StyledWrapper = styled.button`
                 return '56px'
         }
     }};
-    padding-right:${({size, theme, variant}) => {
+    padding-right:${({ size, theme, variant }) => {
         if (variant == buttonVariants.LINK) {
             return null
         }
@@ -96,7 +92,7 @@ export const StyledWrapper = styled.button`
                 return theme.dim[4]
         }
     }};
-    padding-left:${({size, theme, variant}) => {
+    padding-left:${({ size, theme, variant }) => {
         if (variant == buttonVariants.LINK) {
             return null
         }
@@ -114,7 +110,7 @@ export const StyledWrapper = styled.button`
                 return theme.dim[4]
         }
     }};
-    ${({size, theme}) => {
+    ${({ size, theme }) => {
         switch (size) {
             case buttonSizes.MEDIUM:
                 return theme.typography.buttonMdNormal
