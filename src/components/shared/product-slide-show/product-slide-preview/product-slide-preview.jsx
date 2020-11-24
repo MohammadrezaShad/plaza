@@ -9,7 +9,6 @@ import {
 } from './product-slide-preview.styled'
 
 const ProductSlidePreview = ({ onClick, selectedItem, prevImg, index }) => {
-    console.log(index,selectedItem)
     return (
         <StyledWrapper onClick={() => onClick(index)}>
             <StyledImgWrapper selectedItem={selectedItem} index={index}>
