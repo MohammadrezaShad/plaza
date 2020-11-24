@@ -4,15 +4,22 @@ import PropTypes from 'prop-types'
 import { StyledWrapper, StyledIcon, StyledTextWrap, StyledText } from './order-progress.styled'
 import IconProvider from '../../../../providers/icon/icon-provider'
 
-const OrderProgressItem = props => {
+const OrderProgressItem = (
+    { icons, 
+      textOne, 
+      textTwo, 
+      level, 
+      index }
+    ) => {
+    console.log(icons)
     return (
         <StyledWrapper>
-            <StyledIcon>
-                <IconProvider icon="shopping-cart" size="23px" />
+            <StyledIcon level={level} index={index} >
+                <IconProvider icon={icons} size="23px" />
             </StyledIcon>
             <StyledTextWrap>
-                <StyledText>سبد</StyledText>
-                <StyledText>خرید</StyledText>
+                <StyledText>{textOne}</StyledText>
+                <StyledText>{textTwo}</StyledText>
             </StyledTextWrap>
         </StyledWrapper>
     )

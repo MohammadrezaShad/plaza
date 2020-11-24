@@ -9,12 +9,14 @@ export const StyledIcon = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: ${({ theme }) => theme.defaults.borderRadius};
-  background-color: ${({ theme }) => theme.palette.back};
+  background-color: ${({ theme, level, index }) =>
+    level >= index ? theme.palette.secondary : theme.palette.back};
   width: 48px;
   height: 48px;
   border: 1px solid ${({ theme }) => theme.palette.stroke};
   svg {
-    color: ${({ theme }) => theme.palette.disabled};
+    color: ${({ theme, level, index }) => level >= index ? 
+    theme.palette.onPrimary : theme.palette.disabled};
   }
 `;
 
