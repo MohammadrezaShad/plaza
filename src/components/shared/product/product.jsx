@@ -21,9 +21,55 @@ import ProdFour from "../../../assets/images/club/prod4test.png";
 import Button from "../button";
 import { buttonSizes, buttonVariants } from "../../../constants/button-configs";
 import IconProvider from "../../../providers/icon/icon-provider";
-
+const itemsTest = [
+    {
+        id:1,
+        href: Paths.home.getPath(),
+        imgSrc: ProdOne,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id:2,
+        href: Paths.home.getPath(),
+        imgSrc: ProdTwo,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id:3,
+        href: Paths.home.getPath(),
+        imgSrc: ProdThree,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id:4,
+        href: Paths.home.getPath(),
+        imgSrc: ProdFour,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id:5,
+        href: Paths.home.getPath(),
+        imgSrc: ProdTwo,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    }
+]
 const Product = ({
-    items = [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    items = itemsTest,
     buttonTopLeft,
     alignRight = true,
     title,
@@ -42,7 +88,7 @@ const Product = ({
     const [leftArrowStatus, setLeftArrowStatus] = useState(true)
     const [left, setLeft] = useState(0)
 
-    const handlers =useSwipeable({
+    const handlers = useSwipeable({
         onSwipedLeft: () => moveRightHandler(),
         onSwipedRight: () => moveLeftHandler(),
         preventDefaultTouchmoveEvent: true,
@@ -164,112 +210,23 @@ const Product = ({
                         <StyledProducts {...handlers}>
                             <StyledContent $left={left} itemWidth={itemWidth}>
                                 <StyledContainer>
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdOne}
-                                        title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
-
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdTwo}
-                                        title="دسته بازی پلی استیشن 4 قرمز رنگ"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
-
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdThree}
-                                        title="هدفون مشکی بی سیم به همراه کاپ های قرمز رنگ"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
-
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdFour}
-                                        title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
-
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdFour}
-                                        title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdFour}
-                                        title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
-
-
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdFour}
-                                        title="موس گیمینگ زرد رنگ به امکانات حرفه ای برای گیمیر ها"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
-
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdTwo}
-                                        title="دسته بازی پلی استیشن 4 قرمز رنگ"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
-                                    <ProductItem
-                                        href={Paths.home.getPath()}
-                                        imgSrc={ProdTwo}
-                                        title="دسته بازی پلی استیشن 4 قرمز رنگ"
-                                        price={3000000}
-                                        offPrice={2550000}
-                                        point={102}
-                                        Product={true}
-                                        $alignRight={alignRight}
-                                        imgPaddingUnit={imgPaddingUnit}
-                                    />
+                                    {
+                                        items.map(({id,href, imgSrc, title, price, offPrice, point }) => {
+                                            return (
+                                                <ProductItem
+                                                key={id}
+                                                href={href}
+                                                imgSrc={imgSrc}
+                                                title={title}
+                                                price={price}
+                                                offPrice={offPrice}
+                                                point={point}
+                                                $alignRight={alignRight}
+                                                imgPaddingUnit={imgPaddingUnit}
+                                            />
+                                            )
+                                        })
+                                    }
                                 </StyledContainer>
                             </StyledContent>
                         </StyledProducts>
