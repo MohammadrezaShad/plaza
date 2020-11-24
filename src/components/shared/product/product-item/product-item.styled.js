@@ -1,10 +1,29 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledWrapper = styled.li`
-  flex:0 0 25%;
+  flex:${({ $mask }) => $mask ? `0 0 100%` : `0 0 25%`} ;
   position:relative;
-  padding:${({ theme, brand }) => brand ? `${theme.dim[7]} ${theme.dim[3]}` : theme.dim[3]};
+  transition:all .3s;
+  ${({ paddingStatus }) => {
+    if (paddingStatus) {
+      return css`
+        padding:${({ theme, itemPaddingUnit }) => itemPaddingUnit.length ?
+        `${theme.dim[itemPaddingUnit[0]]} ${theme.dim[itemPaddingUnit[1]]}` : theme.dim[3]};
+
+      `
+    }
+  }}
+    ${({ hoverable }) => {
+    if (hoverable) {
+      return css`
+      &:hover{
+        box-shadow: 0 0 20px rgba(0,0,0,.1);
+        z-index:10;
+      }
+      `
+    }
+  }}
   text-align: center;
   margin-right: ${({ theme, $border }) => $border ? '-2px' : '0'};
   margin-top: ${({ theme, $border }) => $border ? '-2px' : '0'};
@@ -12,7 +31,7 @@ export const StyledWrapper = styled.li`
   border:${({ theme, $border }) => $border ? `1px solid ${theme.palette.strokeVariant}` : 'none'};
   border-radius:${({ theme }) => theme.defaults.borderRadius};
   ${({ theme }) => theme.breakPoints.desktop}{
-    flex:0 0 33.33%;
+  flex:${({ $mask }) => $mask ? `0 0 100%` : `0 0 33.33%`} ;
   };
 `;
 
