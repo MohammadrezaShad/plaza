@@ -30,7 +30,7 @@ const ProductItem = ({
   point,
   offPrice,
   price,
-  colors,
+  colors = true,
   children,
   $alignRight,
   paddingUnit,
@@ -39,11 +39,13 @@ const ProductItem = ({
   specialSale,
   hoverable,
   gilMark,
+  paddingStatus = true,
   imgPaddingUnit,
-  brand,
+  itemPaddingUnit = [3, 3],
+  mask
 }) => {
   return (
-    <StyledWrapper brand={brand} $border={$border} paddingUnit={paddingUnit}>
+    <StyledWrapper hoverable={hoverable} $mask={mask} paddingStatus={paddingStatus} itemPaddingUnit={itemPaddingUnit} $border={$border} paddingUnit={paddingUnit}>
       <StyledContainer >
         <StyledContent>
           <StyledImgWrapper imgPaddingUnit={imgPaddingUnit}>
@@ -60,12 +62,16 @@ const ProductItem = ({
           point={point}
           $alignRight={$alignRight}
         />
-        <StyledColors $alignRight={$alignRight}>
-          <ProductItemColor type={1} />
-          <ProductItemColor type={2} />
-          <ProductItemColor type={3} />
-          <ProductItemColor type={4} />
-        </StyledColors>
+        {
+          colors ?
+            <StyledColors $alignRight={$alignRight}>
+              <ProductItemColor type={1} />
+              <ProductItemColor type={2} />
+              <ProductItemColor type={3} />
+              <ProductItemColor type={4} />
+            </StyledColors> : null
+        }
+
         {
           gilMark ?
             <StyledGilMark>
