@@ -91,7 +91,6 @@ const SubProductSlider = ({ children, items, defaultSpeed = 4, title }) => {
     }, [])
 
     useEffect(() => {
-        console.log(showedItem)
         if (showedItem >= items.length && leftMoveState) {
             setLeftMoveState(false)
         } else if (!leftMoveState && showedItem < items.length) {
