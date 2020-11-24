@@ -10,7 +10,9 @@ import {
     StyledBlock,
     StyledFilter,
     StyledProducts,
-    StyledPagination
+    StyledPagination,
+    StyledFeedbackPagination,
+    StyledFeedbackBlock
 } from './brands-content-main.styled'
 import BrandsContentFilters from './brands-content-filters'
 import BrandsContentProducts from './brands-content-products/brands-content-products'
@@ -51,19 +53,26 @@ const BrandsContentMain = props => {
                         <StyledProducts>
                             <BrandsContentProducts />
                         </StyledProducts>
+                        <StyledPagination >
+                            <Pagination />
+                        </StyledPagination>
                     </Fragment> :
                     <StyledContainer>
-                        <StyledWrapper>
-                            <BrandsFeedback />
-                        </StyledWrapper>
+                        <StyledFeedbackBlock>
+                            <StyledWrapper>
+                                <BrandsFeedback />
+                            </StyledWrapper>
+                            <StyledFeedbackPagination >
+                                <Pagination />
+                            </StyledFeedbackPagination>
+                        </StyledFeedbackBlock>
+
                         <StyledSlider>
                             <ProductSlideShow title={t("plazaSpecialOffer")} />
                         </StyledSlider>
                     </StyledContainer>
             }
-            <StyledPagination>
-                <Pagination />
-            </StyledPagination>
+
         </Fragment>
     )
 }
