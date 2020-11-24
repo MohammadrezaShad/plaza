@@ -23,13 +23,15 @@ export const StyledTitle = styled.span`
   display:inline-flex;
   ${({ theme }) => theme.typography.headline2}
   color: ${({ theme }) => theme.palette.onSurface};
+  margin-right:${({theme})=>theme.dim[2]};
+
   &::before{
     content: "";
     position: absolute;
     right: -8px;
-    transform:translateX(100%);
-    top: 6px;
-    background-color: #F89A01;
+    transform:translate(100%,-50%);
+    top: 50%;
+    background-color: ${({ theme }) => theme.palette.primary};
     width: 4px;
     height: 16px;
   }
