@@ -57,6 +57,7 @@ export const StyledText = styled.span`
  display:inline-flex;
  ${({ theme }) => theme.typography.bodyMdNormal};
  color:${({ theme }) => theme.palette.onSurface};
+ white-space:nowrap;
 `
 
 export const StyledPrcentage = styled.span`
@@ -65,13 +66,15 @@ export const StyledPrcentage = styled.span`
  color:${({ theme }) => theme.palette.onSurface};
  margin-left:${({ theme }) => theme.dim[1]};
  line-height:1;
- margin-top:${({ theme }) => theme.dim[1]};
+ margin-top:4px;
 `
 
 
 export const StyledConsent = styled.div`
 display:inline-flex;
 align-items:center;
+margin-left:${({ theme }) => theme.dim[1]};
+
 `
 
 export const StyledIconWrap=styled.span`
