@@ -78,10 +78,10 @@ const BrandsCategory = ({
                         size={buttonSizes.SMALL}
                         color={buttonColors.SECONDARY}
                         variant={buttonVariants.LINK}
-                        text={t("brandsView.moreCategories")}
+                        text={!showMore ? t("brandsView.moreCategories"):t("close")}
                         onClick={expandHandler}
-                    >
-                        <StyledIcon as={IconProvider} icon="arrow-down" size="10px" />
+                      >
+                        <StyledIcon as={IconProvider} icon={!showMore ? "arrow-down":"arrow-up"} size="10px" />
                     </Button>
                 </StyledButton>
             </StyledBlock>
