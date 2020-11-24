@@ -87,6 +87,9 @@
   "next":"بعدی" ,
   "before" : "قبلی" ,
   "plazaSpecialOffer":"پیشنهاد ویژه پلازا",
+  "specialOffer":"پیشنهاد ویژه",
+  "specialSale":"فروش ویژه",
+  "gilMark":"تکنوگیل شمال",
   "plazaClubArea": {
     "dashboard": "داشبورد",
     "pointGraph": "نمودار امتیازات",
