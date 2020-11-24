@@ -44,7 +44,8 @@ declare module "styled-components" {
         8: string;
     },
     zIndex: {
-      header:number
+      header:number;
+      productItem:number;
     },
     typography: {
         headline1: string;
