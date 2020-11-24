@@ -81,7 +81,7 @@ const BrandsCategory = ({
                         text={t("brandsView.moreCategories")}
                         onClick={expandHandler}
                     >
-                        <StyledIcon as={IconProvider} icon="arrow-left" size="10px" />
+                        <StyledIcon as={IconProvider} icon="arrow-down" size="10px" />
                     </Button>
                 </StyledButton>
             </StyledBlock>
