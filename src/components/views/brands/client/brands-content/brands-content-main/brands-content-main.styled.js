@@ -19,4 +19,24 @@ export const StyledPagination = styled.div`
  display:flex;
  justify-content:flex-end;
  margin: ${({ theme }) => theme.dim[4]} 0;
+ width:75%;
+`
+
+export const StyledWrapper = styled.div`
+ padding:0 ${({ theme }) => theme.dim[2]};
+ flex:0 0 66.6%;
+ min-width:0;
+`
+
+export const StyledContainer = styled.div`
+  display:flex;
+  margin:0 -${({ theme }) => theme.dim[2]};
+
+`
+
+export const StyledSlider = styled.div`
+ padding:0 ${({ theme }) => theme.dim[2]};
+ flex:0 0 33.4%;
+ min-width:0;
+ align-self:flex-start;
 `
