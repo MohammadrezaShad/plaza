@@ -16,13 +16,14 @@ const BrandsContentProducts = props => {
                 price={3000000}
                 offPrice={2550000}
                 point={102}
-                Product={true}
+                hoverable={true}
                 $alignRight={true}
                 gilMark={true}
                 $border={true}
                 brand={true}
                 specialOffer={true}
                 hoverable={true}
+                itemPaddingUnit={[7,3]}
             />
             <ProductItem
                 href={Paths.home.getPath()}
@@ -31,27 +32,14 @@ const BrandsContentProducts = props => {
                 price={3000000}
                 offPrice={2550000}
                 point={102}
-                Product={true}
+                hoverable={true}
                 $alignRight={true}
                 gilMark={true}
                 $border={true}
                 brand={true}
                 specialSale={true}
                 hoverable={true}
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                Product={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                hoverable={true}
+                itemPaddingUnit={[7,3]}
 
             />
             <ProductItem
@@ -61,12 +49,13 @@ const BrandsContentProducts = props => {
                 price={3000000}
                 offPrice={2550000}
                 point={102}
-                Product={true}
+                hoverable={true}
                 $alignRight={true}
                 gilMark={true}
                 $border={true}
                 brand={true}
                 hoverable={true}
+                itemPaddingUnit={[7,3]}
 
             />
             <ProductItem
@@ -76,12 +65,13 @@ const BrandsContentProducts = props => {
                 price={3000000}
                 offPrice={2550000}
                 point={102}
-                Product={true}
+                hoverable={true}
                 $alignRight={true}
                 gilMark={true}
                 $border={true}
                 brand={true}
                 hoverable={true}
+                itemPaddingUnit={[7,3]}
 
             />
             <ProductItem
@@ -91,12 +81,13 @@ const BrandsContentProducts = props => {
                 price={3000000}
                 offPrice={2550000}
                 point={102}
-                Product={true}
+                hoverable={true}
                 $alignRight={true}
                 gilMark={true}
                 $border={true}
                 brand={true}
                 hoverable={true}
+                itemPaddingUnit={[7,3]}
 
             />
             <ProductItem
@@ -106,12 +97,13 @@ const BrandsContentProducts = props => {
                 price={3000000}
                 offPrice={2550000}
                 point={102}
-                Product={true}
+                hoverable={true}
                 $alignRight={true}
                 gilMark={true}
                 $border={true}
                 brand={true}
                 hoverable={true}
+                itemPaddingUnit={[7,3]}
 
             />
             <ProductItem
@@ -121,12 +113,13 @@ const BrandsContentProducts = props => {
                 price={3000000}
                 offPrice={2550000}
                 point={102}
-                Product={true}
+                hoverable={true}
                 $alignRight={true}
                 gilMark={true}
                 $border={true}
                 brand={true}
                 hoverable={true}
+                itemPaddingUnit={[7,3]}
 
             />
             <ProductItem
@@ -136,12 +129,29 @@ const BrandsContentProducts = props => {
                 price={3000000}
                 offPrice={2550000}
                 point={102}
-                Product={true}
+                hoverable={true}
                 $alignRight={true}
                 gilMark={true}
                 $border={true}
                 brand={true}
                 hoverable={true}
+                itemPaddingUnit={[7,3]}
+
+            />
+            <ProductItem
+                href={Paths.home.getPath()}
+                imgSrc={ProdOne}
+                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
+                price={3000000}
+                offPrice={2550000}
+                point={102}
+                hoverable={true}
+                $alignRight={true}
+                gilMark={true}
+                $border={true}
+                brand={true}
+                hoverable={true}
+                itemPaddingUnit={[7,3]}
 
             />
         </StyledWrapper>
