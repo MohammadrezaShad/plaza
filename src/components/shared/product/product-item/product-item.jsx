@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 import {
   StyledWrapper,
@@ -16,7 +17,6 @@ import {
   StyledSpecialIcon,
   StyledSpecialText,
   StyledSpecialLayout
-
 } from "./product-item.styled";
 import ProductItemDetail from "./product-item-detail";
 import ProductItemColor from "./product-item-color";
@@ -44,6 +44,7 @@ const ProductItem = ({
   itemPaddingUnit = [3, 3],
   mask
 }) => {
+  const { t } = useTranslation()
   return (
     <StyledWrapper hoverable={hoverable} $mask={mask} paddingStatus={paddingStatus} itemPaddingUnit={itemPaddingUnit} $border={$border} paddingUnit={paddingUnit}>
       <StyledContainer >
@@ -77,7 +78,7 @@ const ProductItem = ({
             <StyledGilMark>
               <GilErtebatMark />
               <StyledGilMarkText>
-                تکنوگیل شمال
+              {t("gilMark")}
             </StyledGilMarkText>
             </StyledGilMark> : null
         }
@@ -86,7 +87,7 @@ const ProductItem = ({
             <StyledSpecialWrap>
               <StyledSpecialLayout $specialOffer={specialOffer} />
               <StyledSpecialIcon $specialOffer={specialOffer} as={IconProvider} icon="special-offer" size="20px" />
-              <StyledSpecialText>پیشنهاد ویژه</StyledSpecialText>
+              <StyledSpecialText>{t("specialOffer")}</StyledSpecialText>
               <StyledSpecialLayout $specialOffer={specialOffer} />
             </StyledSpecialWrap> : null
         }
@@ -95,7 +96,7 @@ const ProductItem = ({
             <StyledSpecialWrap>
               <StyledSpecialLayout $specialSale={specialSale} />
               <StyledSpecialIcon $specialSale={specialSale} as={IconProvider} icon="special-sale" size="20px" />
-              <StyledSpecialText>فروش ویژه</StyledSpecialText>
+              <StyledSpecialText>{t("specialSale")}</StyledSpecialText>
               <StyledSpecialLayout $specialSale={specialSale} />
             </StyledSpecialWrap> : null
         }
