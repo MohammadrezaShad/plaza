@@ -8,7 +8,7 @@ const StarRating = ({ rate = 0, items = [1, 2, 3, 4, 5], liveHover = false,child
     const [rating, setRating] = useState(rate);
     const [hoverRating, setHoverRating] = useState(0);
     const onMouseMove = (index, e) => {
-        let percentage = (e.clientX - e.currentTarget.offsetLeft) / e.currentTarget.offsetWidth * 100
+        let percentage = (e.clientX - e.currentTarget.getClientRects()[0].left) / e.currentTarget.offsetWidth * 100
         if (0 <= percentage && percentage <= 50) {
             setHoverRating(index - 0.5);
         } else if (0 <= percentage) {
@@ -19,8 +19,8 @@ const StarRating = ({ rate = 0, items = [1, 2, 3, 4, 5], liveHover = false,child
         setHoverRating(0)
     };
 
-    const onSaveRating = (index, e) => {
-        let percentage = (e.clientX - e.currentTarget.offsetLeft) / e.currentTarget.offsetWidth * 100
+    const onSaveRating = function(index, e) {
+        let percentage = (e.clientX - e.currentTarget.getClientRects()[0].left) / e.currentTarget.offsetWidth * 100
         if (0 <= percentage && percentage <= 50) {
             setRating(index - 0.5);
         } else if (0 <= percentage) {
