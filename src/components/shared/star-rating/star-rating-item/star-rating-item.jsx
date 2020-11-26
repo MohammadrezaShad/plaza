@@ -19,7 +19,7 @@ const StarRatingItem = ({
                 return <StyledIconPrimary as={IconProvider} icon="star" size="17px" />
 
             case 'half':
-                return <StyledIconHalf as={IconProvider} icon="half-star" size="17px" />
+                return <StyledIconHalf as={IconProvider} icon="half-star-withStroke" size="17px" />
 
             default:
                 return <StyledIconEmpty as={IconProvider} icon="star-outline" size="17px" />
