@@ -63,7 +63,7 @@ const dim = {
 
 const zIndex = {
     header: 100,
-    productItem:10
+    productItem: 10
 }
 
 const typography = {
@@ -112,6 +112,10 @@ const typography = {
                 font-size: 12px;
                 font-weight: normal;
                 line-height: 1.5;`,
+    subtitleXsBold: `
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 1.5;`,
 
     buttonMdNormal: `
                 font-size: 16px;
@@ -146,7 +150,7 @@ const breakPoints = {
     tablet: mediaQueries('768px'),
     laptop: mediaQueries('1024px'),
     laptopL: mediaQueries('1440px'),
-    desktop:mediaQueries('1280px'),
+    desktop: mediaQueries('1280px'),
     desktopL: mediaQueries('2560px')
 }
 // xs: 480,

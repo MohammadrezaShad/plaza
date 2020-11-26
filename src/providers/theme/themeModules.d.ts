@@ -60,6 +60,7 @@ declare module "styled-components" {
         bodySmBold: string;
         bodySmNormal: string;
         subtitleXsNormal: string;
+        subtitleXsBold:string;
         buttonMdNormal: string;
         buttonXsNormal: string;
     },
