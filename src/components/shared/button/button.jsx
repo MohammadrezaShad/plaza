@@ -13,7 +13,7 @@ const Button = ({
     color = variant == buttonVariants.FILL ? buttonColors.PRIMARY : null,
     matchParent,
     text,
-    textWrap = true,
+    textWrap = false,
     onClick,
     children,
     $disabled = false
