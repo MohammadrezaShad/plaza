@@ -18,9 +18,10 @@ export const StyledTooltip = styled.div`
   &:after {
     content: "";
     position: absolute;
-    bottom: -7px;
     right: 50%;
-    transform: translateX(50%);
+    bottom:${({ topTriangle }) => !topTriangle ? '-7px' : 'auto'};
+    top:${({ topTriangle }) => topTriangle ? '-7px' : 'auto'};
+    transform:${({ topTriangle }) => topTriangle ? 'translateX(50%) rotate(180deg)' : 'translateX(50%)'};
     width: 0px;
     height: 0px;
     border-left: 7px solid transparent;
@@ -30,9 +31,10 @@ export const StyledTooltip = styled.div`
   &:before {
     content: "";
     position: absolute;
-    bottom: -8px;
+    bottom:${({ topTriangle }) => !topTriangle ? '-8px' : 'auto'};
+    top:${({ topTriangle }) => topTriangle ? '-8px' : 'auto'};
     right: 50%;
-    transform: translateX(50%);
+    transform:${({ topTriangle }) => topTriangle ? 'translateX(50%) rotate(180deg)' : 'translateX(50%)'};
     width: 0px;
     height: 0px;
     border-left: 8.5px solid transparent;
@@ -54,14 +56,14 @@ export const StyledHeader = styled.span`
 export const StyledText = styled.span`
   display:block;
   padding: ${({ theme }) => theme.dim[1]} ${({ theme }) => theme.dim[2]};
-  padding-top:${({theme,$isNotFirst}) => $isNotFirst ? Math.round(parseInt(theme.dim[1])/2) + 'px' : null};
-  ${({theme}) => theme.typography.bodyMdNormal};
-  color:${({theme}) => theme.palette.onBack};
+  padding-top:${({ theme, $isNotFirst }) => $isNotFirst ? Math.round(parseInt(theme.dim[1]) / 2) + 'px' : null};
+  ${({ theme }) => theme.typography.bodyMdNormal};
+  color:${({ theme }) => theme.palette.onBack};
   line-height:1;
 `
 
 export const StyledFooter = styled.span`
   display:block;
-  padding: ${({ theme }) => theme.dim[1]} ${({ theme }) => theme.dim[2]} ${({ theme }) => theme.dim[2] };
+  padding: ${({ theme }) => theme.dim[1]} ${({ theme }) => theme.dim[2]} ${({ theme }) => theme.dim[2]};
   
 `;
