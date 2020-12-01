@@ -10,7 +10,8 @@ import {
     StyledProducts,
     StyledButtonWrap,
     StyledHead,
-    StyledTitle
+    StyledTitle,
+    StyledItem
 } from "./product.styled";
 import ProductItem from "../../shared/product/product-item";
 import Paths from "../../../utils/paths";
@@ -23,7 +24,7 @@ import { buttonSizes, buttonVariants } from "../../../constants/button-configs";
 import IconProvider from "../../../providers/icon/icon-provider";
 const itemsTest = [
     {
-        id:1,
+        id: 1,
         href: Paths.home.getPath(),
         imgSrc: ProdOne,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
@@ -32,7 +33,25 @@ const itemsTest = [
         point: 102
     },
     {
-        id:2,
+        id: 1111,
+        href: Paths.home.getPath(),
+        imgSrc: ProdOne,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id: 2222,
+        href: Paths.home.getPath(),
+        imgSrc: ProdOne,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id: 2,
         href: Paths.home.getPath(),
         imgSrc: ProdTwo,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
@@ -41,7 +60,7 @@ const itemsTest = [
         point: 102
     },
     {
-        id:3,
+        id: 3,
         href: Paths.home.getPath(),
         imgSrc: ProdThree,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
@@ -50,7 +69,7 @@ const itemsTest = [
         point: 102
     },
     {
-        id:4,
+        id: 4,
         href: Paths.home.getPath(),
         imgSrc: ProdFour,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
@@ -59,7 +78,7 @@ const itemsTest = [
         point: 102
     },
     {
-        id:5,
+        id: 5,
         href: Paths.home.getPath(),
         imgSrc: ProdTwo,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
@@ -73,10 +92,12 @@ const Product = ({
     buttonTopLeft,
     alignRight = true,
     title,
-    marginHead = true,
     borderTitle = true,
-    imgPaddingUnit,
-    children
+    imgWidth,
+    itemPaddingUnit,
+    children,
+    headMarginUnit,
+    favorite
 }) => {
     const [pageSpeed, setPageSpeed] = useState(4)
     const [itemWidth, setItemWidth] = useState(25)
@@ -87,6 +108,8 @@ const Product = ({
     const [rightArrowStatus, setRightArrowStatus] = useState(true)
     const [leftArrowStatus, setLeftArrowStatus] = useState(true)
     const [left, setLeft] = useState(0)
+    const [hoverItem, sethoverItem] = useState(null)
+
 
     const handlers = useSwipeable({
         onSwipedLeft: () => moveRightHandler(),
@@ -131,6 +154,8 @@ const Product = ({
         setItemWidth(window.innerWidth > 1280 ? 25 : 33.33)
         setWindowWidth(window.innerWidth)
         setItemToShow(window.innerWidth > 1280 ? 4 : 3)
+        setItemShowed(window.innerWidth > 1280 ? 4 : 3)
+        setRemainingItem(window.innerWidth > 1280 ? items.length - 4 : items.length - 3)
     }, [])
 
     useEffect(() => {
@@ -152,7 +177,7 @@ const Product = ({
             setItemWidth(25)
         }
 
-        if ((itemShowed === itemToShow) || (itemToShow >= items.length && rightArrowStatus)) {
+        if ((itemShowed === itemToShow) || (itemToShow >= items.length && rightArrowStatus) || left === 0) {
             setRightArrowStatus(false)
         } else if (!rightArrowStatus) {
             setRightArrowStatus(true)
@@ -166,13 +191,14 @@ const Product = ({
         return () => {
             window.removeEventListener('resize', resizeHandler);
         }
+
     }, [itemShowed, itemToShow, itemWidth, windowWidth, left, remainingItem, pageSpeed])
 
 
 
     return (
         <StyledBlock >
-            <StyledHead borderTitle={borderTitle} marginHead={marginHead}>
+            <StyledHead borderTitle={borderTitle} headMarginUnit={headMarginUnit}>
                 <StyledTitle >
                     {title}
                 </StyledTitle>
@@ -207,23 +233,41 @@ const Product = ({
                             </StyledContent>
                         </StyledProducts>
                         :
-                        <StyledProducts {...handlers}>
+                        <StyledProducts {...handlers} itemPaddingUnit={itemPaddingUnit}>
                             <StyledContent $left={left} itemWidth={itemWidth}>
                                 <StyledContainer>
                                     {
-                                        items.map(({id,href, imgSrc, title, price, offPrice, point }) => {
+                                        items.map(({
+                                            id,
+                                            href,
+                                            imgSrc,
+                                            title,
+                                            price,
+                                            offPrice,
+                                            point }) => {
                                             return (
-                                                <ProductItem
-                                                key={id}
-                                                href={href}
-                                                imgSrc={imgSrc}
-                                                title={title}
-                                                price={price}
-                                                offPrice={offPrice}
-                                                point={point}
-                                                $alignRight={alignRight}
-                                                imgPaddingUnit={imgPaddingUnit}
-                                            />
+                                                <StyledItem
+                                                    key={id}
+                                                    itemPaddingUnit={itemPaddingUnit}
+                                                    windowWidth={windowWidth}
+                                                    onMouseEnter={() => sethoverItem(id)}
+                                                    onMouseLeave={() => sethoverItem(null)}
+                                                >
+                                                    <ProductItem
+                                                        id={id}
+                                                        href={href}
+                                                        imgSrc={imgSrc}
+                                                        title={title}
+                                                        price={price}
+                                                        favorite={favorite}
+                                                        offPrice={offPrice}
+                                                        point={point}
+                                                        $alignRight={alignRight}
+                                                        imgWidth={imgWidth}
+                                                        gilMark={false}
+                                                        hover={hoverItem === id}
+                                                    />
+                                                </StyledItem>
                                             )
                                         })
                                     }
@@ -241,6 +285,13 @@ Product.propTypes = {
     items: PropTypes.array,
     buttonTopLeft: PropTypes.bool,
     alignRight: PropTypes.bool,
+    title: PropTypes.string || PropTypes.object,
+    borderTitle: PropTypes.bool,
+    imgWidth: PropTypes.string,
+    itemPaddingUnit: PropTypes.number,
+    children: PropTypes.node,
+    headMarginUnit: PropTypes.number,
+    favorite: PropTypes.bool
 };
 
 export default Product;

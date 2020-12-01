@@ -2,8 +2,8 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledHoverIconWrap = styled.div`
- opacity:0;
- visibility:hidden;
+ opacity:${({hover})=>hover ? '1':'0'};
+ visibility:${({hover})=>hover ? 'visable':'hidden'};;
  position:absolute;
  top:${({ theme, $specialOffer, $specialSale }) =>
     $specialOffer || $specialSale ? theme.dim[4] : theme.dim[3]};
@@ -12,7 +12,7 @@ export const StyledHoverIconWrap = styled.div`
  flex-flow:column;
  transition-property: visibility, opacity;
  transition: 0s visibility, 0.5s opacity;
- transition-delay:0s 0s; 
+ transition-delay:${({hover})=>hover ? '.3s 0s':'0s 0s'}; 
 `
 
 export const StyledWrapper = styled.li`
@@ -69,8 +69,8 @@ export const StyledColors = styled.div`
 `;
 
 export const StyledImgWrapper = styled.div`
-  padding:0 ${({ theme, imgPaddingUnit }) => imgPaddingUnit ? theme.dim[imgPaddingUnit] : theme.dim[4]};
-  margin-bottom: ${({ theme }) => theme.dim[3]};
+  width:${({imgWidth})=>imgWidth};
+  margin:0 auto ${({ theme }) => theme.dim[3]} auto;
 `;
 
 export const StyledTitle = styled(Link)`

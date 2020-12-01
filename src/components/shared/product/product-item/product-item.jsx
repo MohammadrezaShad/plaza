@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
@@ -35,23 +35,20 @@ const ProductItem = ({
   colors = true,
   children,
   $alignRight,
-  paddingUnit,
-  $border,
   specialOffer,
   specialSale,
-  hoverable,
+  hover,
   gilMark,
-  paddingStatus = true,
-  imgPaddingUnit,
-  itemPaddingUnit = [3, 3],
-  mask
+  imgWidth = "67%",
+  favorite = true,
+  compare = false
 }) => {
   const { t } = useTranslation()
   return (
-    <StyledWrapper hoverable={hoverable} $mask={mask} paddingStatus={paddingStatus} itemPaddingUnit={itemPaddingUnit} $border={$border} paddingUnit={paddingUnit}>
+    <Fragment >
       <StyledContainer >
         <StyledContent>
-          <StyledImgWrapper imgPaddingUnit={imgPaddingUnit}>
+          <StyledImgWrapper imgWidth={imgWidth}>
             <StyledLink to={href}>
               <StyledImg src={imgSrc} />
             </StyledLink>
@@ -102,30 +99,42 @@ const ProductItem = ({
               <StyledSpecialLayout $specialSale={specialSale} />
             </StyledSpecialWrap> : null
         }
-        <StyledHoverIconWrap  $specialSale={specialSale} $specialOffer={specialOffer}>
-          <StyledHoverIcon 
-          as={IconProvider} 
-          icon="select-compare" 
-          size="24px" />
-          <StyledHoverIcon as={IconProvider} icon="favorite-o" size="24px" />
+        <StyledHoverIconWrap hover={hover} $specialSale={specialSale} $specialOffer={specialOffer}>
+          {
+            compare ?
+              <StyledHoverIcon
+                as={IconProvider}
+                icon="select-compare"
+                size="24px" /> : ''
+          }
+          {
+            favorite ?
+              <StyledHoverIcon as={IconProvider} icon="favorite-o" size="24px" /> : ''
+          }
         </StyledHoverIconWrap>
         {children}
       </StyledContainer>
-    </StyledWrapper>
+    </Fragment>
   );
 };
 
 ProductItem.propTypes = {
+  title: PropTypes.string,
   price: PropTypes.number,
+  imgSrc: PropTypes.string,
   offPrice: PropTypes.number,
   href: PropTypes.string,
   point: PropTypes.number,
   children: PropTypes.node,
   $alignRight: PropTypes.bool,
-  paddingUnit: PropTypes.number,
-  $border: PropTypes.bool,
   specialOffer: PropTypes.bool,
-  specialSail: PropTypes.bool
+  specialSail: PropTypes.bool,
+  colors: PropTypes.bool,
+  hover: PropTypes.bool,
+  gilMark: PropTypes.bool,
+  imgWidth: PropTypes.string,
+  favorite: PropTypes.bool,
+  compare: PropTypes.bool
 };
 
 export default ProductItem;

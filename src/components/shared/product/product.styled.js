@@ -5,17 +5,23 @@ import Button from "../button";
 
 export const StyledBlock = styled.div`
   position: relative;
+`
 
+export const StyledItem = styled.li`
+  position:relative;
+  flex:${({windowWidth})=>windowWidth>1280 ? '0 0 25%':'0 0 33.33%'} ;
+  transition:all .3s;
+  padding:0 ${({ theme, itemPaddingUnit }) => itemPaddingUnit ? theme.dim[itemPaddingUnit] : theme.dim[2]};
 `
 
 export const StyledHead = styled.div`
   display:flex;
   justify-content:space-between;
-  padding-bottom:${({ theme,borderTitle }) =>borderTitle ? theme.dim[2]:'0'};
-  border-bottom:${({borderTitle,theme})=>borderTitle ? 
-  `1px solid ${theme.palette.strokeVariant}`:'none'};
-  margin-right:${({ theme,marginHead}) =>marginHead ? theme.dim[6]:theme.dim[3]};
-  margin-left:${({ theme,marginHead }) =>marginHead ? theme.dim[6]:theme.dim[3]};
+  padding-bottom:${({ theme }) => theme.dim[2]};
+  border-bottom:${({ borderTitle, theme }) => borderTitle ?
+    `1px solid ${theme.palette.strokeVariant}` : 'none'};
+  margin-bottom:${({theme,headMarginUnit})=>headMarginUnit ? theme.dim[headMarginUnit]:0};
+  
 `
 
 export const StyledTitle = styled.span`
@@ -23,7 +29,7 @@ export const StyledTitle = styled.span`
   display:inline-flex;
   ${({ theme }) => theme.typography.headline2}
   color: ${({ theme }) => theme.palette.onSurface};
-  margin-right:${({theme})=>theme.dim[2]};
+  margin-right:${({ theme }) => theme.dim[2]};
 
   &::before{
     content: "";
@@ -90,7 +96,10 @@ export const StyledContainer = styled.ul`
   display: flex;
 `;
 
-export const StyledProducts = styled.div``;
+export const StyledProducts = styled.div`
+  margin:0 -${({ theme, itemPaddingUnit }) => itemPaddingUnit ? theme.dim[itemPaddingUnit] : theme.dim[2]};
+
+`;
 
 export const StyledIcon = styled(IconProvider)`
   position: absolute;
