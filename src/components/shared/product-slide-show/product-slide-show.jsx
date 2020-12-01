@@ -8,7 +8,8 @@ import {
     StyledHead,
     StyledTitle,
     StyledButtonWrap,
-    StyledPreview
+    StyledPreview,
+    StyledItem
 } from './product-slide-show.styled'
 import ProductItem from '../product/product-item'
 import Paths from '../../../utils/paths'
@@ -142,6 +143,7 @@ const ProductSlideShow = ({ items = itemsTest, title }) => {
 
                     items.map(({ id, href, imgSrc, title, price, offPrice, point }) => {
                         return (
+                            <StyledItem>
                             <ProductItem
                                 key={id}
                                 href={href}
@@ -152,11 +154,10 @@ const ProductSlideShow = ({ items = itemsTest, title }) => {
                                 point={point}
                                 $alignRight
                                 mask={true}
+                                imgWidth="58.5%"
                                 colors={false}
-                                imgPaddingUnit={8}
-                                itemPaddingUnit={[4, 4]}
                             />
-
+                           </StyledItem>
                         )
                     })
 

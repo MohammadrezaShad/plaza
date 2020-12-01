@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledWrapper = styled.div`
  overflow:hidden;
  border:1px solid ${({ theme }) => theme.palette.stroke};
- padding:${({ theme }) => theme.dim[4]} 0;
+ padding:${({ theme }) => theme.dim[3]} 0;
 `
 
 export const StlyedContainer = styled.ul`
@@ -11,9 +11,17 @@ display:flex;
 flex: 0 0 100%;
 min-width:0;
 position:relative;
-left:${({ selectedItem }) => `${100*selectedItem}%`};
+left:${({ selectedItem }) => `${100 * selectedItem}%`};
 transition:1s all;
 `
+
+export const StyledItem = styled.li`
+  position:relative;
+  flex:0 0 100%;
+  transition:all .3s;
+  padding:${({ theme }) => theme.dim[4]};
+`
+
 
 export const StyledHead = styled.div`
 display:flex;
