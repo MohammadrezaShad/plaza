@@ -1,159 +1,111 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import { StyledWrapper } from './brands-content-products.styled'
+import { StyledWrapper, StyledItem } from './brands-content-products.styled'
 import ProductItem from '../../../../../../shared/product/product-item'
 import Paths from '../../../../../../../utils/paths'
 import ProdOne from "../../../../../../../assets/images/club/prod1test.png"
+import ProdTwo from "../../../../../../../assets/images/club/prod2test.png"
+import ProdThree from "../../../../../../../assets/images/club/prod3test.png"
+import ProdFour from "../../../../../../../assets/images/club/prod4test.png"
 
-const BrandsContentProducts = props => {
+const itemsTest = [
+    {
+        id: 1,
+        href: Paths.home.getPath(),
+        imgSrc: ProdOne,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id: 1111,
+        href: Paths.home.getPath(),
+        imgSrc: ProdOne,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id: 2222,
+        href: Paths.home.getPath(),
+        imgSrc: ProdOne,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id: 2,
+        href: Paths.home.getPath(),
+        imgSrc: ProdTwo,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id: 3,
+        href: Paths.home.getPath(),
+        imgSrc: ProdThree,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id: 4,
+        href: Paths.home.getPath(),
+        imgSrc: ProdFour,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    },
+    {
+        id: 5,
+        href: Paths.home.getPath(),
+        imgSrc: ProdTwo,
+        title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
+        price: 3000000,
+        offPrice: 2550000,
+        point: 102
+    }
+]
+const BrandsContentProducts = ({ items = itemsTest }) => {
+    const [hoverItem, sethoverItem] = useState(null)
     return (
         <StyledWrapper>
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                specialOffer={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                specialSale={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-
-            />
-            <ProductItem
-                href={Paths.home.getPath()}
-                imgSrc={ProdOne}
-                title="اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد"
-                price={3000000}
-                offPrice={2550000}
-                point={102}
-                hoverable={true}
-                $alignRight={true}
-                gilMark={true}
-                $border={true}
-                brand={true}
-                hoverable={true}
-                itemPaddingUnit={[7,3]}
-
-            />
+            {
+                items.map(({ id, href, title, price, offPrice, point }) => {
+                    return (
+                        <StyledItem
+                            key={id}
+                            onMouseEnter={() => sethoverItem(id)}
+                            onMouseLeave={() => sethoverItem(null)}
+                        >
+                            <ProductItem
+                                href={href}
+                                compare={true}
+                                imgSrc={ProdOne}
+                                title={title}
+                                price={price}
+                                offPrice={offPrice}
+                                point={point}
+                                hoverable={true}
+                                $alignRight={true}
+                                gilMark={true}
+                                brand={true}
+                                specialOffer={true}
+                                hover={hoverItem===id}
+                                imgWidth="72%"
+                            />
+                        </StyledItem>
+                    )
+                })
+            }
         </StyledWrapper>
     )
 }
