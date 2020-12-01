@@ -1,6 +1,20 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
+export const StyledHoverIconWrap = styled.div`
+ opacity:0;
+ visibility:hidden;
+ position:absolute;
+ top:${({ theme, $specialOffer, $specialSale }) =>
+    $specialOffer || $specialSale ? theme.dim[4] : theme.dim[3]};
+ right:${({ theme }) => theme.dim[3]};
+ display:flex;
+ flex-flow:column;
+ transition-property: visibility, opacity;
+ transition: 0s visibility, 0.5s opacity;
+ transition-delay:0s 0s; 
+`
+
 export const StyledWrapper = styled.li`
   flex:${({ $mask }) => $mask ? `0 0 100%` : `0 0 25%`} ;
   position:relative;
@@ -9,7 +23,7 @@ export const StyledWrapper = styled.li`
     if (paddingStatus) {
       return css`
         padding:${({ theme, itemPaddingUnit }) => itemPaddingUnit.length ?
-        `${theme.dim[itemPaddingUnit[0]]} ${theme.dim[itemPaddingUnit[1]]}` : theme.dim[3]};
+          `${theme.dim[itemPaddingUnit[0]]} ${theme.dim[itemPaddingUnit[1]]}` : theme.dim[3]};
 
       `
     }
@@ -20,6 +34,11 @@ export const StyledWrapper = styled.li`
       &:hover{
         box-shadow: 0 0 20px rgba(0,0,0,.1);
         z-index:10;
+        ${StyledHoverIconWrap}{
+          transition-delay:.3s 0s; 
+          opacity:1;
+          visibility:visible;
+        }
       }
       `
     }
@@ -152,11 +171,19 @@ margin:0 ${({ theme }) => theme.dim[1]};
     content:'';
     height:4px;
     width:4px;
-    border:${({ theme, $specialOffer, specialSale }) =>
+    border:${({ theme, $specialOffer, $specialSale }) =>
     $specialOffer ? `2px solid ${theme.palette.error}` : `2px solid ${theme.palette.primary}`};
     transform: rotate(45deg);
     left: -8px;
     top: -3px;
   }
 }
+`
+
+
+
+export const StyledHoverIcon = styled.span`
+ &:first-child{
+   margin-bottom:${({ theme }) => theme.dim[2]};
+ }
 `

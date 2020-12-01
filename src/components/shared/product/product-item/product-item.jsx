@@ -16,7 +16,9 @@ import {
   StyledSpecialWrap,
   StyledSpecialIcon,
   StyledSpecialText,
-  StyledSpecialLayout
+  StyledSpecialLayout,
+  StyledHoverIconWrap,
+  StyledHoverIcon
 } from "./product-item.styled";
 import ProductItemDetail from "./product-item-detail";
 import ProductItemColor from "./product-item-color";
@@ -78,8 +80,8 @@ const ProductItem = ({
             <StyledGilMark>
               <GilErtebatMark />
               <StyledGilMarkText>
-              {t("gilMark")}
-            </StyledGilMarkText>
+                {t("gilMark")}
+              </StyledGilMarkText>
             </StyledGilMark> : null
         }
         {
@@ -100,6 +102,13 @@ const ProductItem = ({
               <StyledSpecialLayout $specialSale={specialSale} />
             </StyledSpecialWrap> : null
         }
+        <StyledHoverIconWrap  $specialSale={specialSale} $specialOffer={specialOffer}>
+          <StyledHoverIcon 
+          as={IconProvider} 
+          icon="select-compare" 
+          size="24px" />
+          <StyledHoverIcon as={IconProvider} icon="favorite-o" size="24px" />
+        </StyledHoverIconWrap>
         {children}
       </StyledContainer>
     </StyledWrapper>
