@@ -33,7 +33,7 @@ const BrandsContentTop = props => {
                 marginHead={false}
                 buttonTopLeft={true} 
                 alignRight={true} 
-                imgPaddingUnit={5}
+                imgWidth="66%"
                 />
             </StyledContainer>
         </Fragment>

@@ -13,9 +13,7 @@ export const StyledTitle = styled.span`
   margin-left:${({ theme }) => theme.dim[2]};
 `
 
-export const StyledContainer = styled.div`
- margin:0 -${({ theme }) => theme.dim[3]};
-`
+export const StyledContainer = styled.div``
 
 export const StyledLink = styled(Link)`
 display:inline-flex;
