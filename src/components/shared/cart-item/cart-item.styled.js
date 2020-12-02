@@ -17,7 +17,7 @@ export const StyledImgWrap = styled.div`
 `
 
 export const StyledImgContainer = styled.div`
-display: block;
+    display: block;
     width: 100%;
     padding-top: 100%;
     position: relative;
