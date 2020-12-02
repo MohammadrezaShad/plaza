@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
 import {
-  StyledWrapper,
   StyledContainer,
   StyledContent,
   StyledImgWrapper,
@@ -18,10 +17,11 @@ import {
   StyledSpecialText,
   StyledSpecialLayout,
   StyledHoverIconWrap,
-  StyledHoverIcon
+  StyledHoverIcon,
+  StyledItemDetail
 } from "./product-item.styled";
-import ProductItemDetail from "./product-item-detail";
-import ProductItemColor from "./product-item-color";
+import ProductItemDetail from "../product-item-detail";
+import ProductItemColor from "../product-item-color";
 import { ReactComponent as GilErtebatMark } from '../../../../assets/images/gilMark.svg'
 import IconProvider from "../../../../providers/icon/icon-provider";
 
@@ -55,13 +55,15 @@ const ProductItem = ({
           </StyledImgWrapper>
           <StyledTitle to={href} $alignRight={$alignRight} >{title}</StyledTitle>
         </StyledContent>
-        <ProductItemDetail
-          price={price}
-          offPrice={offPrice}
-          href={href}
-          point={point}
-          $alignRight={$alignRight}
-        />
+        <StyledItemDetail $alignRight={$alignRight}>
+          <ProductItemDetail
+            price={price}
+            offPrice={offPrice}
+            href={href}
+            point={point}
+            $alignRight={$alignRight}
+          />
+        </StyledItemDetail>
         {
           colors ?
             <StyledColors $alignRight={$alignRight}>

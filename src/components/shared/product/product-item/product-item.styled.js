@@ -2,8 +2,8 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledHoverIconWrap = styled.div`
- opacity:${({hover})=>hover ? '1':'0'};
- visibility:${({hover})=>hover ? 'visable':'hidden'};;
+ opacity:${({ hover }) => hover ? '1' : '0'};
+ visibility:${({ hover }) => hover ? 'visable' : 'hidden'};;
  position:absolute;
  top:${({ theme, $specialOffer, $specialSale }) =>
     $specialOffer || $specialSale ? theme.dim[4] : theme.dim[3]};
@@ -12,53 +12,15 @@ export const StyledHoverIconWrap = styled.div`
  flex-flow:column;
  transition-property: visibility, opacity;
  transition: 0s visibility, 0.5s opacity;
- transition-delay:${({hover})=>hover ? '.3s 0s':'0s 0s'}; 
+ transition-delay:${({ hover }) => hover ? '.3s 0s' : '0s 0s'}; 
 `
-
-export const StyledWrapper = styled.li`
-  flex:${({ $mask }) => $mask ? `0 0 100%` : `0 0 25%`} ;
-  position:relative;
-  transition:all .3s;
-  ${({ paddingStatus }) => {
-    if (paddingStatus) {
-      return css`
-        padding:${({ theme, itemPaddingUnit }) => itemPaddingUnit.length ?
-          `${theme.dim[itemPaddingUnit[0]]} ${theme.dim[itemPaddingUnit[1]]}` : theme.dim[3]};
-
-      `
-    }
-  }}
-    ${({ hoverable }) => {
-    if (hoverable) {
-      return css`
-      &:hover{
-        box-shadow: 0 0 20px rgba(0,0,0,.1);
-        z-index:10;
-        ${StyledHoverIconWrap}{
-          transition-delay:.3s 0s; 
-          opacity:1;
-          visibility:visible;
-        }
-      }
-      `
-    }
-  }}
-  text-align: center;
-  margin-right: ${({ theme, $border }) => $border ? '-2px' : '0'};
-  margin-top: ${({ theme, $border }) => $border ? '-2px' : '0'};
-  background-color:${({ theme }) => theme.palette.back};
-  border:${({ theme, $border }) => $border ? `1px solid ${theme.palette.strokeVariant}` : 'none'};
-  border-radius:${({ theme }) => theme.defaults.borderRadius};
-  ${({ theme }) => theme.breakPoints.desktop}{
-  flex:${({ $mask }) => $mask ? `0 0 100%` : `0 0 33.33%`} ;
-  };
-`;
 
 export const StyledContainer = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   height: 100%;
+  margin:0 -${({ theme }) => theme.dim[1]};
 `;
 
 export const StyledContent = styled.div``;
@@ -69,7 +31,7 @@ export const StyledColors = styled.div`
 `;
 
 export const StyledImgWrapper = styled.div`
-  width:${({imgWidth})=>imgWidth};
+  width:${({ imgWidth }) => imgWidth};
   margin:0 auto ${({ theme }) => theme.dim[3]} auto;
 `;
 
@@ -187,3 +149,11 @@ export const StyledHoverIcon = styled.span`
    margin-bottom:${({ theme }) => theme.dim[2]};
  }
 `
+
+
+export const StyledItemDetail = styled.div`
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto;
+  justify-content:${({ $alignRight }) => $alignRight ? 'right' : 'center'};
+`;
