@@ -12,6 +12,7 @@ export const StyledContent = styled.div`
  overflow:scroll;
  scrollbar-width: none;
  -ms-overflow-style: none; 
+ -webkit-overflow-scrolling: touch;
  margin: 0 -${({theme})=>theme.dim[1]};
  &::-webkit-scrollbar {
   display: none;
