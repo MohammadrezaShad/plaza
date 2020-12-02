@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 import {StyledFeedbackWrap} from './brands-feedback.styled'
-import FeedbackItem from './feedback-item'
+import FeedbackItem from '../../../../../../shared/feedback-item'
 
 const BrandsFeedback = (
     {
