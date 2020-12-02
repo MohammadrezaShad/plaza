@@ -285,7 +285,10 @@ Product.propTypes = {
     items: PropTypes.array,
     buttonTopLeft: PropTypes.bool,
     alignRight: PropTypes.bool,
-    title: PropTypes.string || PropTypes.object,
+    title: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object
+      ]),
     borderTitle: PropTypes.bool,
     imgWidth: PropTypes.string,
     itemPaddingUnit: PropTypes.number,
