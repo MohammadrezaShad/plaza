@@ -63,7 +63,8 @@ const dim = {
 
 const zIndex = {
     header: 100,
-    productItem: 10
+    productItem: 10,
+    filters:150
 }
 
 const typography = {
