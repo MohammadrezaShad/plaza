@@ -18,3 +18,8 @@ export const StyledBottomWrap = styled.div`
 export const StyledContent = styled.div`
 margin-top:${({ theme }) => theme.dim[4]};
 `
+
+export const StyledSlider = styled.div`
+margin-top:${({ theme }) => theme.dim[2]};
+
+`
