@@ -12,12 +12,8 @@ export const StyledWrapper = styled.div`
 `;
 
 export const StyledLayout = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  overflow: auto;
+  height:100%;
+  overflow:scroll;
   background: ${({ theme }) => theme.palette.back};
 `;
 
