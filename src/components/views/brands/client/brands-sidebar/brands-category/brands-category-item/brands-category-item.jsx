@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import {
@@ -7,20 +7,20 @@ import {
 import Checkbox from '../../../../../../shared/form/checkbox'
 
 
-const BrandsCategoryItem = ({ id,title,onChange}) => {
+const BrandsCategoryItem = ({ id, title, onChange }) => {
 
     return (
 
         <StyledWrap key={id}>
-            <Checkbox text={title} onChange={(e)=>onChange(id,e)}/>
+            <Checkbox text={title} onChange={(e) => onChange(id, e)} />
         </StyledWrap>
     )
 }
 
 BrandsCategoryItem.propTypes = {
-    id:PropTypes.number,
-    title:PropTypes.string,
-    onChange:PropTypes.func
+    id: PropTypes.number,
+    title: PropTypes.string,
+    onChange: PropTypes.func
 }
 
 export default BrandsCategoryItem
