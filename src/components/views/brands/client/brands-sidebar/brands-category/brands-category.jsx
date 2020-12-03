@@ -26,7 +26,7 @@ const BrandsCategory = ({
     const [term, setTerm] = useState('')
     const [categoriesArray, setCategoriesArray] = useState(categories || [])
     const [checkedCategories, setCheckedCategories] = useState([])
-    const [showMore, setShowMore] = useState(false) 
+    const [showMore, setShowMore] = useState(false)
 
     const changeHandler = (e) => {
         setTerm(e.target.value);
@@ -39,7 +39,7 @@ const BrandsCategory = ({
         setCategoriesArray([...newCategoriesArray])
     }
 
-    const onChange = (id, e) => {
+    const onChange = (id) => {
         let newCheckedCategories = [...checkedCategories, id]
         if (checkedCategories.find((checkedId) => checkedId === id)) {
             newCheckedCategories = newCheckedCategories.filter((checkedId) => checkedId !== id)
@@ -57,19 +57,19 @@ const BrandsCategory = ({
                 <StyledSubTitle>{t("brandsView.categoryTip")}</StyledSubTitle>
             </StyledHead>
             <StyledSearch>
-                <Textbox 
-                placeholder={t("brandsView.enterBrand")} 
-                icon="search" 
-                onChange={changeHandler} 
-                value={term} />
+                <Textbox
+                    placeholder={t("brandsView.enterBrand")}
+                    icon="search"
+                    onChange={changeHandler}
+                    value={term} />
             </StyledSearch>
             <StyledBlock>
                 <StyledContent showMore={showMore}>
                     {
                         categoriesArray.map(({ id, title }) => {
-                            return <BrandsCategoryItem key={id} 
-                            id={id} title={title} 
-                            onChange={onChange} />
+                            return <BrandsCategoryItem key={id}
+                                id={id} title={title}
+                                onChange={onChange} />
                         })
                     }
                 </StyledContent>
@@ -78,10 +78,10 @@ const BrandsCategory = ({
                         size={buttonSizes.SMALL}
                         color={buttonColors.SECONDARY}
                         variant={buttonVariants.LINK}
-                        text={!showMore ? t("brandsView.moreCategories"):t("close")}
+                        text={!showMore ? t("brandsView.moreCategories") : t("close")}
                         onClick={expandHandler}
-                      >
-                        <StyledIcon as={IconProvider} icon={!showMore ? "arrow-down":"arrow-up"} size="10px" />
+                    >
+                        <StyledIcon as={IconProvider} icon={!showMore ? "arrow-down" : "arrow-up"} size="10px" />
                     </Button>
                 </StyledButton>
             </StyledBlock>
