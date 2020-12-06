@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledWrapper = styled.label`
   display: inline-flex;
+  align-items: center;
   position: relative;
 `;
 
@@ -43,4 +44,12 @@ export const StyledRadio = styled.input`
       transition: transform 0.2s ease;
     }
   }
+`;
+
+export const StyledText = styled.span`
+  cursor: pointer;
+  display: inline-flex;
+  color: ${({ theme }) => theme.palette.onSurface};
+  ${({ theme }) => theme.typography.bodyMdNormal};
+  margin-right: ${({ theme }) => theme.dim[2]};
 `;

@@ -1,16 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { StyledWrapper, StyledLayout, StyledRadio } from './radio-button.styled'
+import { StyledWrapper, StyledLayout, StyledRadio, StyledText } from './radio-button.styled'
 
-const RadioButton = ({ onChange, name, defaultChecked }) => {
+const RadioButton = ({ text, onChange, name, defaultChecked }) => {
     return (
         <StyledWrapper>
-            <StyledRadio 
-            type="radio" 
-            defaultChecked={defaultChecked} 
-            name={name} 
-            onChange={onChange} />
+            {
+                text
+                    ?
+                    <StyledText>{text}</StyledText>
+                    :
+                    null
+            }
+            <StyledRadio
+                type="radio"
+                defaultChecked={defaultChecked}
+                name={name}
+                onChange={onChange} />
             <StyledLayout />
         </StyledWrapper>
     )
@@ -18,7 +25,9 @@ const RadioButton = ({ onChange, name, defaultChecked }) => {
 
 RadioButton.propTypes = {
     name: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    defaultChecked: PropTypes.bool,
+    text: PropTypes.string
 }
 
 export default RadioButton
