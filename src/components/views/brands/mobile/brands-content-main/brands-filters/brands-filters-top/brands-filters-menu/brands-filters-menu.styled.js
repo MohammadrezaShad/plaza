@@ -18,20 +18,24 @@ export const StyledWrapper = styled.div`
 `;
 
 export const StyledLayout = styled.div`
-  height: 100%;
-  overflow: scroll;
   background: ${({ theme }) => theme.palette.back};
 `;
 
 export const StlyedContent = styled.div`
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 0 ${({ theme }) => theme.dim[2]};
 `;
 
 export const StyledHead = styled.div`
-  position: sticky;
+  position: fixed;
   background-color: ${({ theme }) => theme.palette.back};
   top: 0;
+  left: 0;
+  right: 0;
   display: flex;
+  height: 48px;
   align-items: center;
   justify-content: space-between;
   padding: ${({ theme }) => theme.dim[2]};
@@ -71,8 +75,10 @@ export const StyledSpecialBlock = styled.div`
 `;
 
 export const StyledButton = styled.div`
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   & > button {
     border-radius: 0;
