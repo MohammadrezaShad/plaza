@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-
 import {
     StyledBlock,
     StyledText,
@@ -13,21 +12,39 @@ import IconProvider from '../../../../../../../providers/icon/icon-provider'
 import Button from '../../../../../../shared/button'
 import { buttonSizes, buttonVariants } from '../../../../../../../constants/button-configs'
 import BrandsFiltersMenu from './brands-filters-menu'
+import Sort from '../../../../../../dialogs/brands/sort'
+const sorts = [
+    { title: "جدیدترن ها", id: 1 },
+    { title: "گران ترین ها", id: 2 },
+    { title: "ارزان ترین ها", id: 3 },
+    { title: "جدید ترن ها", id: 4 },
+    { title: "پرفورش ترین ها", id: 5 }]
 
-const BrandsFiltersTop = props => {
+const BrandsFiltersTop = ({ activeFiltersMain, onChange, onClick }) => {
     const [showFilters, setshowFilters] = useState(false)
+    const [showSort, setShowSort] = useState(false)
+    const [sortText, setSortText] = useState(sorts[0]?.title)
     const toggleFilters = () => {
         setshowFilters(!showFilters);
     };
+    const openSort = () => {
+        setShowSort(true)
+    }
+    const closeSort = () => {
+        setShowSort(false)
 
+    }
+    const sortChange = (title) => {
+        setSortText(title)
+    }
     useEffect(() => {
-        if (showFilters) {
+        if (showFilters || showSort) {
             disableBodyScroll();
-        } else {
+        } else if (!showFilters && !showSort) {
             enableBodyScroll();
         }
         return () => {
-            if (showFilters) {
+            if (showFilters || showSort) {
                 enableBodyScroll();
             }
         };
@@ -42,28 +59,44 @@ const BrandsFiltersTop = props => {
                     onClick={toggleFilters}
                 >
                     <StyledText>فیلتر</StyledText>
-                    <StyledIcon as={IconProvider} icon="hamburger-menu" size="16px" />
-                    <StyledFiltersCount>
-                        <StyledCount>
-                            1
-                    </StyledCount>
-                    </StyledFiltersCount>
+                    <StyledIcon as={IconProvider} icon="filter" size="16px" />
+                    {
+                        activeFiltersMain.length ?
+                            <StyledFiltersCount>
+                                <StyledCount>
+                                    {activeFiltersMain.length}
+                                </StyledCount>
+                            </StyledFiltersCount> : null
+                    }
                 </Button>
             </StyledBlock>
             <StyledBlock>
-                <Button variant={buttonVariants.OUTLINE} size={buttonSizes.S_MEDIUM}>
-                    <StyledText>جدید ترین ها</StyledText>
-                    <StyledIcon as={IconProvider} icon="hamburger-menu" size="16px" />
+                <Button
+                    onClick={openSort}
+                    variant={buttonVariants.OUTLINE}
+                    size={buttonSizes.S_MEDIUM}>
+                    <StyledText>
+                        {sortText}
+                    </StyledText>
+                    <StyledIcon as={IconProvider} icon="sort" size="16px" />
                 </Button>
             </StyledBlock>
-            <BrandsFiltersMenu showFilters={showFilters} toggleFilters={toggleFilters} />
-
+            <BrandsFiltersMenu
+                onChange={onChange}
+                onClick={onClick}
+                showFilters={showFilters}
+                toggleFilters={toggleFilters}
+                activeFiltersMain={activeFiltersMain}
+            />
+            <Sort onChange={sortChange} sorts={sorts} open={showSort} onClose={closeSort} />
         </Fragment>
     )
 }
 
 BrandsFiltersTop.propTypes = {
-
+    activeFiltersMain: PropTypes.array,
+    onChange: PropTypes.func,
+    onClick: PropTypes.func
 }
 
 export default BrandsFiltersTop
