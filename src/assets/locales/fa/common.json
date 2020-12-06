@@ -93,6 +93,8 @@
   "gilMark": "تکنوگیل شمال",
   "changeColor": "تغییر رنگ",
   "amount": "تعداد",
+  "sort":"مرتب سازی بر اساس",
+   "availableProducts":"کالاهای موجود",
   "plazaClubArea": {
     "dashboard": "داشبورد",
     "pointGraph": "نمودار امتیازات",
@@ -188,6 +190,7 @@
     "monthScore": "امتیاز ماه: {{count}}"
   },
   "brandsView": {
+    "showMoreProduct":"نمایش کالاهای بیشتر",
     "showAvailableProducts": "نمایش فقط کالاهای موجود",
     "userSatisfaction": "رضایت کاربران",
     "productCount": "تعداد محصولات",
@@ -201,7 +204,8 @@
     "buyNotRecommend": "خرید این محصول را توصیه نمی‌کنم",
     "unitPrice":"مبلغ واحد : {{count}} تومان",
     "totalPrice":"مبلغ کل : {{total}} تومان",
-    "guarantee": "گارانتی"
-
+    "guarantee": "گارانتی",
+    "filterConfirm":"تایید فیلتر"
+    
   }
 }
