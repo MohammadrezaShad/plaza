@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -16,21 +16,56 @@ import IconProvider from "../../../../../../../../providers/icon/icon-provider";
 import SwitchButton from "../../../../../../../shared/form/switch-button";
 import Button from "../../../../../../../shared/button";
 import { buttonSizes } from "../../../../../../../../constants/button-configs";
+import { useTranslation } from "react-i18next";
 
-const BrandsFiltersMenu = ({ showFilters, toggleFilters }) => {
+const BrandsFiltersMenu = ({ showFilters, toggleFilters, onChange, onClick, activeFiltersMain }) => {
     const [availableProduct, setAvailableProduct] = useState(false)
     const [specialSale, setSpecialSale] = useState(false)
     const [specialOffer, setSpecialOffer] = useState(false)
-
+    const { t } = useTranslation()
     const availableProductChange = () => {
         setAvailableProduct(!availableProduct)
+        onChange(1, t('availableProducts'))
     }
     const specialSaleChange = () => {
         setSpecialSale(!specialSale)
+        onChange(2, t('specialSale'))
+
     }
     const specialOfferChange = () => {
         setSpecialOffer(!specialOffer)
+        onChange(3, t('specialSale'))
     }
+
+    useEffect(() => {
+        if (!activeFiltersMain.length) {
+            console.log('call')
+            if (availableProduct) {
+                setAvailableProduct(!availableProduct)
+            }
+            if (specialSale) {
+                setSpecialSale(!specialSale)
+            }
+            if (specialOffer) {
+                setSpecialOffer(!specialOffer)
+            }
+        } else {
+            if (!activeFiltersMain.find(({ id }) => id === 1) && availableProduct) {
+                setAvailableProduct(!availableProduct)
+            }
+
+            if (!activeFiltersMain.find(({ id }) => id === 2) && specialSale) {
+                setSpecialSale(!specialSale)
+            }
+
+            if (!activeFiltersMain.find(({ id }) => id === 3) && specialOffer) {
+                setSpecialOffer(!specialOffer)
+            }
+
+        }
+
+    }, [activeFiltersMain])
+
     return (
         <StyledWrapper showFilters={showFilters}>
             <StyledHead>
@@ -45,11 +80,11 @@ const BrandsFiltersMenu = ({ showFilters, toggleFilters }) => {
             <StyledLayout showFilters={showFilters}>
                 <StlyedContent>
                     <StyledBlock>
-                        <SwitchButton onChange={availableProductChange} text="نمایش فقط کالاهای موجود" />
+                        <SwitchButton status={availableProduct} onChange={availableProductChange} text={t("brandsView.showAvailableProducts")} />
                     </StyledBlock>
                     <StyledSpecialBlock>
-                        <SwitchButton onChange={specialOfferChange} text="پیشنهاد ویژه" />
-                        <SwitchButton onChange={specialSaleChange} text="فروش ویژه" />
+                        <SwitchButton status={specialOffer} onChange={specialOfferChange} text={t("specialOffer")} />
+                        <SwitchButton status={specialSale} onChange={specialSaleChange} text={t("specialSale")} />
                     </StyledSpecialBlock>
                     <StyledBlock>
 
@@ -57,7 +92,12 @@ const BrandsFiltersMenu = ({ showFilters, toggleFilters }) => {
                 </StlyedContent>
             </StyledLayout>
             <StyledButton>
-                <Button size={buttonSizes.LARGE} text="تایید فیلتر" matchParent={true} />
+                <Button
+                    onClick={onClick}
+                    size={buttonSizes.LARGE}
+                    text={t("brandsView.filterConfirm")}
+                    matchParent={true}
+                />
             </StyledButton>
         </StyledWrapper>
     );
@@ -66,6 +106,9 @@ const BrandsFiltersMenu = ({ showFilters, toggleFilters }) => {
 BrandsFiltersMenu.propTypes = {
     showFilters: PropTypes.bool,
     toggleFilters: PropTypes.func,
+    onChange: PropTypes.func,
+    onClick: PropTypes.func,
+    activeFiltersMain: PropTypes.array
 };
 
 export default BrandsFiltersMenu;
