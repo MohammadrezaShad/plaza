@@ -9,19 +9,23 @@ import {
     StyledButtonWrap
 } from './switch-button.styled'
 
-const SwitchButton = ({ onChange, name,text }) => {
+const SwitchButton = ({ onChange, name, text, status }) => {
     return (
         <StyledWrapper>
-            <StyledCheckBox name={name} type="checkbox" onChange={onChange}/>
+            <StyledCheckBox
+                checked={status}
+                name={name}
+                type="checkbox"
+                onChange={onChange} />
             <StyledButtonWrap>
-                <StyledLayout  />
+                <StyledLayout />
             </StyledButtonWrap>
             {
                 text
-                ?
-                <StyledText>{text}</StyledText>
-                :
-                null
+                    ?
+                    <StyledText>{text}</StyledText>
+                    :
+                    null
             }
         </StyledWrapper>
     )
@@ -29,8 +33,9 @@ const SwitchButton = ({ onChange, name,text }) => {
 
 SwitchButton.propTypes = {
     onChange: PropTypes.func,
-    text:PropTypes.string,
-    name:PropTypes.string,
+    text: PropTypes.string,
+    name: PropTypes.string,
+    status: PropTypes.bool
 }
 
 export default SwitchButton
