@@ -1,9 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
+export const StyledBlock = styled.div``;
 
-export const StyledBlock=styled.div`
-&:first-child{
-    margin-bottom:${({theme})=>theme.dim[6]};
-    padding-bottom:${({theme})=>theme.dim[6]};
-}
-`
+export const StyledPreview = styled.div`
+  border: 1px solid ${({ theme }) => theme.palette.stroke};
+`;
