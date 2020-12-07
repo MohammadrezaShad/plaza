@@ -31,6 +31,7 @@ const BrandsCategory = ({
     const changeHandler = (e) => {
         setTerm(e.target.value);
         let newCategoriesArray = [...categories]
+
         newCategoriesArray = newCategoriesArray.filter((category) => {
             if (category.title.includes(e.target.value)) {
                 return true

@@ -10,12 +10,12 @@ const SpecialOffer = (props) => {
   const { t } = useTranslation()
   return (
     <StyledWrapper>
-      <Product 
-      title={t('topRatedProduct')} 
-      itemPaddingUnit={1} 
-      imgPaddingUnit={6} 
-      headMarginUnit={3} 
-      favorite={false}
+      <Product
+        title={t('topRatedProduct')}
+        headMarginUnit={3}
+        favorite={false}
+        imgWidth="68%"
+
       />
     </StyledWrapper>
   );

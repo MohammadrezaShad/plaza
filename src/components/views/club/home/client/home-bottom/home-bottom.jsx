@@ -6,7 +6,7 @@ import { StyledWrapper, StyledContainer } from './home-bottom.styled'
 import SpecialOffer from './special-offer'
 import Card from '../../../../../shared/card'
 
-const HomeBottom = ({ }) => {
+const HomeBottom = () => {
     const { t } = useTranslation()
     return (
         <StyledContainer>

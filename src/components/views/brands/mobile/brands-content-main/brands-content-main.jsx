@@ -14,20 +14,31 @@ import useScrollRequest from '../../../../../helpers/use-scroll-request'
 const BrandsContentMain = () => {
     const { t } = useTranslation()
     const node = useRef(null)
+    const feedNode = useRef(null)
+
     const [selectedTab, setselectedTab] = useState(0)
     const [loadingCount, setLoadingCount] = useState(0)
+    const [feedbackLoadingCount, setFeedbackLoadingCount] = useState(0)
     const loadData = () => {
         console.log('LoadData')
         setLoadingCount(loadingCount + 1)
     }
+    const loadFeed = () => {
+        console.log('LoadFeed')
+        setFeedbackLoadingCount(feedbackLoadingCount + 1)
+    }
+
     const [elementInView, elementGrabber] = useScrollRequest(2000, loadingCount !== 0 && loadingCount % 2 == 0, loadData)
+    const [feedElementInView, feedElementGrabber] = useScrollRequest(2000, feedbackLoadingCount !== 0 && feedbackLoadingCount % 2 == 0, loadFeed)
+
     const tabClickHandler = (tabIndex) => {
         setselectedTab(tabIndex)
     }
     console.log(loadingCount)
     useEffect(() => {
         elementGrabber(node.current)
-    }, [])
+        feedElementGrabber(feedNode.current)
+    }, [selectedTab])
     return (
         <Fragment>
             <StyledBlock>
@@ -53,6 +64,15 @@ const BrandsContentMain = () => {
                     </StyledTabWrap> :
                     <StyledFeedWrap>
                         <BrandsFeedback />
+                        <StyledLoadingIcon ref={feedNode}>
+                            {
+                                feedbackLoadingCount !== 0 && feedbackLoadingCount % 2 == 0 ?
+                                    <Button variant={buttonVariants.OUTLINE}
+                                        text="نمایش نظرات بیشتر"
+                                        onClick={loadFeed} /> :
+                                    <Loading />
+                            }
+                        </StyledLoadingIcon>
                     </StyledFeedWrap>
             }
         </Fragment>

@@ -99,8 +99,8 @@ const BrandsContentProducts = ({ items = itemsTest }) => {
                                 gilMark={true}
                                 brand={true}
                                 specialOffer={true}
-                                hover={hoverItem===id}
-                                imgWidth="72%"
+                                hover={hoverItem === id}
+                                imgWidth="68%"
                             />
                         </StyledItem>
                     )
