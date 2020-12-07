@@ -33,7 +33,7 @@ const itemsTest = [
         id: 1,
         href: Paths.home.getPath(),
         imgSrc: ProdOne,
-        prevImg:ProdSmOne,
+        prevImg: ProdSmOne,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
         price: 3000000,
         offPrice: 2550000,
@@ -43,7 +43,7 @@ const itemsTest = [
         id: 2,
         href: Paths.home.getPath(),
         imgSrc: ProdTwo,
-        prevImg:ProdSmTwo,
+        prevImg: ProdSmTwo,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
         price: 3000000,
         offPrice: 2550000,
@@ -53,7 +53,7 @@ const itemsTest = [
         id: 3,
         href: Paths.home.getPath(),
         imgSrc: ProdThree,
-        prevImg:ProdSmThree,
+        prevImg: ProdSmThree,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
         price: 3000000,
         offPrice: 2550000,
@@ -63,7 +63,7 @@ const itemsTest = [
         id: 4,
         href: Paths.home.getPath(),
         imgSrc: ProdFour,
-        prevImg:ProdSmFour,
+        prevImg: ProdSmFour,
         title: "اسپیکر بلوتوث مشکی رنگ کیفیت عالی دارای امکانات خیلی زیاد",
         price: 3000000,
         offPrice: 2550000,
@@ -76,7 +76,7 @@ const ProductSlideShow = ({ items = itemsTest, title }) => {
     const [rightArrowStatus, setRightArrowStatus] = useState(true)
     const [leftArrowStatus, setLeftArrowStatus] = useState(true)
     const [selectedItem, setSelectedItem] = useState(0)
-     
+
     const handlers = useSwipeable({
         onSwipedLeft: () => moveRightHandler(),
         onSwipedRight: () => moveLeftHandler(),
@@ -97,7 +97,7 @@ const ProductSlideShow = ({ items = itemsTest, title }) => {
         }
     }
 
-    const onClick=(index)=>{
+    const onClick = (index) => {
         setSelectedItem(index)
         setItemShowed(index + 1)
     }
@@ -143,21 +143,20 @@ const ProductSlideShow = ({ items = itemsTest, title }) => {
 
                     items.map(({ id, href, imgSrc, title, price, offPrice, point }) => {
                         return (
-                            <StyledItem>
-                            <ProductItem
-                                key={id}
-                                href={href}
-                                imgSrc={imgSrc}
-                                title={title}
-                                price={price}
-                                offPrice={offPrice}
-                                point={point}
-                                $alignRight
-                                mask={true}
-                                imgWidth="58.5%"
-                                colors={false}
-                            />
-                           </StyledItem>
+                            <StyledItem key={id}>
+                                <ProductItem
+                                    href={href}
+                                    imgSrc={imgSrc}
+                                    title={title}
+                                    price={price}
+                                    offPrice={offPrice}
+                                    point={point}
+                                    $alignRight
+                                    mask={true}
+                                    imgWidth="55.2%"
+                                    colors={false}
+                                />
+                            </StyledItem>
                         )
                     })
 
@@ -166,14 +165,14 @@ const ProductSlideShow = ({ items = itemsTest, title }) => {
             <StyledPreview>
                 {
 
-                    items.map(({ id, href, prevImg, title, price, offPrice, point },index) => {
+                    items.map(({ id, href, prevImg, title, price, offPrice, point }, index) => {
                         return (
-                            <ProductSlidePreview 
-                            key={index} 
-                            index={index} 
-                            prevImg={prevImg}
-                            onClick={onClick}
-                            selectedItem={selectedItem}
+                            <ProductSlidePreview
+                                key={id}
+                                index={index}
+                                prevImg={prevImg}
+                                onClick={onClick}
+                                selectedItem={selectedItem}
                             />
                         )
                     })
