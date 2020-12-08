@@ -66,7 +66,13 @@ class Paths {
     }
 
     static brand = class {
+        static detail (slug) { 
+            return new Uri(`/brand/${slug}`,'/brand/:slug')
+        };
+
         static home = new Uri('/brands')
+
+
     }
 
     static about = new Uri('/about')

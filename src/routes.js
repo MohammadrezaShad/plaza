@@ -1,13 +1,14 @@
 import MainLayout from "./components/layouts/main-layout";
 import Home from "./pages";
 import Signin from "./pages/signin";
-import ProductDetail from "./pages/product";
+import ProductDetail from "./pages/product/[id]";
 import Paths from "./utils/paths";
 import Signup from "./pages/signup";
 import Profile from "./pages/profile";
 import Order from "./pages/order";
 import ProfileOrders from "./pages/profile/orders";
 import Brands from "./pages/brands";
+import BrandDetail from './pages/brand/[slug]'
 
 import ClubLayout from "./components/layouts/club-layout";
 import HomeClub from "./pages/club";
@@ -41,6 +42,10 @@ const routes = [
       {
         path: Paths.brand.home.getRoute(),
         component: Brands,
+      },
+      {
+        path: Paths.brand.detail().getRoute(),
+        component: BrandDetail,
       },
       {
         path: Paths.profile.home.getRoute(),
