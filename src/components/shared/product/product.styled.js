@@ -94,7 +94,7 @@ export const StyledContainer = styled.ul`
 `;
 
 export const StyledProducts = styled.div`
-  margin: 0 -${({ theme, itemPaddingUnit }) => (itemPaddingUnit ? theme.dim[itemPaddingUnit] : 0)};
+  margin: 0 -${({ theme, itemPaddingUnit }) => (itemPaddingUnit ? theme.dim[itemPaddingUnit] : theme.dim[2])};
 `;
 
 export const StyledIcon = styled(IconProvider)`
