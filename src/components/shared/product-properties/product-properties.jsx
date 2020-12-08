@@ -22,7 +22,6 @@ import IconProvider from "../../../providers/icon/icon-provider";
 import Button from "../button";
 import {
   buttonColors,
-  buttonSizes,
   buttonVariants,
 } from "../../../constants/button-configs";
 
@@ -47,7 +46,7 @@ const ProductProperties = (props) => {
           </StyledContainer>
           <StyledContainer>
             <StyledDetailText>قابلیت شوک</StyledDetailText>
-            <StyledIcon as={IconProvider} icon="true" size="24px" $color={1}/>
+            <StyledIcon as={IconProvider} icon="true" size="24px" $color={1} />
           </StyledContainer>
           <StyledContainer>
             <StyledDetailText>وزن</StyledDetailText>
@@ -59,7 +58,7 @@ const ProductProperties = (props) => {
           </StyledContainer>
         </StyledBlock>
         <StyledBlock>
-          <StyledIcon as={IconProvider} icon="shopping-cart" size="32px" $color={2}/>
+          <StyledIcon as={IconProvider} icon="shopping-cart" size="32px" $color={2} />
           <StyledDetail>
             <StyledText>دیگر فروشندگان این کالا</StyledText>
             <StyledAltText>
