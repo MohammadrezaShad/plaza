@@ -14,7 +14,7 @@ const SpecialOffer = (props) => {
         title={t('topRatedProduct')}
         headMarginUnit={3}
         favorite={false}
-        imgWidth="68%"
+        imgWidth="70%"
 
       />
     </StyledWrapper>

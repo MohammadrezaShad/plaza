@@ -28,6 +28,7 @@ const data = [
 ]
 
 const CustomerRelationshipTable = () => {
+
     const { t } = useTranslation()
     const [showConfirmModal, setShowConfirmModal] = useState(false)
     const [configItem, setConfigItem] = useState(null)
@@ -101,7 +102,7 @@ const CustomerRelationshipTable = () => {
                                 </StyledLink>
                             ,
                             button:
-                                <Button variant={buttonVariants.LINK} onClick={()=>onConfirmOpen(buyTogether)}>
+                                <Button variant={buttonVariants.LINK} onClick={() => onConfirmOpen(buyTogether)}>
                                     <IconProvider icon="user-delete" size="20px" />
                                 </Button>
                         }
