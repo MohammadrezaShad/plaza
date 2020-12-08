@@ -153,7 +153,7 @@ const ProductSlideShow = ({ items = itemsTest, title }) => {
                                     point={point}
                                     $alignRight
                                     mask={true}
-                                    imgWidth="55.2%"
+                                    imgWidth="58.2%"
                                     colors={false}
                                 />
                             </StyledItem>
