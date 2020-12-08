@@ -12,20 +12,22 @@ const LoadingBar = ({ step = 5, time = 500 }) => {
     useEffect(() => {
         let timer
         if (reset && !loaded && loading < 80) {
-             timer = setTimeout(() => {
+            timer = setTimeout(() => {
                 setLoading(loading + loadingStep)
             }, loadingTime);
         } else if (reset && !loaded && loading === 100) {
             setLoading(0)
+
         } else if (!reset && loaded) {
             setLoading(100)
             timer && clearTimeout(timer)
         }
         return () => {
-           timer && clearTimeout(timer);
-          };
+            timer && clearTimeout(timer);
+        };
 
     }, [loading, reset, loaded])
+
 
     return <StyledWrapper loading={loading} loaded={loaded} reset={reset}></StyledWrapper>
 }
